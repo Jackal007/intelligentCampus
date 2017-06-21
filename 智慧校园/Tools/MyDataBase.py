@@ -1,8 +1,14 @@
+'''
+Created on 2017年6月21日
+
+@author: zhenglongtian
+'''
+
 import pymysql
 
 class MyDataBase:
     def __init__(self):
-        self.db = pymysql.connect("localhost","root","053062","abcd" )
+        self.db = pymysql.connect("localhost","root","053062","intelligentCampus" )
         self.cursor = self.db.cursor()
 
     def getConn(self):

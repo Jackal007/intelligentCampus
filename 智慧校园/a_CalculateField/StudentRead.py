@@ -1,22 +1,19 @@
-import MyDataBase
+'''
+Created on 2017年6月21日
 
-class StudentRead:
+@author: zhenglongtian
+'''
 
-    def __init__(self,level_1,level_2,level_3,level_4):
-        # levels about the weight
-        self.level_1=level_1
-        self.level_2=level_2
-        self.level_3=level_3
-        self.level_4=level_4
-        self.db=MyDataBase.MyDataBase()
-        self.conn=self.db.getConn()
-        self.executer=self.db.getExcuter()
+import CalculateXX
+from tqdm import tqdm
+
+class StudentRead(CalculateXX.CalculateXX):
 
     def calculate(self):
         sql="select  student_id from score"
         self.executer.execute(sql)
         students = self.executer.fetchall()
-        for student in students:
+        for student in tqdm(students):
             student_id=student[0]
             sql="select count(student_id) from brrow where student_id='"+str(student_id)+"'"
             self.executer.execute(sql)

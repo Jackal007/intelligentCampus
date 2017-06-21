@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
-__author__ = 'Wsine'
+'''
+Created on 2017年6月21日
+
+@author: zhenglongtian
+'''
 
 from math import log
+from Tools import treePlotter
 import operator
-import treePlotter
 import pymysql
 
 def calcShannonEnt(dataSet):

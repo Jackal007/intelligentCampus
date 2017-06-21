@@ -1,22 +1,19 @@
-import MyDataBase
+'''
+Created on 2017年6月21日
 
-class StudentSubsidy:
+@author: zhenglongtian
+'''
 
-    def __init__(self,level_1,level_2,level_3,level_4):
-        # levels about the weight
-        self.level_1=level_1
-        self.level_2=level_2
-        self.level_3=level_3
-        self.level_4=level_4
-        self.db=MyDataBase.MyDataBase()
-        self.conn=self.db.getConn()
-        self.executer=self.db.getExcuter()
+import CalculateXX
+from tqdm import tqdm
+
+class StudentSubsidy(CalculateXX.CalculateXX):
 
     def calculate(self):
         sql="select  * from subsidy"
         self.executer.execute(sql)
         students =self.executer.fetchall()
-        for student in students:
+        for student in tqdm(students):
 
             student_id=student[0]
             subsidy=student[1]
@@ -30,8 +27,8 @@ class StudentSubsidy:
             sql="insert into students(student_id,can) values('"+str(student_id)+"',"+str(weight)+")"
             try:
                 self.executer.execute(sql)
-            except e:
-                print(e)
+            except:
+                pass
 
         self.conn.commit()
         self.db.close()
