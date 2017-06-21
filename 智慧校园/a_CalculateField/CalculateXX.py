@@ -20,6 +20,11 @@ class CalculateXX:
         self.db = MyDataBase.MyDataBase()
         self.conn = self.db.getConn()
         self.executer = self.db.getExcuter()
+        
+        # 从这边读取到所有学生的id
+        sql = "select student_id from score"
+        self.executer.execute(sql)
+        self.students = self.executer.fetchall()
 
     def calculate(self):
         for i in tqdm(range(1, 100)):
