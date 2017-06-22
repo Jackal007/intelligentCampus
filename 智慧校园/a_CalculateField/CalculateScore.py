@@ -6,8 +6,9 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
+from a_CalculateField.LevelConfig import BookBorrow_level as level
 
-class StudentScore(CalculateXX.CalculateXX):
+class CalculateScore(CalculateXX.CalculateXX):
 
     def calculate(self):
         countSQL = "select max(rank) from score"
@@ -50,5 +51,5 @@ class StudentScore(CalculateXX.CalculateXX):
         self.db.close()
 
 if __name__ == '__main__':
-    t = StudentScore(10, 20, 30, 40)
+    t = CalculateScore(level[0], level[1], level[2], level[3])
     t.calculate()

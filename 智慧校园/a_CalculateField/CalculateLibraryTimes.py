@@ -1,22 +1,20 @@
-import MyDataBase
+'''
+Created on 2017年6月21日
 
-class StudentDiligence:
+@author: zhenglongtian
+'''
 
-    def __init__(self,level_1,level_2,level_3,level_4):
-        # levels about the weight
-        self.level_1=level_1
-        self.level_2=level_2
-        self.level_3=level_3
-        self.level_4=level_4
-        self.db=MyDataBase.MyDataBase()
-        self.conn=self.db.getConn()
-        self.executer=self.db.getExcuter()
+import CalculateXX
+from tqdm import tqdm
+from a_CalculateField.LevelConfig import LibraryTimes_level as level
+
+class CalculateLibraryTimes(CalculateXX.CalculateXX):
 
     def calculate(self):
         sql="select  student_id from students order by score"
         self.executer.execute(sql)
         students = self.executer.fetchall()
-        for student in students:
+        for student in tqdm(students):
             student_id=student[0]
 
             sql="select count(student_id) from library where student_id='"+str(student_id)+"'"
@@ -40,11 +38,11 @@ class StudentDiligence:
             except:
                 weight=0
 
-            sql="update students set diligence='"+str(weight)+"' where student_id='"+str(student_id)+"' "
+            sql="update students set library_times='"+str(weight)+"' where student_id='"+str(student_id)+"' "
             self.executer.execute(sql)
         self.conn.commit()
         self.db.close()
 
 if __name__=='__main__':
-    t=StudentDiligence(10,20,30,40)
+    t=CalculateLibraryTimes(level[0], level[1], level[2], level[3])
     t.calculate()

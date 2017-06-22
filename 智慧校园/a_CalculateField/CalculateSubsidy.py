@@ -6,9 +6,9 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
-from a_CalculateField.LevelConfig import StudentSubsidy_level as level
+from a_CalculateField.LevelConfig import Subsidy_level as level
 
-class StudentSubsidy(CalculateXX.CalculateXX):
+class CalculateSubsidy(CalculateXX.CalculateXX):
 
     def calculate(self):
         # 对每一个学生统计其奖学金获得情况
@@ -32,5 +32,5 @@ class StudentSubsidy(CalculateXX.CalculateXX):
         self.db.close()
 
 if __name__ == '__main__':
-    t = StudentSubsidy(level[0], level[1], level[2], level[3])
+    t = CalculateSubsidy(level[0], level[1], level[2], level[3])
     t.calculate()

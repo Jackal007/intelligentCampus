@@ -6,9 +6,9 @@ Created on 2017年6月21日
 
 from tqdm import tqdm
 import CalculateXX
-from a_CalculateField.LevelConfig import StudentBookBorrow_level as level
+from a_CalculateField.LevelConfig import BookBorrow_level as level
 
-class StudentBookBorrow(CalculateXX.CalculateXX):
+class CalculateLibraryBorrow(CalculateXX.CalculateXX):
 
     def calculate(self):
         
@@ -31,9 +31,9 @@ class StudentBookBorrow(CalculateXX.CalculateXX):
 
                 total += weight
 
-            sql = "update students set bookBorrow='" + str(weight) + "' where student_id='" + str(student_id) + "' "
+            sql = "update students set bookBorrow='" + str(weight) + "' where student_id='" + str(studentId) + "' "
             self.executer.execute(sql)
 
 if __name__ == '__main__':
-    t = StudentBookBorrow(level[0], level[1], level[2], level[3])
+    t = CalculateLibraryBorrow(level[0], level[1], level[2], level[3])
     t.calculate()

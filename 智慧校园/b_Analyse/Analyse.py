@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
-__author__ = 'Wsine'
+'''
+Created on 2017年6月21日
+
+@author: zhenglongtian
+'''
 
 from math import log
+from Tools import treePlotter
 import operator
-import treePlotter
 import pymysql
 
 def calcShannonEnt(dataSet):
@@ -21,7 +25,7 @@ def calcShannonEnt(dataSet):
         labelCounts[currentLabel] += 1
     shannonEnt = 0.0
     for key in labelCounts:
-        prob = float(labelCounts[key])/numEntries
+        prob = float(labelCounts[key]) / numEntries
         shannonEnt -= prob * log(prob, 2)
     return shannonEnt
 
@@ -35,7 +39,7 @@ def splitDataSet(dataSet, axis, value):
     for featVec in dataSet:
         if featVec[axis] == value:
             reduceFeatVec = featVec[:axis]
-            reduceFeatVec.extend(featVec[axis+1:])
+            reduceFeatVec.extend(featVec[axis + 1:])
             retDataSet.append(reduceFeatVec)
     return retDataSet
 
@@ -54,7 +58,7 @@ def chooseBestFeatureToSplit(dataSet):
         gini = 0.0
         for value in uniqueVals:
             subDataSet = splitDataSet(dataSet, i, value)
-            prob = len(subDataSet)/float(len(dataSet))
+            prob = len(subDataSet) / float(len(dataSet))
             subProb = len(splitDataSet(subDataSet, -1, 'N')) / float(len(subDataSet))
             gini += prob * (1.0 - pow(subProb, 2) - pow(1 - subProb, 2))
         if (gini < bestGini):
@@ -160,26 +164,26 @@ def createDataSet():
     windy-> 0: false | 1: true
     """
     dataSet = []
-    db = pymysql.connect("localhost","root","053062","abcd" )
+    db = pymysql.connect("localhost", "root", "053062", "intelligentCampus")
     cursor = db.cursor()
-    sql="select diligence,score,book,spend,can from students limit 200"
+    sql = "select score,subsidy,cost_amount,bookBorrow,balanceRank,diligence,library_time_spand,superMarket_cost_rate,dinnerHall_cost_rate,cost_times"
     cursor.execute(sql)
-    students=cursor.fetchall()
+    students = cursor.fetchall()
     for student in students:
-        diligence=student[0]
-        score=student[1]
-        book=student[2]
-        spend=student[3]
-        can=student[4]
-        data=[]
-        data.append(diligence)
-        data.append(score)
-        data.append(book)
-        data.append(spend)
-        data.append(can)
+        score = student[0]
+        subsidy = student[1]
+        cost_amount = student[2]
+        bookBorrow = student[3]
+        balanceRank = student[4]
+        diligence = student[5]
+        library_time_spand = student[6]
+        superMarket_cost_rate = student[7]
+        dinnerHall_cost_rate = student[8]
+        cost_times = student[9]
+        data = [score, subsidy, cost_amount, bookBorrow, balanceRank, diligence, library_time_spand, superMarket_cost_rate, dinnerHall_cost_rate, cost_times]
         dataSet.append(data)
     # labels = ['outlook', 'temperature', 'humidity', 'windy']
-    labels = ['diligence', 'score', 'spend', 'read','can']
+    labels = ['score', 'subsidy', 'cost_amount', 'bookBorrow', 'balanceRank', 'diligence', 'library_time_spand', 'superMarket_cost_rate', 'dinnerHall_cost_rate', 'cost_times']
     print(dataSet)
     return dataSet, labels
 
@@ -198,30 +202,32 @@ def createTestSet():
     #            [1, 0, 1, 0],
     #            [2, 1, 0, 1]]
     dataSet = []
-    db = pymysql.connect("localhost","root","053062","abcd" )
+    db = pymysql.connect("localhost", "root", "053062", "intelligentCampus")
     cursor = db.cursor()
-    sql="select diligence,score,book,spend from students limit 20"
+    sql = "select score,subsidy,cost_amount,bookBorrow,balanceRank,diligence,library_time_spand,superMarket_cost_rate,dinnerHall_cost_rate,cost_times"
     cursor.execute(sql)
-    students=cursor.fetchall()
+    students = cursor.fetchall()
     for student in students:
-        diligence=student[1]
-        score=student[2]
-        book=student[3]
-        spend=student[4]
-        data=[]
-        data.append(diligence)
-        data.append(score)
-        data.append(book)
-        data.append(spend)
+        score = student[0]
+        subsidy = student[1]
+        cost_amount = student[2]
+        bookBorrow = student[3]
+        balanceRank = student[4]
+        diligence = student[5]
+        library_time_spand = student[6]
+        superMarket_cost_rate = student[7]
+        dinnerHall_cost_rate = student[8]
+        cost_times = student[9]
+        data = [score, subsidy, cost_amount, bookBorrow, balanceRank, diligence, library_time_spand, superMarket_cost_rate, dinnerHall_cost_rate, cost_times]
         dataSet.append(data)
     return dataSet
 
 def main():
     dataSet, labels = createDataSet()
-    labels_tmp = labels[:] # 拷贝，createTree会改变labels
+    labels_tmp = labels[:]  # 拷贝，createTree会改变labels
     desicionTree = createTree(dataSet, labels_tmp)
-    #storeTree(desicionTree, 'classifierStorage.txt')
-    #desicionTree = grabTree('classifierStorage.txt')
+    storeTree(desicionTree, 'classifierStorage.txt')
+    desicionTree = grabTree('classifierStorage.txt')
     print('desicionTree:\n', desicionTree)
     treePlotter.createPlot(desicionTree)
     testSet = createTestSet()
