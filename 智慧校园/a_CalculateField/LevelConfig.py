@@ -9,7 +9,7 @@ Score_level = [10, 20, 30, 40]
 # 借阅书籍数
 BookBorrow_level = [10, 20, 30, 40]
 # 在图书馆时长
-LibraryTimeSpand_level = [10, 20, 30, 40]
+LibraryTimeSpand_level = [300, 600, 900, 1800]
 # 图书馆次数
 LibraryTimes_level = [100, 200, 300, 400]
 # 消费类型[not yet]

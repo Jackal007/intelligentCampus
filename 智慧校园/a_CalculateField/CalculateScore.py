@@ -11,6 +11,7 @@ from a_CalculateField.LevelConfig import BookBorrow_level as level
 class CalculateScore(CalculateXX.CalculateXX):
 
     def calculate(self):
+        print("CalculateScore")
         countSQL = "select max(rank) from score"
         studentSQL = "select * from score"
 

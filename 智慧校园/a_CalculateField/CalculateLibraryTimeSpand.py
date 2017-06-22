@@ -11,7 +11,8 @@ from a_CalculateField.LevelConfig import BookBorrow_level as level
 class CalculateLibraryTimeSpand(CalculateXX.CalculateXX):
 
     def calculate(self):
-        sql = "insert into library_modify(select f1,date(f3),min(time(f3))as entry,max(time(f3))as leav,TIMESTAMPDIFF(minute,max(f3),min(f3)) from library_trainwhere f2 REGEXP '..[0-6]' group by f1,date(f3))"
+        print("CalculateLibraryTimeSpand")
+        sql = "insert into library_modify(select student_id,date(date),min(time(date))as entry,max(time(date))as leav,TIMESTAMPDIFF(minute,max(date),min(date)) from library where door_id REGEXP '..[0-6]' group by student_id,date(date))"
         self.executer.execute(sql)
         sql = "SELECT student_id,sum(totaltime) FROM library_modify GROUP BY student_id"
         self.executer.execute(sql)
@@ -21,18 +22,18 @@ class CalculateLibraryTimeSpand(CalculateXX.CalculateXX):
             student_LibraryTime = student[1]
 
             LibraryTimeRank = -1
-            if student_LibraryTime < 300:
+            if student_LibraryTime < self.level_1:
                 LibraryTimeRank = 1
-            elif student_LibraryTime < 600:
+            elif student_LibraryTime < self.level_2:
                 LibraryTimeRank = 2
-            elif student_LibraryTime < 900:        
+            elif student_LibraryTime < self.level_3:        
                 LibraryTimeRank = 3
-            elif student_LibraryTime < 1800:
+            elif student_LibraryTime < self.level_4:
                 LibraryTimeRank = 4
             else:
                 LibraryTimeRank = 5
 
-            sql = "update students set LibraryTimeRank='" + LibraryTimeRank + "' where student_id='" + str(student_id) + "'"
+            sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id='" + str(student_id) + "'"
             self.executer.executer(sql)
 
         self.conn.commit()

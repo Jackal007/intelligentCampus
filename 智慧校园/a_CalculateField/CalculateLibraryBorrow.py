@@ -12,6 +12,7 @@ class CalculateLibraryBorrow(CalculateXX.CalculateXX):
 
     def calculate(self):
         
+        print("CalculateLibraryBorrow")
         # 对每一个学生统计其借书的次数
         for student in tqdm(self.students):
             studentId = student[0]

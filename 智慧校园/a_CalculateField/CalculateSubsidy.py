@@ -11,6 +11,7 @@ from a_CalculateField.LevelConfig import Subsidy_level as level
 class CalculateSubsidy(CalculateXX.CalculateXX):
 
     def calculate(self):
+        print("CalculateSubsidy")
         # 对每一个学生统计其奖学金获得情况
         for student in tqdm(self.students):
             student_id = student[0]

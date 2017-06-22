@@ -11,6 +11,7 @@ from a_CalculateField.LevelConfig import BalanceRank_level as level
 class CalculateBalanceRank(CalculateXX.CalculateXX):
 
     def calculate(self):
+        print("CalculateBalanceRank")
         for student in tqdm(self.students):
             studentId = student[0]
             sql = "select min(balance),max(balance) from card where student_id=" + str(studentId)

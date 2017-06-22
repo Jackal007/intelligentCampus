@@ -8,11 +8,16 @@ import os
 # os.system("StudentScore.py")
 
 def painStudent():
-    os.system("StudentSubsidy.py")
-    os.system("StudentScore.py")
-    os.system("StudentDiligence.py")
-    os.system("StudentRead.py")
-    os.system("StudentCost.py")
+    os.system('python a_CalculateField/CalculateSubsidy.py')
+    os.system('python a_CalculateField/CalculateBalanceRank.py')
+    os.system('python a_CalculateField/CalculateCostAmount.py')
+    os.system('python a_CalculateField/CalculateCostAverage.py')
+    os.system('python a_CalculateField/CalculateCostRate.py')
+    os.system('python a_CalculateField/CalculateLibraryBorrow.py')
+    os.system('python a_CalculateField/CalculateLibraryTimes.py')
+    os.system('python a_CalculateField/CalculateLibraryTimeSpand.py')
+#     os.system('a_CalculateField/CalculateScore.py')
     
-if __name__=='__main__':
-    print("painStudent")
+if __name__ == '__main__':
+#     print("painStudent")
+    painStudent()

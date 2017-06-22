@@ -11,6 +11,7 @@ from a_CalculateField.LevelConfig import LibraryTimes_level as level
 class CalculateLibraryTimes(CalculateXX.CalculateXX):
 
     def calculate(self):
+        print("CalculateLibraryTimes")
         sql="select  student_id from students order by score"
         self.executer.execute(sql)
         students = self.executer.fetchall()

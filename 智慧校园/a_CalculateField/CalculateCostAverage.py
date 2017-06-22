@@ -11,10 +11,11 @@ from a_CalculateField.LevelConfig import AverageCost_level as level
 class CalculateCostAverage(CalculateXX.CalculateXX):
 
     def calculate(self):
+        print("CalculateCostAverage")
         sql = "select student_id,deal_way,avg(deal_cost) from card group by student_id,deal_way"
         self.executer.execute(sql)
         students = self.executer.fetchall()
-        for student in students:
+        for student in tqdm(students):
             student_id = student[0]
             if student[1] == "食堂":
                 avg_dinnerHall = student[2]

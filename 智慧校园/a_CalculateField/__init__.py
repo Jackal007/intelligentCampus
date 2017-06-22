@@ -1,5 +1,4 @@
-from a_CalculateField import CalculateField
-
-if __name__=='__main__':
-    pass
+# import os
+# for filename in os.listdir():
+#     print("os.system('" + filename + "')")
     

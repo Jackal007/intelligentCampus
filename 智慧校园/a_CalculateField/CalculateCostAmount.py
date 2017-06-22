@@ -11,6 +11,7 @@ from LevelConfig import CostAmount_level as level
 class CalculateCostAmount(CalculateXX.CalculateXX):
 
     def calculate(self):
+        print("CalculateCostAmount")
         # 对每一个学生统计其消费金额的情况
         for student in tqdm(self.students):
             student_id = student[0]

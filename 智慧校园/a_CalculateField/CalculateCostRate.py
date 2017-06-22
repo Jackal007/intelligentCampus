@@ -11,6 +11,7 @@ from a_CalculateField.LevelConfig import BookBorrow_level as level
 class CalculateCostRate(CalculateXX.CalculateXX):
 
     def calculate(self):
+        print("CalculateCostRate")
         sql = "select student_id,sum(deal_cost) from card group by student_id"
         self.executer.execute(sql)
         lists = self.executer.fetchall()
