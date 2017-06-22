@@ -14,8 +14,8 @@ def painStudent():
     os.system('python a_CalculateField/CalculateLibraryBorrow.py')
     os.system('a_CalculateField/CalculateScore.py')
     os.system('python a_CalculateField/CalculateCostAmount.py')
-#     os.system('python a_CalculateField/CalculateCostAverage.py')
-#     os.system('python a_CalculateField/CalculateCostRate.py')
+    os.system('python a_CalculateField/CalculateCostAverage.py')
+    os.system('python a_CalculateField/CalculateCostRate.py')
     os.system('python a_CalculateField/CalculateBalanceRank.py')
     
 if __name__ == '__main__':

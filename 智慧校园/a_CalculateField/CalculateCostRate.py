@@ -27,7 +27,7 @@ class CalculateCostRate(CalculateXX.CalculateXX):
                     dinnerHall = student[2] / list[1]
                 if student[0] == student_id and student[1] == '超市':
                     supermarket = student[2] / list[1]
-                sql = "update students set cost_avg_dinnerHall='" + str(dinnerHall) + "' where student_id='" + str(student_id) + "' "
+                sql = "update students set cost_dinnerhall_rate='" + str(dinnerHall) + "' where student_id='" + str(student_id) + "' "
                 self.executer.execute(sql)
                 sql = "update students set cost_supermarket_rate='" + str(supermarket) + "' where student_id='" + str(student_id) + "' "
                 self.executer.execute(sql)

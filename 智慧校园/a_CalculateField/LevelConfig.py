@@ -9,7 +9,7 @@ Score_level = {"A":10, "B":20, "C":30, "D": 40}
 # 借阅书籍数
 BookBorrow_level = {"A":6, "B":10, "C": 21, "D": 100}
 # 在图书馆时长
-LibraryTimeSpand_level = {"A":300, "B": 600, "C":900, "D": 1800}
+LibraryTimeSpand_level = {"A":60, "B": 90, "C":120, "D": 150}
 # 图书馆次数
 LibraryTimes_level = {"A":50, "B":100, "C":200, "D":500}
 # 消费类型[not yet]
@@ -24,7 +24,7 @@ CostTimes_level = {"A":10, "B": 20, "C": 30, "D":40}
 BalanceRank_level = {"A":100, "B":200, "C":300, "D":400}
 # 平均花费
 AverageCost_level = {"A":100, "B": 200, "C":300, "D": 400}
-# 月消费金额
-CostAmount_level = {"A":10000, "B": 15000, "C":20000, "D": 25000}
+# 消费金额
+CostAmount_level = {"A":50, "B": 100, "C":200, "D": 500}
 # 奖学金额
 Subsidy_level = {"A":0, "B":1000, "C": 1500, "D": 2000}
