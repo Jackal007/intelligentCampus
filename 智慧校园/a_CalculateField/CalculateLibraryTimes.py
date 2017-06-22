@@ -12,7 +12,7 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
 
     def calculate(self):
         print("CalculateLibraryTimes")
-        sql="select  student_id from students order by score"
+        sql="select student_id from students order by score"
         self.executer.execute(sql)
         students = self.executer.fetchall()
         for student in tqdm(students):
@@ -20,24 +20,15 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
 
             sql="select count(student_id) from library where student_id='"+str(student_id)+"'"
             self.executer.execute(sql)
-            data = self.executer.fetchall()
-            total,num=0,0
-            for row in data:
-                study_time=row[0]
-                weight=1
-                if study_time<self.level_2:
-                    weight*=self.level_1
-                elif study_time<self.level_2:
-                    weight*=self.level_2
-                else:
-                    weight*=self.level_3
-
-                total+=weight
-                num+=1
-            try:
-                weight=total/(num)
-            except:
-                weight=0
+            data = self.executer.fetchone()
+            study_time=data[0]
+            weight=""
+            if study_time<self.level["A"]:
+                weight="A"
+            elif study_time<self.level["B"]:
+                weight="B"
+            else:
+                weight="C"
 
             sql="update students set library_times='"+str(weight)+"' where student_id='"+str(student_id)+"' "
             self.executer.execute(sql)
@@ -45,5 +36,5 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
         self.db.close()
 
 if __name__=='__main__':
-    t=CalculateLibraryTimes(level[0], level[1], level[2], level[3])
+    t=CalculateLibraryTimes(level)
     t.calculate()

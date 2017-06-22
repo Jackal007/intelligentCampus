@@ -14,24 +14,26 @@ class CalculateSubsidy(CalculateXX.CalculateXX):
         print("CalculateSubsidy")
         # 对每一个学生统计其奖学金获得情况
         for student in tqdm(self.students):
-            student_id = student[0]
-            subsidy = student[1]
+            studentId = student[0]
+            sql = "select stipend from subsidy where student_id=" + str(studentId)
+            self.executer.execute(sql)
+            subsidy = self.executer.fetchone()[0]
 
-            weight = 1
+            weight = ""
             if int(subsidy) == 0:
-                weight *= 0
+                weight = "A"
             else:
-                weight *= 1
+                weight = "B"
 
-            sql = "insert into students(student_id,can) values('" + str(student_id) + "'," + str(weight) + ")"
-            try:
-                self.executer.execute(sql)
-            except:
-                pass
+            sql = "insert into students(student_id,subsidy) values('" + str(studentId) + "','" + weight + "')"
+#             try:
+            self.executer.execute(sql)
+#             except:
+#                 pass
 
         self.conn.commit()
         self.db.close()
 
 if __name__ == '__main__':
-    t = CalculateSubsidy(level[0], level[1], level[2], level[3])
+    t = CalculateSubsidy(level)
     t.calculate()

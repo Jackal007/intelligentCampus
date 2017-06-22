@@ -1,4 +1,2 @@
-# import os
-# for filename in os.listdir():
-#     print("os.system('" + filename + "')")
-    
+# with open("LevelConfig.py",encoding= 'gbk') as f:
+#     print(f[0])

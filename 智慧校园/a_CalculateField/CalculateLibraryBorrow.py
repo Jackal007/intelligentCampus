@@ -16,25 +16,22 @@ class CalculateLibraryBorrow(CalculateXX.CalculateXX):
         # 对每一个学生统计其借书的次数
         for student in tqdm(self.students):
             studentId = student[0]
-            sql = "select count(student_id) from brrow where student_id='" + str(studentId) + "'"
+            sql = "select count(student_id) from borrow where student_id='" + str(studentId) + "'"
             self.executer.execute(sql)
 
-            total = 0
             data = self.executer.fetchone()
             read_time = data[0]
-            weight = 1
-            if read_time < self.level_1:
-                weight *= self.level_1
-            elif read_time < self.level_2:
-                weight *= self.level_2
+            weight = "C"
+            if read_time < self.level["A"]:
+                weight ="A"
+            elif read_time < self.level["B"]:
+                weight ="B"
             else:
-                weight *= self.level_3
+                weight = "C"
 
-                total += weight
-
-            sql = "update students set bookBorrow='" + str(weight) + "' where student_id='" + str(studentId) + "' "
+            sql = "update students set library_borrow='" + str(weight) + "' where student_id='" + str(studentId) + "' "
             self.executer.execute(sql)
 
 if __name__ == '__main__':
-    t = CalculateLibraryBorrow(level[0], level[1], level[2], level[3])
+    t = CalculateLibraryBorrow(level)
     t.calculate()

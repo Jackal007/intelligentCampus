@@ -5,27 +5,26 @@ Created on 2017年6月21日
 '''
 
 # 成绩排名
-Score_level = [10, 20, 30, 40]
+Score_level = {"A":10, "B":20, "C":30, "D": 40}
 # 借阅书籍数
-BookBorrow_level = [10, 20, 30, 40]
+BookBorrow_level = {"A":6, "B":10, "C": 21, "D": 100}
 # 在图书馆时长
-LibraryTimeSpand_level = [300, 600, 900, 1800]
+LibraryTimeSpand_level = {"A":300, "B": 600, "C":900, "D": 1800}
 # 图书馆次数
-LibraryTimes_level = [100, 200, 300, 400]
+LibraryTimes_level = {"A":50, "B":100, "C":200, "D":500}
 # 消费类型[not yet]
-CostType_level = [10, 20, 30, 40]
+CostType_level = {"A":10, "B":20, "C": 30, "D":40}
 # 超市消费/总消费比例
-SuperMarketCostRate_level = [10, 20, 30, 40]
+SuperMarketCostRate_level = {"A":0.1, "B":0.2, "C":0.3, "D": 0.4}
 # 食堂消费/总消费比例
-DinnerHallCostRate_level = [10, 20, 30, 40]
+DinnerHallCostRate_level = {"A":0.1, "B": 0.2, "C":0.3, "D":0.4}
 # 消费次数[not yet]
-CostTimes_level = [10, 20, 30, 40]
+CostTimes_level = {"A":10, "B": 20, "C": 30, "D":40}
 # 卡内平均余额
-BalanceRank_level = [100, 200, 300, 400]
+BalanceRank_level = {"A":100, "B":200, "C":300, "D":400}
 # 平均花费
-AverageCost_level = [100, 200, 300, 400]
+AverageCost_level = {"A":100, "B": 200, "C":300, "D": 400}
 # 月消费金额
-CostAmount_level = [10, 20, 30, 40]
+CostAmount_level = {"A":10000, "B": 15000, "C":20000, "D": 25000}
 # 奖学金额
-Subsidy_level = [10, 20, 30, 40]
-
+Subsidy_level = {"A":0, "B":1000, "C": 1500, "D": 2000}

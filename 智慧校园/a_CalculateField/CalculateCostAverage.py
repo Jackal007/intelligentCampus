@@ -29,5 +29,5 @@ class CalculateCostAverage(CalculateXX.CalculateXX):
         self.db.close()
 
 if __name__ == '__main__':
-    t = CalculateCostAverage(level[0], level[1], level[2], level[3])
+    t = CalculateCostAverage(level)
     t.calculate()

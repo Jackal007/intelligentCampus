@@ -21,17 +21,13 @@ class CalculateLibraryTimeSpand(CalculateXX.CalculateXX):
             student_id = student[0]
             student_LibraryTime = student[1]
 
-            LibraryTimeRank = -1
-            if student_LibraryTime < self.level_1:
-                LibraryTimeRank = 1
-            elif student_LibraryTime < self.level_2:
-                LibraryTimeRank = 2
-            elif student_LibraryTime < self.level_3:        
-                LibraryTimeRank = 3
-            elif student_LibraryTime < self.level_4:
-                LibraryTimeRank = 4
+            LibraryTimeRank = ""
+            if student_LibraryTime < self.level["A"]:
+                LibraryTimeRank = "A"
+            elif student_LibraryTime < self.level["B"]:
+                LibraryTimeRank = "B"
             else:
-                LibraryTimeRank = 5
+                LibraryTimeRank = "C"
 
             sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id='" + str(student_id) + "'"
             self.executer.executer(sql)
@@ -40,5 +36,5 @@ class CalculateLibraryTimeSpand(CalculateXX.CalculateXX):
         self.db.close()
 
 if __name__ == '__main__':
-    t = CalculateLibraryTimeSpand(level[0], level[1], level[2], level[3])
+    t = CalculateLibraryTimeSpand(level)
     t.calculate()

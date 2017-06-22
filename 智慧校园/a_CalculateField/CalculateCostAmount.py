@@ -19,12 +19,12 @@ class CalculateCostAmount(CalculateXX.CalculateXX):
             self.executer.execute(sql)
             deal_cost = self.executer.fetchone()[0]
             weight = 1
-            if deal_cost < self.level_1:
-                weight *= self.level_1
-            elif deal_cost < self.level_2:
-                weight *= self.level_2
+            if deal_cost < self.level["A"]:
+                weight *= "A"
+            elif deal_cost < self.level["B"]:
+                weight *="B"
             else:
-                weight *= self.level_3
+                weight *= "C"
 
             sql = "update students set cost_amount='" + str(weight) + "' where student_id='" + str(student_id) + "' "
             self.executer.execute(sql)
@@ -32,5 +32,5 @@ class CalculateCostAmount(CalculateXX.CalculateXX):
         self.db.close()
 
 if __name__ == '__main__':
-    t = CalculateCostAmount(level[0], level[1], level[2], level[3])
+    t = CalculateCostAmount(level)
     t.calculate()

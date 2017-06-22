@@ -27,19 +27,13 @@ class CalculateScore(CalculateXX.CalculateXX):
         for student in tqdm(students):
             student_id = student[0]
             rank = student[2]
-            weight = 1
+            weight = ""
             if int(rank) < T_10:
-                weight *= self.level_1
-#                 print(str(10)+"   "+str(rank))
+                weight = "A"
             elif int(rank) < T_30:
-                weight *= self.level_2
-#                 print(str(30)+"   "+str(rank))
-            elif int(rank) < T_50:
-                weight *= self.level_3
-#                 print(str(50)+"   "+str(rank))
+                weight = "B"
             else:
-                weight *= self.level_4
-#                 print(str(rank))
+                weight = "C"
 
             sql = "update students set score='" + str(weight) + "' where student_id='" + str(student_id) + "'"
             try:
@@ -52,5 +46,5 @@ class CalculateScore(CalculateXX.CalculateXX):
         self.db.close()
 
 if __name__ == '__main__':
-    t = CalculateScore(level[0], level[1], level[2], level[3])
+    t = CalculateScore(level)
     t.calculate()

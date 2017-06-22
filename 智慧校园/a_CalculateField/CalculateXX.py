@@ -11,12 +11,9 @@ from Tools import MyDataBase
 
 class CalculateXX:
 
-    def __init__(self, level_1, level_2, level_3, level_4):
+    def __init__(self, level):
         # levels about the weight
-        self.level_1 = level_1
-        self.level_2 = level_2
-        self.level_3 = level_3
-        self.level_4 = level_4
+        self.level = level
         self.db = MyDataBase.MyDataBase()
         self.conn = self.db.getConn()
         self.executer = self.db.getExcuter()

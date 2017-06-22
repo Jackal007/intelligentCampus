@@ -8,8 +8,10 @@ import pymysql
 
 class MyDataBase:
     def __init__(self):
-        self.db = pymysql.connect("localhost","root","053062","intelligentCampus" )
+        print("connect to data base......")
+        self.db = pymysql.connect("localhost","root","053062","intelligentCampus_small" )
         self.cursor = self.db.cursor()
+        print("connect success!")
 
     def getConn(self):
         return self.db
