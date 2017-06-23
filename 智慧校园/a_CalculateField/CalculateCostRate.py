@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
-from a_CalculateField.LevelConfig import AverageCost_level as level
+from a_CalculateField.LevelConfig import CostRate_level as level
 
 class CalculateCostRate(CalculateXX.CalculateXX):
 
@@ -25,8 +25,21 @@ class CalculateCostRate(CalculateXX.CalculateXX):
             for student in students:
                 if student[0] == student_id and student[1] == '食堂':
                     dinnerHall = student[2] / list[1]
+                if dinnerHall < self.level["A"]:
+                    dinnerHall ="A"
+                elif dinnerHall < self.level["B"]:
+                    dinnerHall ="B"
+                else:
+                    dinnerHall = "C"
+                
                 if student[0] == student_id and student[1] == '超市':
                     supermarket = student[2] / list[1]
+                if supermarket < self.level["A"]:
+                    supermarket ="A"
+                elif supermarket < self.level["B"]:
+                    supermarket ="B"
+                else:
+                    supermarket = "C"
                 sql = "update students set cost_dinnerhall_rate='" + str(dinnerHall) + "' where student_id='" + str(student_id) + "' "
                 self.executer.execute(sql)
                 sql = "update students set cost_supermarket_rate='" + str(supermarket) + "' where student_id='" + str(student_id) + "' "

@@ -9,7 +9,7 @@ import pymysql
 class MyDataBase:
     def __init__(self):
         print("connect to data base......")
-        self.db = pymysql.connect("localhost","root","053062","intelligentCampus" )
+        self.db = pymysql.connect("localhost","root","root","intelligentCampusTest" )
         self.cursor = self.db.cursor()
         print("connect success!")
 

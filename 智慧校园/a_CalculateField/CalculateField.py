@@ -11,9 +11,7 @@ def painStudent():
     os.system('python a_CalculateField/CalculateSubsidy.py')
     os.system('python a_CalculateField/CalculateScore.py')
     os.system('python a_CalculateField/CalculateCostAmount.py')
-#     乱码了,不能算
 #     os.system('python a_CalculateField/CalculateCostAverage.py')
-#     乱码了,不能算
 #     os.system('python a_CalculateField/CalculateCostRate.py')
     os.system('python a_CalculateField/CalculateLibraryBorrow.py')
     os.system('python a_CalculateField/CalculateLibraryTimes.py')
