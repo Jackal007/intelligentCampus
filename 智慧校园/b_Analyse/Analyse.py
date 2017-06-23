@@ -166,24 +166,26 @@ def createDataSet():
     dataSet = []
     db = pymysql.connect("localhost", "root", "053062", "intelligentCampus")
     cursor = db.cursor()
-    sql = "select score,subsidy,cost_amount,bookBorrow,balanceRank,diligence,library_time_spand,superMarket_cost_rate,dinnerHall_cost_rate,cost_times"
+    sql = "select score,cost_amount,cost_avg_superMarket,cost_avg_dinnerHall,cost_supermarket_rate,cost_dinnerhall_rate,cost_times,library_borrow,library_times,library_time_spand,balance_rank,subsidy from students"
     cursor.execute(sql)
     students = cursor.fetchall()
     for student in students:
         score = student[0]
-        subsidy = student[1]
-        cost_amount = student[2]
-        bookBorrow = student[3]
-        balanceRank = student[4]
-        diligence = student[5]
-        library_time_spand = student[6]
-        superMarket_cost_rate = student[7]
-        dinnerHall_cost_rate = student[8]
-        cost_times = student[9]
-        data = [score, subsidy, cost_amount, bookBorrow, balanceRank, diligence, library_time_spand, superMarket_cost_rate, dinnerHall_cost_rate, cost_times]
+        cost_amount = student[1]
+        cost_avg_superMarket = student[2]
+        cost_avg_dinnerHall = student[3]
+        cost_supermarket_rate = student[4]
+        cost_dinnerhall_rate = student[5]
+        cost_times = student[6]
+        library_borrow = student[7]
+        library_times = student[8]
+        library_time_spand = student[9]
+        balance_rank = student[10]
+        subsidy = student[11]
+        data = [score, cost_amount, cost_avg_superMarket, cost_avg_dinnerHall, cost_supermarket_rate, cost_dinnerhall_rate, cost_times, library_borrow, library_times, library_time_spand, balance_rank, subsidy]
         dataSet.append(data)
     # labels = ['outlook', 'temperature', 'humidity', 'windy']
-    labels = ['score', 'subsidy', 'cost_amount', 'bookBorrow', 'balanceRank', 'diligence', 'library_time_spand', 'superMarket_cost_rate', 'dinnerHall_cost_rate', 'cost_times']
+    labels = ['score', ' cost_amount', ' cost_avg_superMarket', ' cost_avg_dinnerHall', ' cost_supermarket_rate', ' cost_dinnerhall_rate', ' cost_times', ' library_borrow', ' library_times', ' library_time_spand', 'balance_rank', 'subsidy', ]
     print(dataSet)
     return dataSet, labels
 
@@ -204,21 +206,23 @@ def createTestSet():
     dataSet = []
     db = pymysql.connect("localhost", "root", "053062", "intelligentCampus")
     cursor = db.cursor()
-    sql = "select score,subsidy,cost_amount,bookBorrow,balanceRank,diligence,library_time_spand,superMarket_cost_rate,dinnerHall_cost_rate,cost_times"
+    sql = "select score,cost_amount,cost_avg_superMarket,cost_avg_dinnerHall,cost_supermarket_rate,cost_dinnerhall_rate,cost_times,library_borrow,library_times,library_time_spand,balance_rank,subsidy from students"
     cursor.execute(sql)
     students = cursor.fetchall()
     for student in students:
         score = student[0]
-        subsidy = student[1]
-        cost_amount = student[2]
-        bookBorrow = student[3]
-        balanceRank = student[4]
-        diligence = student[5]
-        library_time_spand = student[6]
-        superMarket_cost_rate = student[7]
-        dinnerHall_cost_rate = student[8]
-        cost_times = student[9]
-        data = [score, subsidy, cost_amount, bookBorrow, balanceRank, diligence, library_time_spand, superMarket_cost_rate, dinnerHall_cost_rate, cost_times]
+        cost_amount = student[1]
+        cost_avg_superMarket = student[2]
+        cost_avg_dinnerHall = student[3]
+        cost_supermarket_rate = student[4]
+        cost_dinnerhall_rate = student[5]
+        cost_times = student[6]
+        library_borrow = student[7]
+        library_times = student[8]
+        library_time_spand = student[9]
+        balance_rank = student[10]
+        subsidy = student[11]
+        data = [score, cost_amount, cost_avg_superMarket, cost_avg_dinnerHall, cost_supermarket_rate, cost_dinnerhall_rate, cost_times, library_borrow, library_times, library_time_spand, balance_rank, subsidy]
         dataSet.append(data)
     return dataSet
 

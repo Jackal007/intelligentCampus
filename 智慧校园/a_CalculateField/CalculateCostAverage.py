@@ -15,8 +15,8 @@ class CalculateCostAverage(CalculateXX.CalculateXX):
         sql = "select student_id,deal_way,avg(deal_cost) from card group by student_id,deal_way"
         self.executer.execute(sql)
         students = self.executer.fetchall()
-        avg_dinnerHall=""
-        avg_superMarket=""
+        avg_dinnerHall="C"
+        avg_superMarket="C"
         for student in tqdm(students):
             student_id = student[0]
             if student[1] == "食堂":

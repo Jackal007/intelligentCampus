@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
-from a_CalculateField.LevelConfig import BookBorrow_level as level
+from a_CalculateField.LevelConfig import AverageCost_level as level
 
 class CalculateCostRate(CalculateXX.CalculateXX):
 

@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 from tqdm import tqdm
 import CalculateXX
-from a_CalculateField.LevelConfig import BookBorrow_level as level
+from a_CalculateField.LevelConfig import LibraryBorrow_level as level
 
 class CalculateLibraryBorrow(CalculateXX.CalculateXX):
 
@@ -31,6 +31,8 @@ class CalculateLibraryBorrow(CalculateXX.CalculateXX):
 
             sql = "update students set library_borrow='" + str(weight) + "' where student_id='" + str(studentId) + "' "
             self.executer.execute(sql)
+        self.conn.commit()
+        self.db.close()
 
 if __name__ == '__main__':
     t = CalculateLibraryBorrow(level)
