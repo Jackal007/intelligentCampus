@@ -16,7 +16,7 @@ class CalculateXX:
         self.executer = self.db.getExcuter()
         
         # 从这边读取到所有学生的id
-        sql = "select student_id from subsidy"
+        sql = "select student_id from score"
         self.executer.execute(sql)
         self.students = []
         for i in self.executer.fetchall():

@@ -25,7 +25,7 @@ class CalculateScore(CalculateXX.CalculateXX):
         students = self.executer.fetchall()
 
         for student in tqdm(students):
-            student_id = student[0]
+            studentId = student[0]
             rank = student[2]
             weight = ""
             if int(rank) < T_10:
@@ -35,7 +35,7 @@ class CalculateScore(CalculateXX.CalculateXX):
             else:
                 weight = "C"
 
-            sql = "update students set score='" + str(weight) + "' where student_id='" + str(student_id) + "'"
+            sql = "insert into students(student_id,score) values('"+str(studentId)+"','"+str(weight)+"')" 
             try:
                 self.executer.execute(sql)
             except:

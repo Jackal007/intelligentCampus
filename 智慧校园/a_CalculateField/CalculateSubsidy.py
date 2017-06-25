@@ -24,7 +24,7 @@ class CalculateSubsidy(CalculateXX.CalculateXX):
             else:
                 weight = "B"
 
-            sql = "insert into students(student_id,subsidy) values('" + str(studentId) + "','" + weight + "')"
+            sql = "update students set subsidy= " + weight + " where student_id = " + str(studentId)
 #             try:
             self.executer.execute(sql)
 #             except:
