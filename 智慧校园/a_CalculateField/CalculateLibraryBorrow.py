@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 from tqdm import tqdm
 import CalculateXX
-from a_CalculateField.LevelConfig import LibraryBorrow_level as level
+from MyConfig import LibraryBorrow_level as level
 
 class CalculateLibraryBorrow(CalculateXX.CalculateXX):
 
@@ -14,8 +14,7 @@ class CalculateLibraryBorrow(CalculateXX.CalculateXX):
         
         print("CalculateLibraryBorrow")
         # 对每一个学生统计其借书的次数
-        for student in tqdm(self.students):
-            studentId = student[0]
+        for studentId in tqdm(self.students):
             sql = "select count(student_id) from borrow where student_id='" + str(studentId) + "'"
             self.executer.execute(sql)
 

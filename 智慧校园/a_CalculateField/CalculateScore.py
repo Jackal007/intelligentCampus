@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
-from a_CalculateField.LevelConfig import Score_level as level
+from MyConfig import Score_level as level
 
 class CalculateScore(CalculateXX.CalculateXX):
 

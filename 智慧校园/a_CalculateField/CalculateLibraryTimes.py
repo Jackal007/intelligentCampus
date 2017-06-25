@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
-from a_CalculateField.LevelConfig import LibraryTimes_level as level
+from MyConfig import LibraryTimes_level as level
 
 class CalculateLibraryTimes(CalculateXX.CalculateXX):
 
@@ -16,9 +16,8 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
         self.executer.execute(sql)
         students = self.executer.fetchall()
         for student in tqdm(students):
-            student_id=student[0]
-
-            sql="select count(student_id) from library where student_id='"+str(student_id)+"'"
+            studentId=student[0]
+            sql="select count(student_id) from library where student_id='"+str(studentId)+"'"
             self.executer.execute(sql)
             data = self.executer.fetchone()
             study_time=data[0]
@@ -30,7 +29,7 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
             else:
                 weight="C"
 
-            sql="update students set library_times='"+str(weight)+"' where student_id='"+str(student_id)+"' "
+            sql="update students set library_times='"+str(weight)+"' where student_id='"+str(studentId)+"' "
             self.executer.execute(sql)
         self.conn.commit()
         self.db.close()

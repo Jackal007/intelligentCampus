@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
-from a_CalculateField.LevelConfig import CostRate_level as level
+from MyConfig import CostRate_level as level
 
 class CalculateCostRate(CalculateXX.CalculateXX):
 
@@ -19,11 +19,11 @@ class CalculateCostRate(CalculateXX.CalculateXX):
         self.executer.execute(sql)
         students = self.executer.fetchall()
         for list in tqdm(lists):
-            student_id = list[0]
+            studentId = list[0]
             supermarket = 0.0
             dinnerHall = 0.0
             for student in students:
-                if student[0] == student_id and student[1] == '食堂':
+                if student[0] == studentId and student[1] == '食堂':
                     dinnerHall = student[2] / list[1]
                 if dinnerHall < self.level["A"]:
                     dinnerHall ="A"
@@ -32,7 +32,7 @@ class CalculateCostRate(CalculateXX.CalculateXX):
                 else:
                     dinnerHall = "C"
                 
-                if student[0] == student_id and student[1] == '超市':
+                if student[0] == studentId and student[1] == '超市':
                     supermarket = student[2] / list[1]
                 if supermarket < self.level["A"]:
                     supermarket ="A"
@@ -40,9 +40,9 @@ class CalculateCostRate(CalculateXX.CalculateXX):
                     supermarket ="B"
                 else:
                     supermarket = "C"
-                sql = "update students set cost_dinnerhall_rate='" + str(dinnerHall) + "' where student_id='" + str(student_id) + "' "
+                sql = "update students set cost_dinnerhall_rate='" + str(dinnerHall) + "' where student_id='" + str(studentId) + "' "
                 self.executer.execute(sql)
-                sql = "update students set cost_supermarket_rate='" + str(supermarket) + "' where student_id='" + str(student_id) + "' "
+                sql = "update students set cost_supermarket_rate='" + str(supermarket) + "' where student_id='" + str(studentId) + "' "
                 self.executer.execute(sql)
         self.conn.commit()
         self.db.close()

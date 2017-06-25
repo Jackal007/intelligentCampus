@@ -6,15 +6,13 @@ Created on 2017年6月21日
 
 from tqdm import tqdm
 import CalculateXX
-from a_CalculateField.LevelConfig import BalanceRank_level as level
-from warnings import catch_warnings
+from MyConfig import BalanceRank_level as level
 
 class CalculateBalanceRank(CalculateXX.CalculateXX):
 
     def calculate(self):
         print("CalculateBalanceRank")
-        for student in tqdm(self.students):
-            studentId = student[0]
+        for studentId in tqdm(self.students):
             sql = "select min(balance),max(balance) from card where student_id='" + str(studentId)+"'"
             self.executer.execute(sql)
             s = self.executer.fetchone()

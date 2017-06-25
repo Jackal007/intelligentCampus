@@ -1,2 +1,3 @@
-# with open("LevelConfig.py",encoding= 'gbk') as f:
-#     print(f[0])
+a=[1,2,3]
+b=a[0]
+print(b[0])

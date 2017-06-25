@@ -6,15 +6,14 @@ Created on 2017年6月21日
 
 import CalculateXX
 from tqdm import tqdm
-from a_CalculateField.LevelConfig import Subsidy_level as level
+from MyConfig import Subsidy_level as level
 
 class CalculateSubsidy(CalculateXX.CalculateXX):
 
     def calculate(self):
         print("CalculateSubsidy")
         # 对每一个学生统计其奖学金获得情况
-        for student in tqdm(self.students):
-            studentId = student[0]
+        for studentId in tqdm(self.students):
             sql = "select stipend from subsidy where student_id=" + str(studentId)
             self.executer.execute(sql)
             subsidy = self.executer.fetchone()[0]

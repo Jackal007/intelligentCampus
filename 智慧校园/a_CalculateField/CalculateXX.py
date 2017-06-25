@@ -4,9 +4,6 @@ Created on 2017年6月21日
 @author: zhenglongtian
 '''
 
-from time import sleep
-from tqdm import tqdm
-import sys
 from Tools import MyDataBase
 
 class CalculateXX:
@@ -19,14 +16,14 @@ class CalculateXX:
         self.executer = self.db.getExcuter()
         
         # 从这边读取到所有学生的id
-        sql = "select student_id from score"
+        sql = "select student_id from subsidy"
         self.executer.execute(sql)
-        self.students = self.executer.fetchall()
+        self.students = []
+        for i in self.executer.fetchall():
+            self.students.append(i[0])
 
     def calculate(self):
-        for i in tqdm(range(1, 100)):
-            sleep(0.01)
-            sys.stdout.flush()   
+        pass  
 
 if __name__ == '__main__':
     print('一个父类')

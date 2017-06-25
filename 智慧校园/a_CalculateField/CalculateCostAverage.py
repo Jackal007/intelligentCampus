@@ -6,7 +6,7 @@ Created on 2017年6月21日
 
 from tqdm import tqdm
 import CalculateXX
-from a_CalculateField.LevelConfig import AverageCost_level as level
+from MyConfig import AverageCost_level as level
 
 class CalculateCostAverage(CalculateXX.CalculateXX):
 
@@ -18,7 +18,7 @@ class CalculateCostAverage(CalculateXX.CalculateXX):
         avg_dinnerHall="C"
         avg_superMarket="C"
         for student in tqdm(students):
-            student_id = student[0]
+            studentId = student[0]
             if student[1] == "食堂":
                 avg_dinnerHall = student[2]
             if avg_dinnerHall < self.level["A"]:
@@ -37,9 +37,9 @@ class CalculateCostAverage(CalculateXX.CalculateXX):
             else:
                 avg_superMarket = "C"
             
-            sql = "update students set cost_avg_dinnerHall='" + str(avg_dinnerHall) + "' where student_id='" + str(student_id) + "' "
+            sql = "update students set cost_avg_dinnerHall='" + str(avg_dinnerHall) + "' where student_id='" + str(studentId) + "' "
             self.executer.execute(sql)
-            sql = "update students set cost_avg_superMarket='" + str(avg_superMarket) + "' where student_id='" + str(student_id) + "' "
+            sql = "update students set cost_avg_superMarket='" + str(avg_superMarket) + "' where student_id='" + str(studentId) + "' "
             self.executer.execute(sql)
         self.conn.commit()
         self.db.close()
