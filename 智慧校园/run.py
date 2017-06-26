@@ -6,4 +6,3 @@ Created on 2017年6月22日
 
 import a_CalculateField.CalculateField as calculate
 calculate.painStudent()
-

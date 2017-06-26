@@ -9,7 +9,7 @@ Subsidy_level = {"A":0, "B":1000, "C": 1500, "D": 2000}
 # 成绩排名
 Score_level = {"A":10, "B":20, "C":30, "D": 40}
 # 消费金额
-CostAmount_level = {"A":1000, "B": 2000, "C":5000, "D": 10000}
+CostAmount_level = {"A":1500, "B": 3000, "C":5000, "D": 10000}
 # 平均花费
 AverageCost_level = {"A":5, "B": 10, "C":20, "D": 50}
 # xx消费/总消费比例

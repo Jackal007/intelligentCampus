@@ -24,8 +24,9 @@ class CalculateSubsidy(CalculateXX.CalculateXX):
             else:
                 weight = "B"
 
-            sql = "update students set subsidy= " + weight + " where student_id = " + str(studentId)
+            sql = "update students set subsidy= '" + weight + "' where student_id = " + str(studentId)
 #             try:
+#             print(sql)
             self.executer.execute(sql)
 #             except:
 #                 pass
