@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *���ݿ����ӹ��߸�����
+ *锟斤拷锟捷匡拷锟斤拷锟接癸拷锟竭革拷锟斤拷锟斤拷
  */
 public class DBCON {
 	public static final String DRIVER="com.mysql.jdbc.Driver";
@@ -24,7 +24,7 @@ public class DBCON {
 	
 	/**
 	 * @throws ClassNotFoundException 
-	 * @return�������ݿ�����
+	 * @return锟斤拷锟斤拷锟斤拷锟捷匡拷锟斤拷锟斤拷
 	 */
 	public static Connection getCon() {
 		try {
@@ -36,7 +36,7 @@ public class DBCON {
 			}
 			con=DriverManager.getConnection(URL, USER, PWD);
 			//conn = con.createStatement(); 
-			//System.out.println("���ӳɹ�");
+			//System.out.println("锟斤拷锟接成癸拷");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -45,7 +45,7 @@ public class DBCON {
 	}
 	
 	/**
-	 * �ر���Դ 
+	 * 锟截憋拷锟斤拷源 
 	 */
 	public void closeAll(){
 		if(rs!=null){
@@ -70,10 +70,10 @@ public class DBCON {
 	}
 	
 	/**
-	 * @param sql sql��� 
-	 * @param pras �����б� 
+	 * @param sql sql锟斤拷锟� 
+	 * @param pras 锟斤拷锟斤拷锟叫憋拷 
 	 * @throws ClassNotFoundException 
-	 * @return��Ӱ�������
+	 * @return锟斤拷影锟斤拷锟斤拷锟斤拷锟�
 	 */
 	
 	public void update(String sql) {
@@ -96,9 +96,9 @@ public class DBCON {
 	
 	
 	/**
-	 * @param sql sql��� 
+	 * @param sql sql锟斤拷锟� 
 	 * @param pras
-	 * @return �����
+	 * @return 锟斤拷锟斤拷锟�
 	 * @throws ClassNotFoundException 
 	 */
 	public ResultSet query(String sql){
