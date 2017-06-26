@@ -14,6 +14,12 @@ class Student:
         self.balance_rank = info[10]
         self.subsidy = info[11]
     
+    def getStudentId(self):
+        return self.studentId
+    
+    def setStudentId(self, studentId): 
+        self.studentId = studentId
+    
     def getScore(self):
         return self.score
     
@@ -44,11 +50,11 @@ class Student:
     def setCost_amount(self, cost_amount): 
         self.cost_amount = cost_amount
     
-    def getBook_borrow(self): 
-        return self.book_borrow
+    def getLibrary_borrow(self): 
+        return self.library_borrow
     
-    def setBook_borrow(self, book_borrow): 
-        self.book_borrow = book_borrow
+    def setLibrary_borrow(self, library_borrow): 
+        self.library_borrow = library_borrow
     
     def getBalance_rank(self): 
         return self.balance_rank
