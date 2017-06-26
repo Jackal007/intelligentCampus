@@ -1,6 +1,6 @@
 from Tools import MyDataBase
 from Model import Student
-
+f = open('results.txt', 'w')
 Student = Student.Student
 db = MyDataBase.MyDataBase()
 conn = db.getConn()
@@ -60,14 +60,14 @@ def Analyse_test(studentId, score, cost_amount, cost_avg_superMarket, cost_avg_d
             max = t_subsidy[i]
     
     if tag == "A": 
-        print (studentId, " 0")
+        f.write(studentId + ",0\n")
     elif tag == "B": 
-        print (studentId, " 1000")
+        f.write(studentId + ",1000\n")
     elif tag == "C": 
-        print (studentId, " 1500")
-    elif tag == "D": 
-        print (studentId, " 2000")
-
+        f.write(studentId + ",1500\n")
+    else: 
+        f.write(studentId + ",2000\n")
+        
 def analyse():
     for student in students:
         Analyse_test(student.getStudentId(), student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank())
@@ -77,3 +77,4 @@ P_subsidy = {"A":0.0, "B":0.0, "C":0.0, "D": 0}
 
 testData()
 analyse()
+f.close()
