@@ -93,8 +93,4 @@ public class Student {
 	public void setSubsidy(String subsidy) {
 		this.subsidy = subsidy;
 	}
-	
-
-	
-	
 }
