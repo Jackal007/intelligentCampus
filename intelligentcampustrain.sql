@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2017-06-25 15:52:50
+Date: 2017-06-27 10:51:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,7 +32,7 @@ CREATE TABLE `borrow` (
 -- ----------------------------
 DROP TABLE IF EXISTS `card`;
 CREATE TABLE `card` (
-  `student_id` char(10) NOT NULL,
+  `student_id` int(10) NOT NULL,
   `deal_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deal_type` char(10) DEFAULT NULL,
   `deal_site` char(10) DEFAULT NULL,
@@ -47,9 +47,9 @@ CREATE TABLE `card` (
 -- ----------------------------
 DROP TABLE IF EXISTS `dorm`;
 CREATE TABLE `dorm` (
-  `student_id` char(10) NOT NULL,
+  `student_id` int(10) NOT NULL,
   `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `in_out` char(5) DEFAULT NULL,
+  `in_out` int(5) DEFAULT NULL,
   KEY `student_id_index` (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -58,9 +58,9 @@ CREATE TABLE `dorm` (
 -- ----------------------------
 DROP TABLE IF EXISTS `library`;
 CREATE TABLE `library` (
-  `student_id` char(10) NOT NULL,
+  `student_id` int(10) NOT NULL,
   `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `door_id` char(5) DEFAULT NULL,
+  `door_id` char(10) DEFAULT NULL,
   KEY `student_id_index` (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -81,8 +81,8 @@ CREATE TABLE `library_modify` (
 -- ----------------------------
 DROP TABLE IF EXISTS `score`;
 CREATE TABLE `score` (
-  `student_id` char(10) NOT NULL DEFAULT '0',
-  `college_id` char(5) DEFAULT NULL,
+  `student_id` int(10) NOT NULL DEFAULT '0',
+  `college_id` int(5) DEFAULT NULL,
   `rank` int(5) DEFAULT NULL,
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -92,7 +92,7 @@ CREATE TABLE `score` (
 -- ----------------------------
 DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
-  `student_id` char(10) NOT NULL,
+  `student_id` int(10) NOT NULL,
   `score` char(5) DEFAULT 'D' COMMENT '成绩排名',
   `cost_amount` char(5) DEFAULT 'D' COMMENT '花费金额',
   `cost_avg_superMarket` char(5) DEFAULT 'D',
@@ -113,7 +113,7 @@ CREATE TABLE `students` (
 -- ----------------------------
 DROP TABLE IF EXISTS `subsidy`;
 CREATE TABLE `subsidy` (
-  `student_id` int(11) NOT NULL DEFAULT '0',
-  `stipend` varchar(255) DEFAULT NULL,
+  `student_id` int(10) NOT NULL DEFAULT '0',
+  `stipend` int(10) DEFAULT NULL,
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

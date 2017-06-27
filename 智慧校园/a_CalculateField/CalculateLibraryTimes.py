@@ -20,16 +20,16 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
             sql="select count(student_id) from library where student_id='"+str(studentId)+"'"
             self.executer.execute(sql)
             data = self.executer.fetchone()
-            study_time=data[0]
+            studyTimes=data[0]
             weight=""
-            if study_time<self.level["A"]:
+            if studyTimes<self.level["A"]:
                 weight="A"
-            elif study_time<self.level["B"]:
+            elif studyTimes<self.level["B"]:
                 weight="B"
             else:
                 weight="C"
 
-            sql="update students set library_times='"+str(weight)+"' where student_id='"+str(studentId)+"' "
+            sql="update students set library_times='"+str(weight)+"' where student_id="+str(studentId)
             self.executer.execute(sql)
         self.conn.commit()
         self.db.close()

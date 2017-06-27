@@ -6,29 +6,29 @@ Created on 2017年6月21日
 
 from tqdm import tqdm
 import CalculateXX
-from MyConfig import LibraryBorrow_level as level
+from MyConfig import CostTimes_level as level
 
 class CalculateLibraryBorrow(CalculateXX.CalculateXX):
 
     def calculate(self):
         
         print("CalculateLibraryBorrow")
-        # 对每一个学生统计其借书的次数
+        # 对每一个学生统计其消费次数
         for studentId in tqdm(self.students):
-            sql = "select count(student_id) from borrow where student_id='" + str(studentId) + "'"
+            sql = "select count(*) from card where student_id=" + str(studentId)
             self.executer.execute(sql)
 
             data = self.executer.fetchone()
-            readTimes = data[0]
+            cost_times = data[0]
             weight = "C"
-            if readTimes < self.level["A"]:
+            if cost_times < self.level["A"]:
                 weight ="A"
-            elif readTimes < self.level["B"]:
+            elif cost_times < self.level["B"]:
                 weight ="B"
             else:
                 weight = "C"
 
-            sql = "update students set library_borrow='" + str(weight) + "' where student_id=" + str(studentId)
+            sql = "update students set cost_times='" + str(weight) + "' where student_id=" + str(studentId)
             self.executer.execute(sql)
         self.conn.commit()
         self.db.close()

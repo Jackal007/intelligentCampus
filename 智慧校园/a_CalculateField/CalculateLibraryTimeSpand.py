@@ -29,7 +29,7 @@ class CalculateLibraryTimeSpand(CalculateXX.CalculateXX):
             else:
                 LibraryTimeRank = "C"
 
-            sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id='" + str(studentId) + "'"
+            sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id=" + str(studentId)
             self.executer.execute(sql)
 
         self.conn.commit()

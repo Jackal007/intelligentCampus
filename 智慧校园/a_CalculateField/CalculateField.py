@@ -9,12 +9,13 @@ import os
 
 def painStudent():
     os.system('python a_CalculateField/CalculateScore.py')
-    os.system('python a_CalculateField/CalculateCostAmount.py')
-#     os.system('python a_CalculateField/CalculateCostAverage.py')
-#     os.system('python a_CalculateField/CalculateCostRate.py')
     os.system('python a_CalculateField/CalculateLibraryBorrow.py')
     os.system('python a_CalculateField/CalculateLibraryTimes.py')
     os.system('python a_CalculateField/CalculateLibraryTimeSpand.py')
+    os.system('python a_CalculateField/CalculateCostAmount.py')    
+    os.system('python a_CalculateField/CalculateCostTimes.py')
+    os.system('python a_CalculateField/CalculateCostAverage.py')
+    os.system('python a_CalculateField/CalculateCostRate.py')
     os.system('python a_CalculateField/CalculateBalanceRank.py')
     os.system('python a_CalculateField/CalculateSubsidy.py')
     
