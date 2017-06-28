@@ -1,5 +1,6 @@
+# coding=gbk
 '''
-Created on 2017å¹´6æœˆ21æ—¥
+Created on 2017Äê6ÔÂ21ÈÕ
 
 @author: zhenglongtian
 '''
@@ -13,34 +14,39 @@ class CalculateCostAverage(CalculateXX.CalculateXX):
     def calculate(self):
         print("CalculateCostAverage")
         for studentId in tqdm(self.students):
-            avg_dinnerHall="C"
-            avg_superMarket="C"
-            sql = "select deal_way,avg(deal_cost) from card where student_id= "+str(studentId)+" group by deal_way"
+            sql = "select deal_way,avg(deal_cost) from card where student_id= " + str(studentId) + " group by deal_way"
             self.executer.execute(sql)
             result = self.executer.fetchall()
             for i in result:
-                if i[0]=="é£Ÿå ‚":
+                if "dinnerhall" in i[0]:
                     avg_dinnerHall = i[1]
                     if avg_dinnerHall < self.level["A"]:
-                        avg_dinnerHall ="A"
+                        avg_dinnerHall = "A"
                     elif avg_dinnerHall < self.level["B"]:
-                        avg_dinnerHall ="B"
-                    else:
+                        avg_dinnerHall = "B"
+                    elif avg_dinnerHall < self.level["C"]:
                         avg_dinnerHall = "C"
-                elif i[0]=="è¶…å¸‚":
+                    else:
+                        avg_dinnerHall = "D"
+                elif "supermarket" in i[0]:
                     avg_superMarket = i[1]
                     if avg_superMarket < self.level["A"]:
-                        avg_superMarket ="A"
+                        avg_superMarket = "A"
                     elif avg_superMarket < self.level["B"]:
-                        avg_superMarket ="B"
-                    else:
+                        avg_superMarket = "B"
+                    elif avg_superMarket < self.level["C"]:
                         avg_superMarket = "C"
+                    else:
+                        avg_superMarket = "D"
             
-            sql = "update students set cost_avg_dinnerHall='" + str(avg_dinnerHall) + "' where student_id='" + str(studentId) + "' "
-            self.executer.execute(sql)
-            sql = "update students set cost_avg_superMarket='" + str(avg_superMarket) + "' where student_id='" + str(studentId) + "' "
-            self.executer.execute(sql)
-            self.conn.commit()
+            try:
+                sql = "update students set cost_avg_dinnerHall='" + str(avg_dinnerHall) + "' where student_id=" + str(studentId) 
+                self.executer.execute(sql)
+                sql = "update students set cost_avg_superMarket='" + str(avg_superMarket) + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)
+                self.conn.commit()
+            except:
+                print(sql)
         self.db.close()
 
 if __name__ == '__main__':

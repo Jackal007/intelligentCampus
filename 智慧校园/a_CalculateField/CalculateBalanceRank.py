@@ -21,12 +21,12 @@ class CalculateBalanceRank(CalculateXX.CalculateXX):
                 maxBalance = s[1]
                 averageBalance = (minBalance + maxBalance) / 2
                 
-                balanceRank = -1;
+                balanceRank = "D";
                 if averageBalance < self.level["A"]:
                     balanceRank = "A"
                 elif averageBalance < self.level["B"]:
                     balanceRank = "B"
-                else:
+                elif averageBalance < self.level["C"]:
                     balanceRank = "C"
                     
                 sql = "update students set balance_rank='" + str(balanceRank) + "' where student_id='" + str(studentId) + "'"

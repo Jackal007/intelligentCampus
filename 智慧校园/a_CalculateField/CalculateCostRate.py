@@ -23,28 +23,27 @@ class CalculateCostRate(CalculateXX.CalculateXX):
             for student in students:
                 supermarket = "D"
                 dinnerHall = "D"
-                if student[0] == studentId and student[1] == '食堂':
+                if student[0] == studentId and student[1] == 'dinnerhall':
                     dinnerHall = student[2] / list[1]
                     if dinnerHall < self.level["A"]:
                         dinnerHall = "A"
                     elif dinnerHall < self.level["B"]:
                         dinnerHall = "B"
-                    else:
+                    elif dinnerHall < self.level["C"]:
                         dinnerHall = "C"
                 
-                if student[0] == studentId and student[1] == '超市':
+                if student[0] == studentId and student[1] == 'supermarket':
                     supermarket = student[2] / list[1]
                     if supermarket < self.level["A"]:
                         supermarket = "A"
                     elif supermarket < self.level["B"]:
                         supermarket = "B"
-                    else:
+                    elif supermarket < self.level["C"]:
                         supermarket = "C"
                 sql = "update students set cost_dinnerhall_rate='" + str(dinnerHall) + "' where student_id='" + str(studentId) + "' "
                 self.executer.execute(sql)
                 sql = "update students set cost_supermarket_rate='" + str(supermarket) + "' where student_id='" + str(studentId) + "' "
                 self.executer.execute(sql)
-                print("one over")
                 self.conn.commit()
         self.db.close()
 

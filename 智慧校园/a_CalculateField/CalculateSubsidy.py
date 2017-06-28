@@ -18,11 +18,13 @@ class CalculateSubsidy(CalculateXX.CalculateXX):
             self.executer.execute(sql)
             subsidy = self.executer.fetchone()[0]
 
-            weight = ""
-            if int(subsidy) == 0:
+            weight = "D"
+            if int(subsidy) <= level["A"]:
                 weight = "A"
-            else:
+            elif int(subsidy) <= level["B"]:
                 weight = "B"
+            elif int(subsidy) <= level["C"]:
+                weight = "C"
 
             sql = "update students set subsidy= '" + weight + "' where student_id = " + str(studentId)
 #             try:

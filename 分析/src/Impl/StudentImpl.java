@@ -13,10 +13,10 @@ public class StudentImpl implements StudentDao{
 	DBCON util=new DBCON();
 	@Override
 	public List<Student> queryAll(int tag) {
-		if(tag==1)//²éÑ¯Ç°Ò»°ëÊý¾Ý
-			return  _list(util.query("select *  from students order by student_id limit 5000" ));
+		if(tag==1)//ï¿½ï¿½Ñ¯Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			return  _list(util.query("select *  from students order by student_id" ));
 		else
-			return  _list(util.query("select *  from students order by student_id desc limit 4000" ));
+			return  _list(util.query("select *  from students order by student_id desc" ));
 	}
 	private List<Student> _list(ResultSet rs){
 		List<Student> _list=new ArrayList<Student>();

@@ -20,12 +20,12 @@ class CalculateLibraryBorrow(CalculateXX.CalculateXX):
 
             data = self.executer.fetchone()
             readTimes = data[0]
-            weight = "C"
+            weight = "D"
             if readTimes < self.level["A"]:
-                weight ="A"
+                weight = "A"
             elif readTimes < self.level["B"]:
-                weight ="B"
-            else:
+                weight = "B"
+            elif readTimes < self.level["C"]:
                 weight = "C"
 
             sql = "update students set library_borrow='" + str(weight) + "' where student_id=" + str(studentId)

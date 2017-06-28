@@ -13,13 +13,13 @@ import Impl.StudentImpl;
 public class testNB {
 
 	/**
-	 * data_length Ëã·¨µÄË¼Ïë
+	 * data_length ï¿½ã·¨ï¿½ï¿½Ë¼ï¿½ï¿½
 	 */
 	public static List<Student> list = new ArrayList<Student>();;
 	public static double[][] P_Balance_rank = new double[3][4];
 	// double[][] P_Score=new double[3][2];
 	public static double[][] P_Cost_amount = new double[3][4];
-	// PA,PB..·Ö±ð±íÊ¾¸ÃÑ§Éú»ñµÃA£¬B,C£¬DµÈ¼¶½±Ñ§½ðµÄ¸ÅÂÊ
+	// PA,PB..ï¿½Ö±ï¿½ï¿½Ê¾ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½B,Cï¿½ï¿½Dï¿½È¼ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
 	public static double PA_subsidy = 0, PB_subsidy = 0, PC_subsidy = 0, PD_subsidy = 0;
 	// public static double[][] P_supermarket_cost_rate=new double[3][4];
 	// public static double[][] P_dinnerhall_cost_rate=new double[3][4];
@@ -30,7 +30,7 @@ public class testNB {
 	// public static double[][] P_cost_time=new double[3][4];
 	// public static double[][] P_Score=new double[3][4];
 	public static void main(String[] args) {
-		// 1.¶ÁÈ¡Êý¾Ý£¬·ÅÈëlistÈÝÆ÷ÖÐ
+		// 1.ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½listï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		StudentDao sd = new StudentImpl();
 		list = sd.queryAll(1);
@@ -50,10 +50,10 @@ public class testNB {
 
 	}
 
-	// ÑµÁ·Ñù±¾£¬²âÊÔ
+	// Ñµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static void testData() {
-		// ÑµÁ·Ñù±¾
-		int A_subsidy = 0, B_subsidy = 0, C_subsidy = 0, D_subsidy = 0; // ±íÊ¾»ñµÃA,B,C,DµÈ¼¶µÄÊýÁ¿
+		// Ñµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int A_subsidy = 0, B_subsidy = 0, C_subsidy = 0, D_subsidy = 0; // ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½A,B,C,Dï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int[] A_balance_rank = { 0, 0, 0, 0 }, B_balance_rank = { 0, 0, 0, 0 }, C_balance_rank = { 0, 0, 0, 0 };
 		int[] A_score = { 0, 0, 0, 0 }, B_score = { 0, 0, 0, 0 }, C_score = { 0, 0, 0, 0 };
 		int[] A_cost_amount = { 0, 0, 0, 0 }, B_cost_amount = { 0, 0, 0, 0 }, C_cost_amount = { 0, 0, 0, 0 };
@@ -69,7 +69,7 @@ public class testNB {
 		for (int j = 0; j < list.size(); j++) {
 			Student bb = list.get(j);
 			// System.out.println(bb.getSubsidy());
-			if (classfiy(bb.getSubsidy()) == 1)// Î´»ñµÃÖúÑ§½ð
+			if (classfiy(bb.getSubsidy()) == 1)// Î´ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½
 			{
 				A_subsidy++;
 				if (classfiy(bb.getBalance_rank()) == 1)
@@ -129,7 +129,7 @@ public class testNB {
 				 * if(classfiy(bb.getCost_times())==2) B_cost_time[0]++;
 				 * if(classfiy(bb.getCost_times())==3) C_cost_time[0]++;
 				 */
-			} else if (classfiy(bb.getSubsidy()) == 2)// »ñµÃ1000ÖúÑ§½ð
+			} else if (classfiy(bb.getSubsidy()) == 2)// ï¿½ï¿½ï¿½1000ï¿½ï¿½Ñ§ï¿½ï¿½
 			{
 				B_subsidy++;
 				if (classfiy(bb.getBalance_rank()) == 1)
@@ -184,7 +184,7 @@ public class testNB {
 				 * if(classfiy(bb.getCost_times())==2) B_cost_time[1]++;
 				 * if(classfiy(bb.getCost_times())==3) C_cost_time[1]++;
 				 */
-			} else if (classfiy(bb.getSubsidy()) == 3)// »ñµÃ1500ÖúÑ§½ð
+			} else if (classfiy(bb.getSubsidy()) == 3)// ï¿½ï¿½ï¿½1500ï¿½ï¿½Ñ§ï¿½ï¿½
 			{
 				C_subsidy++;
 				if (classfiy(bb.getBalance_rank()) == 1)
@@ -239,7 +239,7 @@ public class testNB {
 				 * if(classfiy(bb.getCost_times())==2) B_cost_time[2]++;
 				 * if(classfiy(bb.getCost_times())==3) C_cost_time[2]++;
 				 */
-			} else if (classfiy(bb.getSubsidy()) == 2)// »ñµÃ2000ÖúÑ§½ð
+			} else if (classfiy(bb.getSubsidy()) == 2)// ï¿½ï¿½ï¿½2000ï¿½ï¿½Ñ§ï¿½ï¿½
 			{
 				D_subsidy++;
 				if (classfiy(bb.getBalance_rank()) == 1)
@@ -296,12 +296,12 @@ public class testNB {
 				 */
 			}
 		}
-		// ¸ÅÂÊ¼ÆËã£¬»ñµÃ·ÖÅäÆ÷
+		// ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ã£¬ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½
 
-		PA_subsidy = A_subsidy * 1.0 / list.size(); // ÎÞ·¨»ñÈ¡ÖúÑ§½ðµÄ¸ÅÂÊ
-		PB_subsidy = B_subsidy * 1.0 / list.size(); // »ñÈ¡1000ÖúÑ§½ðµÄ¸ÅÂÊ
-		PC_subsidy = C_subsidy * 1.0 / list.size(); // »ñÈ¡1500ÖúÑ§½ðµÄ¸ÅÂÊ
-		PD_subsidy = D_subsidy * 1.0 / list.size(); // »ñÈ¡2000ÖúÑ§½ðµÄ¸ÅÂÊ
+		PA_subsidy = A_subsidy * 1.0 / list.size(); // ï¿½Þ·ï¿½ï¿½ï¿½È¡ï¿½ï¿½Ñ§ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+		PB_subsidy = B_subsidy * 1.0 / list.size(); // ï¿½ï¿½È¡1000ï¿½ï¿½Ñ§ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+		PC_subsidy = C_subsidy * 1.0 / list.size(); // ï¿½ï¿½È¡1500ï¿½ï¿½Ñ§ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+		PD_subsidy = D_subsidy * 1.0 / list.size(); // ï¿½ï¿½È¡2000ï¿½ï¿½Ñ§ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
 		for (int k = 0; k < 4; ++k) {
 			if (k == 0) {
 				P_Balance_rank[0][k] = 1.0 * A_balance_rank[k] / (A_subsidy * 1.0) + 0.15;
@@ -443,7 +443,7 @@ public class testNB {
 
 	// }
 	//
-	// ·ÖÎöÊý¾Ý
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static void Analyse_test(String id, String a, String b, String c, String d, String e, String f) {
 		double P_Asubsidy = 1.0, P_Bsubsidy = 1.0, P_Csubsidy = 1.0, P_Dsubsidy = 1.0;
 		if (a.equals("A")) {
@@ -557,17 +557,21 @@ public class testNB {
 		if (P_Dsubsidy > max)
 			tag = 4;
 		if (tag == 1) {
-			// System.out.println("Ñ§ºÅÎª "+id+" ÎÞ·¨»ñµÃÖúÑ§½ðµÄ¿ÉÄÜÐÔ½Ï´ó");
-			System.out.println(id + " 0");
+			// System.out.println("Ñ§ï¿½ï¿½Îª "+id+" ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ô½Ï´ï¿½");
+			System.out.println(id + ",0");
+			method1(id + ",0");
 		} else if (tag == 2) {
-			// System.out.println("Ñ§ºÅÎª "+id+" »ñµÃ1000ÔªÖúÑ§½ðµÄ¿ÉÄÜÐÔ½Ï´ó");
-			System.out.println(id + " 1000");
+			// System.out.println("Ñ§ï¿½ï¿½Îª "+id+" ï¿½ï¿½ï¿½1000Ôªï¿½ï¿½Ñ§ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ô½Ï´ï¿½");
+			System.out.println(id + ",1000");
+			method1(id + ",1000");
 		} else if (tag == 3) {
-			// System.out.println("Ñ§ºÅÎª "+id+" »ñµÃ1500ÔªÖúÑ§½ðµÄ¿ÉÄÜÐÔ½Ï´ó");
-			System.out.println(id + " 1500");
+			// System.out.println("Ñ§ï¿½ï¿½Îª "+id+" ï¿½ï¿½ï¿½1500Ôªï¿½ï¿½Ñ§ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ô½Ï´ï¿½");
+			System.out.println(id + ",1500");
+			method1(id + ",1500");
 		} else {
-			// System.out.println("Ñ§ºÅÎª "+id+" »ñµÃ2000ÔªÖúÑ§½ðµÄ¿ÉÄÜÐÔ½Ï´ó");
-			System.out.println(id + " 2000");
+			// System.out.println("Ñ§ï¿½ï¿½Îª "+id+" ï¿½ï¿½ï¿½2000Ôªï¿½ï¿½Ñ§ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ô½Ï´ï¿½");
+			System.out.println(id + ",2000");
+			method1(id + ",2000");
 		}
 		P_Asubsidy = 1.0;
 		P_Bsubsidy = 1.0;
@@ -592,8 +596,8 @@ public class testNB {
 	public static void method1(String str) {
 		FileWriter fw = null;
 		try {
-			// Èç¹ûÎÄ¼þ´æÔÚ£¬Ôò×·¼ÓÄÚÈÝ£»Èç¹ûÎÄ¼þ²»´æÔÚ£¬Ôò´´½¨ÎÄ¼þ
-			File f = new File("E:\\dd.txt");
+			// ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ò´´½ï¿½ï¿½Ä¼ï¿½
+			File f = new File("results.txt");
 			fw = new FileWriter(f, true);
 		} catch (IOException e) {
 			e.printStackTrace();

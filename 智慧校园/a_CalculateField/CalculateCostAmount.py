@@ -26,7 +26,7 @@ class CalculateCostAmount(CalculateXX.CalculateXX):
                         weight = "A"
                     elif int(deal_cost) < self.level["B"]:
                         weight ="B"
-                    else:
+                    elif int(deal_cost) < self.level["C"]:
                         weight = "C"
         
                     sql = "update students set cost_amount='" + str(weight) + "' where student_id='" + str(studentId) + "' "

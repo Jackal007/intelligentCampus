@@ -21,12 +21,12 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
             self.executer.execute(sql)
             data = self.executer.fetchone()
             studyTimes=data[0]
-            weight=""
+            weight="D"
             if studyTimes<self.level["A"]:
                 weight="A"
             elif studyTimes<self.level["B"]:
                 weight="B"
-            else:
+            elif studyTimes<self.level["C"]:
                 weight="C"
 
             sql="update students set library_times='"+str(weight)+"' where student_id="+str(studentId)

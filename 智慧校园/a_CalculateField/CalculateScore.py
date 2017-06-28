@@ -27,12 +27,12 @@ class CalculateScore(CalculateXX.CalculateXX):
         for student in tqdm(students):
             studentId = student[0]
             rank = student[2]
-            weight = ""
+            weight = "D"
             if int(rank) < T_10:
                 weight = "A"
             elif int(rank) < T_30:
                 weight = "B"
-            else:
+            elif int(rank) < T_50:
                 weight = "C"
 
             sql = "insert into students(student_id,score) values('"+str(studentId)+"','"+str(weight)+"')" 

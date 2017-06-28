@@ -164,7 +164,7 @@ def createDataSet():
     windy-> 0: false | 1: true
     """
     dataSet = []
-    db = pymysql.connect("localhost", "root", "053062", "intelligentCampus")
+    db = pymysql.connect("localhost", "root", "root", "intelligentCampustrain")
     cursor = db.cursor()
     sql = "select score,cost_amount,cost_avg_superMarket,cost_avg_dinnerHall,cost_supermarket_rate,cost_dinnerhall_rate,cost_times,library_borrow,library_times,library_time_spand,balance_rank,subsidy from students"
     cursor.execute(sql)
@@ -204,7 +204,7 @@ def createTestSet():
     #            [1, 0, 1, 0],
     #            [2, 1, 0, 1]]
     dataSet = []
-    db = pymysql.connect("localhost", "root", "053062", "intelligentCampus")
+    db = pymysql.connect("localhost", "root", "root", "intelligentCampustrain")
     cursor = db.cursor()
     sql = "select score,cost_amount,cost_avg_superMarket,cost_avg_dinnerHall,cost_supermarket_rate,cost_dinnerhall_rate,cost_times,library_borrow,library_times,library_time_spand,balance_rank,subsidy from students"
     cursor.execute(sql)

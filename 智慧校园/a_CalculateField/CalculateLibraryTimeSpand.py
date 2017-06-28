@@ -21,12 +21,12 @@ class CalculateLibraryTimeSpand(CalculateXX.CalculateXX):
             studentId = student[0]
             student_LibraryTime = student[1]
 
-            LibraryTimeRank = ""
+            LibraryTimeRank = "D"
             if student_LibraryTime < self.level["A"]:
                 LibraryTimeRank = "A"
             elif student_LibraryTime < self.level["B"]:
                 LibraryTimeRank = "B"
-            else:
+            elif student_LibraryTime < self.level["C"]:
                 LibraryTimeRank = "C"
 
             sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id=" + str(studentId)

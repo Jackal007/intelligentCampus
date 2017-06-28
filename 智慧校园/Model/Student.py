@@ -7,12 +7,12 @@ class Student:
         self.cost_avg_dinnerHall = info[4]
         self.cost_supermarket_rate = info[5]
         self.cost_dinnerhall_rate = info[6]
-        self.cost_times = info[6]
-        self.library_borrow = info[7]
-        self.library_times = info[8]
-        self.library_time_spand = info[9]
-        self.balance_rank = info[10]
-        self.subsidy = info[11]
+        self.cost_times = info[7]
+        self.library_borrow = info[8]
+        self.library_times = info[9]
+        self.library_time_spand = info[10]
+        self.balance_rank = info[11]
+        self.subsidy = info[12]
     
     def getStudentId(self):
         return self.studentId
@@ -26,11 +26,11 @@ class Student:
     def setScore(self, score): 
         self.score = score
     
-    def getStudent_id(self): 
-        return self.student_id
+    def getCost_amount(self): 
+        return self.cost_amount
     
-    def setStudent_id(self, student_id): 
-        self.student_id = student_id
+    def setCost_amount(self, cost_amount): 
+        self.cost_amount = cost_amount
     
     def getCost_avg_dinnerHall(self): 
         return self.cost_avg_dinnerHall
@@ -43,12 +43,6 @@ class Student:
     
     def setCost_avg_superMarket(self, cost_avg_superMarket): 
         self.cost_avg_superMarket = cost_avg_superMarket
-    
-    def getCost_amount(self): 
-        return self.cost_amount
-    
-    def setCost_amount(self, cost_amount): 
-        self.cost_amount = cost_amount
     
     def getLibrary_borrow(self): 
         return self.library_borrow
