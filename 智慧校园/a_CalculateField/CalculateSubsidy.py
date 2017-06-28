@@ -27,11 +27,10 @@ class CalculateSubsidy(CalculateXX.CalculateXX):
                 weight = "C"
 
             sql = "update students set subsidy= '" + weight + "' where student_id = " + str(studentId)
-#             try:
-#             print(sql)
-            self.executer.execute(sql)
-#             except:
-#                 pass
+            try:
+                self.executer.execute(sql)
+            except:
+                pass
 
         self.conn.commit()
         self.db.close()

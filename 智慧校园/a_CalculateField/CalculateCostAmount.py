@@ -1,9 +1,3 @@
-'''
-Created on 2017年6月21日
-
-@author: zhenglongtian
-'''
-
 from tqdm import tqdm
 import threading
 import CalculateXX
@@ -16,23 +10,23 @@ class CalculateCostAmount(CalculateXX.CalculateXX):
         print("CalculateCostAmount")
         # 对每一个学生统计其消费金额的情况
         def smallCalculate(students):
-            for studentId in tqdm(students):
-                try:
-                    sql = "select sum(deal_cost) from card where student_id=" + str(studentId) 
-                    self.executer.execute(sql)
-                    deal_cost = self.executer.fetchone()[0]
-                    weight = "D"
-                    if int(deal_cost) < self.level["A"]:
-                        weight = "A"
-                    elif int(deal_cost) < self.level["B"]:
-                        weight ="B"
-                    elif int(deal_cost) < self.level["C"]:
-                        weight = "C"
-        
-                    sql = "update students set cost_amount='" + str(weight) + "' where student_id='" + str(studentId) + "' "
-                    self.executer.execute(sql)
-                except:
-                    pass
+            try:
+                for studentId in tqdm(students):
+                        sql = "select sum(deal_cost) from card where student_id=" + str(studentId) 
+                        self.executer.execute(sql)
+                        deal_cost = self.executer.fetchone()[0]
+                        weight = "D"
+                        if int(deal_cost) < self.level["A"]:
+                            weight = "A"
+                        elif int(deal_cost) < self.level["B"]:
+                            weight ="B"
+                        elif int(deal_cost) < self.level["C"]:
+                            weight = "C"
+            
+                        sql = "update students set cost_amount='" + str(weight) + "' where student_id=" + str(studentId)
+                        self.executer.execute(sql)
+            except:
+                pass
             self.conn.commit()
             
         # slice students to many slices

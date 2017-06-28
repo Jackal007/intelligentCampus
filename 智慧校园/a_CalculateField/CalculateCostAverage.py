@@ -45,6 +45,11 @@ class CalculateCostAverage(CalculateXX.CalculateXX):
                 sql = "update students set cost_avg_superMarket='" + str(avg_superMarket) + "' where student_id=" + str(studentId)
                 self.executer.execute(sql)
                 self.conn.commit()
+#                 sql = "flush query cache"
+#                 self.executer.execute(sql)
+#                 sql = "flush tables"
+#                 self.executer.execute(sql)
+#                 self.conn.commit()
             except:
                 print(sql)
         self.db.close()

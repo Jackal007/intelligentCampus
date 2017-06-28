@@ -7,17 +7,14 @@ Created on 2017年6月21日
 import CalculateXX
 from tqdm import tqdm
 from MyConfig import LibraryTimes_level as level
+from Tools import MyLog
 
 class CalculateLibraryTimes(CalculateXX.CalculateXX):
-
+    @MyLog.myException
     def calculate(self):
         print("CalculateLibraryTimes")
-        sql="select student_id from students order by score"
-        self.executer.execute(sql)
-        students = self.executer.fetchall()
-        for student in tqdm(students):
-            studentId=student[0]
-            sql="select count(student_id) from library where student_id='"+str(studentId)+"'"
+        for studentId in tqdm(self.students):
+            sql="select count(student_id) from library where student_id="+str(studentId)
             self.executer.execute(sql)
             data = self.executer.fetchone()
             studyTimes=data[0]
@@ -28,12 +25,14 @@ class CalculateLibraryTimes(CalculateXX.CalculateXX):
                 weight="B"
             elif studyTimes<self.level["C"]:
                 weight="C"
-
-            sql="update students set library_times='"+str(weight)+"' where student_id="+str(studentId)
-            self.executer.execute(sql)
+            try:
+                sql="update students set library_times='"+str(weight)+"' where student_id="+str(studentId)
+                self.executer.execute(sql)
+            except:
+                pass
         self.conn.commit()
         self.db.close()
 
-if __name__=='__main__':
-    t=CalculateLibraryTimes(level)
+if __name__ == '__main__':
+    t = CalculateLibraryTimes(level)
     t.calculate()

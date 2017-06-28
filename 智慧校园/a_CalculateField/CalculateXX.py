@@ -1,10 +1,5 @@
-'''
-Created on 2017年6月21日
-
-@author: zhenglongtian
-'''
-
 from Tools import MyDataBase
+from Tools import MyLog
 
 class CalculateXX:
 
@@ -21,9 +16,9 @@ class CalculateXX:
         self.students = []
         for i in self.executer.fetchall():
             self.students.append(i[0])
-
+    @MyLog.myException
     def calculate(self):
         pass  
 
 if __name__ == '__main__':
-    print('一个父类')
+    print('a father')

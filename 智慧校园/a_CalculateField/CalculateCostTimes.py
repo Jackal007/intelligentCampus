@@ -27,9 +27,11 @@ class CalculateLibraryBorrow(CalculateXX.CalculateXX):
                 weight ="B"
             elif cost_times < self.level["C"]:
                 weight = "C"
-
-            sql = "update students set cost_times='" + str(weight) + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
+            try:
+                sql = "update students set cost_times='" + str(weight) + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)
+            except:
+                print(sql)
         self.conn.commit()
         self.db.close()
 

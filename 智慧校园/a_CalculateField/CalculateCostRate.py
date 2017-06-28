@@ -12,39 +12,47 @@ class CalculateCostRate(CalculateXX.CalculateXX):
 
     def calculate(self):
         print("CalculateCostRate")
-        sql = "select student_id,sum(deal_cost) from card group by student_id"
-        self.executer.execute(sql)
-        lists = self.executer.fetchall()
-        sql = "select student_id,deal_way,sum(deal_cost) from card group by student_id,deal_way"
-        self.executer.execute(sql)
-        students = self.executer.fetchall()
-        for list in tqdm(lists):
-            studentId = list[0]
-            for student in students:
-                supermarket = "D"
-                dinnerHall = "D"
-                if student[0] == studentId and student[1] == 'dinnerhall':
-                    dinnerHall = student[2] / list[1]
-                    if dinnerHall < self.level["A"]:
-                        dinnerHall = "A"
-                    elif dinnerHall < self.level["B"]:
-                        dinnerHall = "B"
-                    elif dinnerHall < self.level["C"]:
-                        dinnerHall = "C"
-                
-                if student[0] == studentId and student[1] == 'supermarket':
-                    supermarket = student[2] / list[1]
-                    if supermarket < self.level["A"]:
-                        supermarket = "A"
-                    elif supermarket < self.level["B"]:
-                        supermarket = "B"
-                    elif supermarket < self.level["C"]:
-                        supermarket = "C"
-                sql = "update students set cost_dinnerhall_rate='" + str(dinnerHall) + "' where student_id='" + str(studentId) + "' "
+        for studentId in tqdm(self.students):
+            sql = "select deal_way,avg(deal_cost) from card where student_id= " + str(studentId) + " group by deal_way"
+            self.executer.execute(sql)
+            result = self.executer.fetchall()
+            total = 0
+            dinnerHall = 0
+            superMarket = 0
+            for i in result:
+                total += i[1]
+                if "dinnerhall" in i[0]:
+                    dinnerHall = i[1]
+                elif "supermarket" in i[0]:
+                    superMarket = i[1]
+            
+            dinnerHall_rate = dinnerHall / total
+            if dinnerHall_rate < self.level["A"]:
+                dinnerHall_rate = "A"
+            elif dinnerHall_rate < self.level["B"]:
+                dinnerHall_rate = "B"
+            elif dinnerHall_rate < self.level["C"]:
+                dinnerHall_rate = "C"
+            else:
+                dinnerHall_rate = "D"
+            superMarket_rate = superMarket / total
+            if superMarket_rate < self.level["A"]:
+                superMarket_rate = "A"
+            elif superMarket_rate < self.level["B"]:
+                superMarket_rate = "B"
+            elif superMarket_rate < self.level["C"]:
+                superMarket_rate = "C"
+            else:
+                superMarket_rate = "D"
+            
+            try:
+                sql = "update students set cost_avg_dinnerHall='" + dinnerHall_rate + "' where student_id=" + str(studentId) 
                 self.executer.execute(sql)
-                sql = "update students set cost_supermarket_rate='" + str(supermarket) + "' where student_id='" + str(studentId) + "' "
+                sql = "update students set cost_avg_superMarket='" + superMarket_rate + "' where student_id=" + str(studentId)
                 self.executer.execute(sql)
                 self.conn.commit()
+            except:
+                print(sql)
         self.db.close()
 
 if __name__ == '__main__':

@@ -1,11 +1,6 @@
-'''
-Created on 2017年6月21日
-
-@author: zhenglongtian
-'''
-
 from tqdm import tqdm
 import CalculateXX
+
 from MyConfig import BalanceRank_level as level
 
 class CalculateBalanceRank(CalculateXX.CalculateXX):
@@ -13,10 +8,10 @@ class CalculateBalanceRank(CalculateXX.CalculateXX):
     def calculate(self):
         print("CalculateBalanceRank")
         for studentId in tqdm(self.students):
-            sql = "select min(balance),max(balance) from card where student_id='" + str(studentId)+"'"
-            self.executer.execute(sql)
-            s = self.executer.fetchone()
             try:
+                sql = "select min(balance),max(balance) from card where student_id=" + str(studentId)
+                self.executer.execute(sql)
+                s = self.executer.fetchone()
                 minBalance = s[0]
                 maxBalance = s[1]
                 averageBalance = (minBalance + maxBalance) / 2
@@ -29,12 +24,12 @@ class CalculateBalanceRank(CalculateXX.CalculateXX):
                 elif averageBalance < self.level["C"]:
                     balanceRank = "C"
                     
-                sql = "update students set balance_rank='" + str(balanceRank) + "' where student_id='" + str(studentId) + "'"
+                sql = "update students set balance_rank='" + str(balanceRank) + "' where student_id=" + str(studentId)
                 self.executer.execute(sql)
+                self.conn.commit()
             except:
-                pass
-
-        self.conn.commit()
+                print(sql)
+                
         self.db.close()
 
 if __name__ == '__main__':

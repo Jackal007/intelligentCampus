@@ -28,10 +28,12 @@ class CalculateLibraryTimeSpand(CalculateXX.CalculateXX):
                 LibraryTimeRank = "B"
             elif student_LibraryTime < self.level["C"]:
                 LibraryTimeRank = "C"
-
-            sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
-
+                
+            try:
+                sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)
+            except:
+                pass
         self.conn.commit()
         self.db.close()
 
