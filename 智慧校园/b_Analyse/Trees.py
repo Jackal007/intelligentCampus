@@ -1,12 +1,7 @@
-'''
-Created on Oct 12, 2010
-Decision Tree Source Code for Machine Learning in Action Ch. 3
-@author: Peter Harrington
-'''
 from Model import Student
 from math import log
 import operator
-import treePlotter
+from Tools import treePlotter
 from Tools import MyDataBase
 
 students = []
@@ -22,10 +17,9 @@ def createDataSet():
     for i in executer.fetchall():
         student = Student(i)
         students.append(student)
-        dataSet.append([student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank(),student.getSubsidy()])
+        dataSet.append([student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank(), student.getSubsidy()])
     labels = ['score', 'cost_amount', 'cost_avg_superMarket', 'cost_avg_dinnerHall', 'cost_supermarket_rate', 'cost_dinner_rate', 'cost_times', 'library_borrow', 'library_times', 'library_time_spand', 'balance_rank']
     # change to discrete values
-    print(len(dataSet))
     return dataSet, labels
 
 """计算香农熵"""
@@ -85,10 +79,14 @@ def majorityCnt(classList):
 
 
 def createTree(dataSet, labels):
-    tlabels=labels[:]
+    tlabels = labels[:]
     classList = [example[-1] for example in dataSet]
-    if classList.count(classList[0]) == len(classList):
-        return classList[0]  # stop splitting when all of the classes are equal
+#     print(classList)
+    try:
+        if classList.count(classList[0]) == len(classList):
+            return classList[0]  # stop splitting when all of the classes are equal
+    except:
+        return "A"
     if len(dataSet[0]) == 1:  # stop splitting when there are no more features in dataSet
 #         print("民主投票")
         return majorityCnt(classList)
@@ -131,31 +129,30 @@ def storeTree(inputTree, filename):
     pickle.dump(inputTree, fw)
     fw.close()
 
-
 def grabTree(filename):
     import pickle
     fr = open(filename)
     return pickle.load(fr)
 
-
-myDat, labels = createDataSet()
-myTree = createTree(myDat, labels)
-# treePlotter.createPlot(myTree)
- 
-f = open('../d_CorrectRateTest/results.txt', 'w')
-for student in students :
-    temp = classify(myTree, labels, [student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank()])
-    if temp == "A":
-        temp = 0
-    elif temp == "B":
-        temp = 1000
-    elif temp == "C":
-        temp = 1500
-    elif temp == "D":
-        temp = 2000
-    else:
-        print("!!!!!!!!!!!!!")
-     
-    f.write(str(student.getStudentId()) + "," + str(temp) + "\n")
- 
-f.close()
+if __name__ == '__main__':
+    myDat, labels = createDataSet()
+    myTree = createTree(myDat, labels)
+    # storeTree(myTree,'dtress')
+    # treePlotter.createPlot(myTree)
+    
+    # 将结果写入文件
+    with open('../d_CorrectRateTest/results.txt', 'w')as f:
+        for student in students :
+            temp = classify(myTree, labels, [student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank()])
+            if temp == "A":
+                temp = 0
+            elif temp == "B":
+                temp = 1000
+            elif temp == "C":
+                temp = 1500
+            elif temp == "D":
+                temp = 2000
+            else:
+                print("!!!!!!!!!!!!!")
+             
+            f.write(str(student.getStudentId()) + "," + str(temp) + "\n")

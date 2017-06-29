@@ -29,3 +29,6 @@ CostType_level = {"A":10, "B":20, "C": 30, "D":40}
 
 ###### thread config ######
 threadN=50
+
+a = "select (*) from score_train"
+"select student_id from score_train order by student_id LIMIT a/2,1"

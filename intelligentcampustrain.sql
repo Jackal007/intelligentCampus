@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2017-06-27 10:51:32
+Date: 2017-06-29 15:14:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,12 +20,12 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `borrow`;
 CREATE TABLE `borrow` (
-  `student_id` char(10) NOT NULL,
-  `book_id` text NOT NULL,
+  `student_id` int(10) NOT NULL,
+  `book_id` text CHARACTER SET utf8mb4 NOT NULL,
   `brrow_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `book_name` text,
+  `book_name` text CHARACTER SET utf8mb4,
   KEY `student_id_index` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for card
@@ -35,8 +35,8 @@ CREATE TABLE `card` (
   `student_id` int(10) NOT NULL,
   `deal_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deal_type` char(10) DEFAULT NULL,
-  `deal_site` char(10) DEFAULT NULL,
-  `deal_way` char(10) DEFAULT NULL,
+  `deal_site` char(20) DEFAULT NULL,
+  `deal_way` char(20) DEFAULT NULL,
   `deal_cost` float(10,2) DEFAULT NULL,
   `balance` float(10,0) DEFAULT NULL,
   KEY `student_id_index` (`student_id`) USING HASH
@@ -69,7 +69,7 @@ CREATE TABLE `library` (
 -- ----------------------------
 DROP TABLE IF EXISTS `library_modify`;
 CREATE TABLE `library_modify` (
-  `student_id` char(10) DEFAULT NULL,
+  `student_id` int(10) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `entrytime` time DEFAULT NULL,
   `leavetime` time DEFAULT NULL,
