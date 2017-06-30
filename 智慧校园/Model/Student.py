@@ -26,29 +26,29 @@ class Student:
         return self.score
     
     def setScore(self, score): 
-#         r=ScoreRankCalculater.ScoreRankCalculater(self,MyConfig.Score_level).calculate()
+        r = ScoreRankCalculater.ScoreRankCalculater(self, MyConfig.Score_level).calculate()
         self.score = r
     
     def getCost_amount(self): 
-#         CostAmountCalculater.CostAmountCalculater(self,MyConfig.CostAmount_level)
         return self.cost_amount
     
     def setCost_amount(self, cost_amount): 
-        self.cost_amount = cost_amount
+        r = CostAmountCalculater.CostAmountCalculater(self, MyConfig.CostAmount_level)
+        self.cost_amount = r
     
     def getCost_avg_dinnerHall(self): 
         return self.cost_avg_dinnerHall
     
     def setCost_avg_dinnerHall(self, cost_avg_dinnerHall): 
-#         CostDinnerHallAverageCalculater.CostDinnerHallAverageCalculater(self,MyConfig.AverageCost_level)
-        self.cost_avg_dinnerHall = cost_avg_dinnerHall
+        r = CostDinnerHallAverageCalculater.CostDinnerHallAverageCalculater(self, MyConfig.AverageCost_level)
+        self.cost_avg_dinnerHall = r
     
     def getCost_avg_superMarket(self): 
         return self.cost_avg_superMarket
     
     def setCost_avg_superMarket(self, cost_avg_superMarket): 
-#         CostSuperMarketAverageCalculater.CostSuperMarketAverageCalculater(self,MyConfig.AverageCost_level)
-        self.cost_avg_superMarket = cost_avg_superMarket
+        r = CostSuperMarketAverageCalculater.CostSuperMarketAverageCalculater(self, MyConfig.AverageCost_level)
+        self.cost_avg_superMarket = r
     
     def getLibrary_borrow(self): 
         return self.library_borrow
@@ -59,14 +59,16 @@ class Student:
     def getBalance_rank(self): 
         return self.balance_rank
     
-    def setBalance_rank(self, balance_rank): 
-        self.balance_rank = balance_rank
+    def setBalance_rank(self, balance_rank):
+        r = BalanceRankCalculater.BalanceRankCalculater(self, MyConfig.BalanceRank_level) 
+        self.balance_rank = r
     
     def getLibrary_times(self): 
         return self.library_times
     
     def setLibrary_times(self, library_times): 
-        self.library_times = library_times
+        r = LibraryTimesCalculater.LibraryTimesCalculater(self, MyConfig.LibraryTimes_level)
+        self.library_times = r
     
     def getLibrary_time_spand(self): 
         return self.library_time_spand
@@ -78,13 +80,15 @@ class Student:
         return self.cost_supermarket_rate
     
     def setCost_supermarket_rate(self, cost_supermarket_rate): 
-        self.cost_supermarket_rate = cost_supermarket_rate
+        r = CostSuperMarketRateCalculater.CostSuperMarketRateCalculater(self, MyConfig.CostRate_level)
+        self.cost_supermarket_rate = r
     
     def getCost_dinnerhall_rate(self): 
         return self.cost_dinnerhall_rate
     
-    def setCost_dinnerhall_rate(self, cost_dinnerhall_rate): 
-        self.cost_dinnerhall_rate = cost_dinnerhall_rate
+    def setCost_dinnerhall_rate(self, cost_dinnerhall_rate):
+        r = CostDinnerHallRateCalculater.CostDinnerHallRateCalculater(self, MyConfig.CostRate_level) 
+        self.cost_dinnerhall_rate = r
     
     def getCost_times(self): 
         return self.cost_times
