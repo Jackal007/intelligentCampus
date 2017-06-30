@@ -52,7 +52,7 @@ def treesClassifier_A_BCD(dataSet):
     retArray = ones((shape(dataSet)[0], 1))
     result = []
     for data in dataSet:
-        temp = Trees.classify(myTree, labels, data)
+        temp = Trees.classify(myTree, labels, [data[i] for i in range(len(data)-1)])
         if temp == "A":
             result.append([1.0])
         else:
@@ -67,12 +67,12 @@ def treesClassifier_B_CD(dataSet):
     retArray = ones((shape(dataSet)[0], 1))
     result = []
     for data in dataSet:
-        temp = Trees.classify(myTree, labels, data)
+        temp = Trees.classify(myTree, labels, [data[i] for i in range(len(data)-1)])
         if temp == "B":
-            result.append([1.0])
+            result.append([1])
         else:
-            result.append([-1.0])
-    retArray[mat(result)[:, 0] == -1.0] = -1.0
+            result.append([-1])
+    retArray[mat(result)[:, 0] == -1] = -1
     return retArray
 
 def treesClassifier_C_D(dataSet):
@@ -82,12 +82,12 @@ def treesClassifier_C_D(dataSet):
     retArray = ones((shape(dataSet)[0], 1))
     result = []
     for data in dataSet:
-        temp = Trees.classify(myTree, labels, data)
+        temp = Trees.classify(myTree, labels, [data[i] for i in range(len(data)-1)])
         if temp == "C":
-            result.append([1.0])
+            result.append([1])
         else:
-            result.append([-1.0])
-    retArray[mat(result)[:, 0] == -1.0] = -1.0
+            result.append([-1])
+    retArray[mat(result)[:, 0] == -1] = -1
     return retArray
  
 def buildTreeClassifier(classifier, dataArr, classLabels, D):
@@ -149,14 +149,17 @@ if __name__ == '__main__':
         
         student_t, dataSet = getDataSet("A")
         result = adaClassify(treesClassifier_A_BCD,dataSet, weakClassArr)
-         
+        count=0
+        
         for i in range(len(student_t)):
             r = int(result[i][0, 0])
             if r == 1:
                 f.write(str(students_copy[student_t[i]].getStudentId()) + ",0\n")
                 students_copy[student_t[i]].setStudentId(-1)
+                count+=1
+        print(count)
         
-        dataSet, labelSet = getTrainDataSet("BCD")
+        dataSet, labelSet = getTrainDataSet("ABCD")
         weakClassArr, aggClassEst = adaBoostTrain(treesClassifier_B_CD, dataSet, labelSet)
           
         student_t, dataSet = getDataSet("B")
@@ -167,15 +170,14 @@ if __name__ == '__main__':
             if r == 1:
                 f.write(str(students_copy[student_t[i]].getStudentId()) + ",1000\n")
                 students_copy[student_t[i]].setStudentId(-1)
-        
-        dataSet, labelSet = getTrainDataSet("CD")
+                count+=1
+        print(count)
+        dataSet, labelSet = getTrainDataSet("ABCD")
         weakClassArr, aggClassEst = adaBoostTrain(treesClassifier_C_D, dataSet, labelSet)
         
         student_t, dataSet = getDataSet("C")
-        print(len(student_t))
-        print(len(dataSet))
         result = adaClassify(treesClassifier_C_D,dataSet, weakClassArr)
-         
+        
         for i in range(len(student_t)):
             r = int(result[i][0, 0])
             if r == 1:

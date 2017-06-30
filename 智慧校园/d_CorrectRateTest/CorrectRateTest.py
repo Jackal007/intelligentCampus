@@ -31,7 +31,7 @@ conn.close()
 
 print(total)
 
-# print(correct)
-# print(correct / total)
-print(correct0)
-print(correct0 / total)
+print(correct)
+print(correct / total)
+# print(correct0)
+# print(correct0 / total)

@@ -14,7 +14,7 @@ for i in executer.fetchall():
     students.append(Student(i))
 
 def testData():
-    salt = 0.1
+    salt = 0.05
     # 
     subsidy = {"A":0.0, "B":0.0, "C":0.0, "D": 0.0}  
     score = {"A":{"A":0, "B":0, "C":0, "D": 0}, "B": {"A":0, "B":0, "C":0, "D": 0}, "C":{"A":0, "B":0, "C":0, "D": 0}, "D": {"A":0, "B":0, "C":0, "D": 0}}
@@ -46,17 +46,17 @@ def testData():
         P_subsidy[i] = subsidy[i] / len(students);
     for i in "ABCD":
         for j in "ABCD":
-            P_score[j][i] = float(score[j][i]) / float(subsidy[i]) + salt + 0.15
-            P_cost_amount[j][i] = float(cost_amount[j][i]) / float(subsidy[i]) + salt + 0.15  # ++
+            P_score[j][i] = float(score[j][i]) / float(subsidy[i]) + salt 
+            P_cost_amount[j][i] = float(cost_amount[j][i]) / float(subsidy[i]) + salt  
             P_cost_avg_superMarket[j][i] = float(cost_avg_superMarket[j][i]) / float(subsidy[i])
-            P_cost_avg_dinnerHall[j][i] = float(cost_avg_dinnerHall[j][i]) / float(subsidy[i]) / 3
+            P_cost_avg_dinnerHall[j][i] = float(cost_avg_dinnerHall[j][i]) / float(subsidy[i]) 
             P_cost_supermarket_rate[j][i] = float(cost_supermarket_rate[j][i]) / float(subsidy[i])
-            P_cost_dinnerhall_rate[j][i] = float(cost_dinnerhall_rate[j][i]) / float(subsidy[i]) / 3
-            P_cost_times[j][i] = float(cost_times[j][i]) / float(subsidy[i]) / 3
-            P_library_borrow[j][i] = float(library_borrow[j][i]) / float(subsidy[i]) + salt + 0.15
-            P_library_times[j][i] = float(library_times[j][i]) / float(subsidy[i]) + salt + 0.15
-            P_library_time_spand[j][i] = float(library_time_spand[j][i]) / float(subsidy[i]) / 3
-            P_balance_rank[j][i] = float(balance_rank[j][i]) / float(subsidy[i]) / 3  # --
+            P_cost_dinnerhall_rate[j][i] = float(cost_dinnerhall_rate[j][i]) / float(subsidy[i]) 
+            P_cost_times[j][i] = float(cost_times[j][i]) / float(subsidy[i]) 
+            P_library_borrow[j][i] = float(library_borrow[j][i]) / float(subsidy[i]) + salt 
+            P_library_times[j][i] = float(library_times[j][i]) / float(subsidy[i]) + salt 
+            P_library_time_spand[j][i] = float(library_time_spand[j][i]) / float(subsidy[i]) 
+            P_balance_rank[j][i] = float(balance_rank[j][i]) / float(subsidy[i]) 
      
 def Analyse_test(studentId, score, cost_amount, cost_avg_superMarket, cost_avg_dinnerHall, cost_supermarket_rate, cost_dinnerhall_rate, cost_times, library_borrow, library_times, library_time_spand, balance_rank):
     P_subsidy = {"A":1.0, "B":1.0, "C":1.0, "D": 1.0}
