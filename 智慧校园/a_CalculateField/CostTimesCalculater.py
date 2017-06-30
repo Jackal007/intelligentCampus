@@ -1,14 +1,6 @@
-'''
-Created on 2017年6月21日
+from a_CalculateField import XXCalculater
 
-@author: zhenglongtian
-'''
-
-from tqdm import tqdm
-import CalculateXX
-from MyConfig import CostTimes_level as level
-
-class CalculateLibraryBorrow(CalculateXX.CalculateXX):
+class CostTimesCalculater(XXCalculater.XXCalculater):
 
     def calculate(self):
         

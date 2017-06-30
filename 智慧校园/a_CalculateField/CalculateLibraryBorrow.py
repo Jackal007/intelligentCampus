@@ -5,10 +5,9 @@ Created on 2017年6月21日
 '''
 
 from tqdm import tqdm
-import CalculateXX
-from MyConfig import LibraryBorrow_level as level
+impfrom a_CalculateField import XXCalculaterrom MyConfig import LibraryBorrow_level as level
 
-class CalculateLibraryBorrow(CalculateXX.CalculateXX):
+class CalculateLibraryBorrow(CalXXCalculaterlXXCalculater
 
     def calculate(self):
         

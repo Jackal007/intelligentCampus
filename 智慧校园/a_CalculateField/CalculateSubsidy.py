@@ -4,11 +4,10 @@ Created on 2017年6月21日
 @author: zhenglongtian
 '''
 
-import CalculateXX
-from tqdm import tqdm
+impfrom a_CalculateField import XXCalculaterrom tqdm import tqdm
 from MyConfig import Subsidy_level as level
 
-class CalculateSubsidy(CalculateXX.CalculateXX):
+class CalculateSubsidy(CalXXCalculaterlXXCalculater
 
     def calculate(self):
         print("CalculateSubsidy")

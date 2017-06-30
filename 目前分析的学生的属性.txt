@@ -1,0 +1,13 @@
+score
+cost_amout
+dinnerhall_cost_rate
+supermarket_cost_rate
+dinnerhall_avg_cost
+supermarket_avg_cost
+library_time_spand
+book_borrow
+library_times
+cost_times
+
+
+洗衣房的消费次数和占总消费的比例

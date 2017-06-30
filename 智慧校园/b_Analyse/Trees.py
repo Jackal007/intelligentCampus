@@ -1,4 +1,5 @@
 from Model import Student
+import random
 from math import log
 import operator
 from Tools import treePlotter
@@ -77,6 +78,35 @@ def majorityCnt(classList):
 
     return sortedClassCount[0][0]
 
+def randomClass() :    #随机生成一个'A'~'D'之间的字符并返回
+    classlabels = chr(random.randint(0,3)+ord('A'))
+    return classlabels
+
+
+def classify(inputTree, featLabels, testVec):
+    firstSides = list(inputTree.keys())
+
+    firstStr = firstSides[0]  # 挑选首选特征
+    print("###first= " + firstStr + "###")
+    # firstStr = inputTree.keys()[0]
+    #  print(firstStr)
+    #  print(featLabels)
+    secondDict = inputTree[firstStr]  # 这时secondDict的内容就是决策树按照名称为 firstStr 的特征分类后的结果
+    featIndex = featLabels.index(firstStr)  # 找到该特征处于第几列，赋值给featIndex
+    print(featIndex)
+    new_item = 1    #标记当前的待分类记录是不是以前从未出现的情况（包括各节点所包含的key的组合），0表示假，1表示真
+    for key in secondDict.keys() :
+        if testVec[featIndex] == key:
+            new_item = 0
+            if isinstance(secondDict[key], dict):
+                classLabel = classify(secondDict[key], featLabels, testVec)
+            else:
+                classLabel = secondDict[key]
+    if new_item ==1:
+        return randomClass()
+
+    return classLabel  # classLabel表示最后的分类类型
+
 
 def createTree(dataSet, labels):
     tlabels = labels[:]
@@ -102,45 +132,25 @@ def createTree(dataSet, labels):
         myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels)
     return myTree
 
-def classify(inputTree, featLabels, testVec):
-    firstSides = list(inputTree.keys())
-#     print("***********", firstSides, "*************")
-    firstStr = firstSides[0]  # 挑选首选特征
-    secondDict = inputTree[firstStr]  # 这时secondDict的内容就是决策树按照名称为 firstStr 的特征分类后的结果
-    featIndex = featLabels.index(firstStr)  # 找到该特征处于第几列，赋值给featIndex
-    key = testVec[featIndex]  # 获得待分类的记录该特征的具体值
-
-#     print("-----------------------------------------------------")
-#     print("特征名为：", firstStr, "特征的列数为：", featIndex, "----特征值为：", key)
-#     print("有效特征值包括：", list(secondDict.keys()))
-#     print("-----------------------------------------------------")
-
-    valueOfFeat = secondDict[key]
-
-    if isinstance(valueOfFeat, dict):
-        classLabel = classify(valueOfFeat, featLabels, testVec)
-    else:
-        classLabel = valueOfFeat
-    return classLabel  # classLabel表示最后的分类类型
-
 def storeTree(inputTree, filename):
     import pickle
-    fw = open(filename, 'w')
+    fw = open(filename, 'wb')
     pickle.dump(inputTree, fw)
     fw.close()
 
 def grabTree(filename):
     import pickle
-    fr = open(filename)
+    fr = open(filename,'rb')
     return pickle.load(fr)
 
 if __name__ == '__main__':
     myDat, labels = createDataSet()
-    myTree = createTree(myDat, labels)
-    # storeTree(myTree,'dtress')
+#     myTree = createTree(myDat, labels)
+#     storeTree(myTree,'dtress.txt')
+    myTree=grabTree('dtress.txt')
     # treePlotter.createPlot(myTree)
     
-    # 将结果写入文件
+#     将结果写入文件
     with open('../d_CorrectRateTest/results.txt', 'w')as f:
         for student in students :
             temp = classify(myTree, labels, [student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank()])
@@ -154,5 +164,5 @@ if __name__ == '__main__':
                 temp = 2000
             else:
                 print("!!!!!!!!!!!!!")
-             
+              
             f.write(str(student.getStudentId()) + "," + str(temp) + "\n")

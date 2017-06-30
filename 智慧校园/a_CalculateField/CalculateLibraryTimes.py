@@ -4,12 +4,11 @@ Created on 2017年6月21日
 @author: zhenglongtian
 '''
 
-import CalculateXX
-from tqdm import tqdm
+impfrom a_CalculateField import XXCalculaterrom tqdm import tqdm
 from MyConfig import LibraryTimes_level as level
 from Tools import MyLog
 
-class CalculateLibraryTimes(CalculateXX.CalculateXX):
+class CalculateLibraryTimes(CalXXCalculaterlXXCalculater
     @MyLog.myException
     def calculate(self):
         print("CalculateLibraryTimes")

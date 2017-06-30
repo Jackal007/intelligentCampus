@@ -1,3 +1,5 @@
+from a_CalculateField import *
+
 class Student:
     def __init__(self, info):
         self.studentId = info[0]
@@ -24,9 +26,11 @@ class Student:
         return self.score
     
     def setScore(self, score): 
-        self.score = score
+#         r=ScoreRankCalculater.ScoreRankCalculater(self,MyConfig.Score_level).calculate()
+        self.score = r
     
     def getCost_amount(self): 
+#         CostAmountCalculater.CostAmountCalculater(self,MyConfig.CostAmount_level)
         return self.cost_amount
     
     def setCost_amount(self, cost_amount): 
@@ -36,12 +40,14 @@ class Student:
         return self.cost_avg_dinnerHall
     
     def setCost_avg_dinnerHall(self, cost_avg_dinnerHall): 
+#         CostDinnerHallAverageCalculater.CostDinnerHallAverageCalculater(self,MyConfig.AverageCost_level)
         self.cost_avg_dinnerHall = cost_avg_dinnerHall
     
     def getCost_avg_superMarket(self): 
         return self.cost_avg_superMarket
     
     def setCost_avg_superMarket(self, cost_avg_superMarket): 
+#         CostSuperMarketAverageCalculater.CostSuperMarketAverageCalculater(self,MyConfig.AverageCost_level)
         self.cost_avg_superMarket = cost_avg_superMarket
     
     def getLibrary_borrow(self): 
