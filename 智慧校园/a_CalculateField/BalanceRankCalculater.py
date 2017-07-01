@@ -1,9 +1,9 @@
 from a_CalculateField import XXCalculater
 
-class CalculateBalanceRank(XXCalculater.XXCalculater):
+class BalanceRankCalculater(XXCalculater.XXCalculater):
 
     def calculate(self):
-        print("CalculateBalanceRank")
+        print("BalanceRankCalculater")
         
         try:
             studentId = self.student.getStudentId()
@@ -27,5 +27,4 @@ class CalculateBalanceRank(XXCalculater.XXCalculater):
             self.conn.commit()
         except:
             print(sql)
-            continue
-        self.db.close()
+            pass

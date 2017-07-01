@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2017-06-29 15:14:41
+Date: 2017-07-01 16:47:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -93,18 +93,18 @@ CREATE TABLE `score` (
 DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
   `student_id` int(10) NOT NULL,
-  `score` char(5) DEFAULT 'D' COMMENT '成绩排名',
-  `cost_amount` char(5) DEFAULT 'D' COMMENT '花费金额',
-  `cost_avg_superMarket` char(5) DEFAULT 'D',
-  `cost_avg_dinnerHall` char(5) DEFAULT 'D',
-  `cost_supermarket_rate` char(5) DEFAULT 'D' COMMENT '花费在超市占总消费的比例',
-  `cost_dinnerhall_rate` char(5) DEFAULT 'D' COMMENT '食堂消费占总消费的比例',
-  `cost_times` char(5) DEFAULT 'D' COMMENT '花费次数',
-  `library_borrow` char(5) DEFAULT 'D' COMMENT '图书借阅量',
-  `library_times` char(5) DEFAULT 'D' COMMENT '勤奋度',
-  `library_time_spand` char(5) DEFAULT 'D' COMMENT '图书馆时长',
-  `balance_rank` char(5) DEFAULT 'D' COMMENT '卡内余额',
-  `subsidy` char(5) DEFAULT 'D' COMMENT '奖学金额',
+  `score` char(5) DEFAULT 'A' COMMENT '成绩排名',
+  `cost_amount` char(5) DEFAULT 'A' COMMENT '花费金额',
+  `cost_avg_superMarket` char(5) DEFAULT 'A',
+  `cost_avg_dinnerHall` char(5) DEFAULT 'A',
+  `cost_supermarket_rate` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
+  `cost_dinnerhall_rate` char(5) DEFAULT 'A' COMMENT '食堂消费占总消费的比例',
+  `cost_times` char(5) DEFAULT 'A' COMMENT '花费次数',
+  `library_borrow` char(5) DEFAULT 'A' COMMENT '图书借阅量',
+  `library_times` char(5) DEFAULT 'A' COMMENT '勤奋度',
+  `library_time_spand` char(5) DEFAULT 'A' COMMENT '图书馆时长',
+  `balance_rank` char(5) DEFAULT 'A' COMMENT '卡内余额',
+  `subsidy` char(5) DEFAULT 'A' COMMENT '奖学金额',
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

@@ -1,9 +1,9 @@
 from a_CalculateField import XXCalculater
 
-class CalculateCostAmount(XXCalculater.XXCalculater):
+class CostAmountCalculater(XXCalculater.XXCalculater):
 
     def calculate(self):
-        print("CalculateCostAmount")
+        print("CostAmountCalculater")
         # 对每一个学生统计其消费金额的情况
         try:
             studentId = self.student.getStudentId()
@@ -24,6 +24,4 @@ class CalculateCostAmount(XXCalculater.XXCalculater):
             self.conn.commit()
         except:
             print(sql)
-            continue
-        
-        self.db.close()
+            pass
