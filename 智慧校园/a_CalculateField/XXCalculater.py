@@ -1,4 +1,5 @@
-from Tools import *
+from Tools import MyLog
+from Tools import MyDataBase
 
 class XXCalculater:
 
@@ -11,7 +12,8 @@ class XXCalculater:
                 
     def setStudent(self, student):
         self.student = student
-
+    
+    @MyLog.myException
     def calculate(self):
         pass  
     

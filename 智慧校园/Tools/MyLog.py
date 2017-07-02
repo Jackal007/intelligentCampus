@@ -1,4 +1,5 @@
 import time
+import sys
 
 def myException(function):
     """
@@ -10,8 +11,7 @@ def myException(function):
             return function(*args, **kwargs)
         except:
             # log the exception
-            err = "There was an exception in  "
-            err += function.__name__
-            with open('mylog.txt','a') as f:
-                f.write(err+'\n')
+            info = sys.exc_info()  
+            with open('mylog.txt', 'a') as f:
+                f.write(str(info[0]) + ":" + str(info[1]) + '\n')
     return wrapper

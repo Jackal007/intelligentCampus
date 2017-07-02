@@ -43,14 +43,12 @@ calculater = [ScoreRankCalculater, CostAmountCalculater, CostDinnerHallAverageCa
             CostSuperMarketRateCalculater, CostDinnerHallRateCalculater, CostTimesCalculater, SubsidyCalculater]
 
 for i in tqdm(studentIds):
-#     try:
+    print()
     i=i[0]
     student = Student([])
     student.setStudentId(i)
     student.setCalculater(calculater)
     student.setAll()
-#     except:
-#          continue 
 
 for i in calculater:
     i.afterCalculate()
