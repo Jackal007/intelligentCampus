@@ -2,7 +2,8 @@ from Tools import MyDataBase
 db = MyDataBase.MyDataBase()
 conn = db.getConn()
 executer = db.getExcuter()
-
+###
+#这边的命名得改下
 
 ###### thread config ######
 threadN = 10
@@ -13,9 +14,10 @@ LibraryTimes_level = {"A":62, "B":168, "C":352, "D": 2964}
 LibraryTimeSpand_level = {"A":90, "B":120, "C":150, "D": 180}
 BalanceRank_level = {"A":110.0, "B":157.5, "C":250.0, "D": 2313.0}
 CostAmount_level = {"A":6003.13, "B":8912.93, "C":11138.1, "D": 28700.05}
-AverageCost_level = {"A":6.29041, "B":7.623881, "C":9.593506, "D": 703.76}
+AverageDinnerHallCost_level = {"A":3.85589, "B":4.502174, "C":5.40595, "D": 37.766668}
+AverageSuperMarketCost_level = {"A":5.848889, "B":7.588235, "C":9.951852, "D": 211.199997}
 CostDinnerHallRate_level = {"A":0.15, "B":0.3, "C":0.45, "D": 0.6}
-CostSuperMarketRate_level={"A":0.2, "B":0.4, "C":0.6, "D": 0.8}
+CostSuperMarketRate_level = {"A":0.2, "B":0.4, "C":0.6, "D": 0.8}
 CostTimes_level = {"A":840, "B":1255, "C":1571, "D": 4878}
 CostType_level = {"A":10, "B":20, "C":30, "D": 40}
 
@@ -100,9 +102,33 @@ if __name__ == '__main__':
     CostAmount_level = {"A":A, "B": B, "C":C, "D": D}
     print('CostAmount_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
     '''
-    平均花费
+    超市平均花费
     '''
-    sql = "select avg(deal_cost) as c from card group by student_id order by c"
+    sql = "select avg(deal_cost) as c from card where deal_way='supermarket' group by student_id order by c"
+    executer.execute(sql)
+    AverageCosts = executer.fetchall()
+    A = AverageCosts[int(len(AverageCosts) * 0.25)][0]
+    B = AverageCosts[int(len(AverageCosts) * 0.5)][0]
+    C = AverageCosts[int(len(AverageCosts) * 0.75)][0]
+    D = AverageCosts[int(len(AverageCosts) * 1) - 1][0]
+    AverageCost_level = {"A":A, "B": B, "C":C, "D": D}
+    print('AverageSupermarketCost_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
+    '''
+    食堂平均花费
+    '''
+    sql = "select avg(deal_cost) as c from card where deal_way='dinnerhall' group by student_id order by c"
+    executer.execute(sql)
+    AverageCosts = executer.fetchall()
+    A = AverageCosts[int(len(AverageCosts) * 0.25)][0]
+    B = AverageCosts[int(len(AverageCosts) * 0.5)][0]
+    C = AverageCosts[int(len(AverageCosts) * 0.75)][0]
+    D = AverageCosts[int(len(AverageCosts) * 1) - 1][0]
+    AverageCost_level = {"A":A, "B": B, "C":C, "D": D}
+    print('AverageDinnerHallCost_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
+    '''
+    洗衣房平均花费【周一】
+    '''
+    sql = "select avg(deal_cost) as c from card where deal_way='dinnerhall' group by student_id order by c"
     executer.execute(sql)
     AverageCosts = executer.fetchall()
     A = AverageCosts[int(len(AverageCosts) * 0.25)][0]
@@ -119,7 +145,7 @@ if __name__ == '__main__':
     C = 0.3
     D = 0.4
     CostDinnerHallRate_level = {"A":A, "B": B, "C":C, "D": D}
-    print('CostRate_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
+    print('CostDinnerHallRate_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
     '''
     超市消费/总消费比例
     '''
@@ -128,7 +154,16 @@ if __name__ == '__main__':
     C = 0.75
     D = 1
     CostSuperMarketRate_level = {"A":A, "B":B, "C":C, "D": D}
-    print('CostRate_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
+    print('CostSupermarketRate_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
+    '''
+    洗衣房消费/总消费比例【周一】
+    '''
+    A = 0.25
+    B = 0.5
+    C = 0.75
+    D = 1
+    CostSuperMarketRate_level = {"A":A, "B":B, "C":C, "D": D}
+    print('CostLaundryRate_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
     '''
     消费次数
     '''
@@ -142,7 +177,7 @@ if __name__ == '__main__':
     CostTimes_level = {"A":A, "B": B, "C": C, "D":D}
     print('CostTimes_level = {"A":' + str(A) + ', "B":' + str(B) + ', "C":' + str(C) + ', "D": ' + str(D) + '}')
     '''
-    消费类型
+    消费类型[周一]
     '''
     A = 10
     B = 20
