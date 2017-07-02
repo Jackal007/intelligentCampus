@@ -28,3 +28,4 @@ class CostDinnerHallAverageCalculater(XXCalculater.XXCalculater):
         except:
             print(sql)
             pass
+        return avg_dinnerHall

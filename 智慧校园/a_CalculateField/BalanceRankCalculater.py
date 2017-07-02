@@ -11,7 +11,7 @@ class BalanceRankCalculater(XXCalculater.XXCalculater):
             self.executer.execute(sql)
             s = self.executer.fetchone()
             minBalance,maxBalance = s[0],s[1]
-            t=averageBalance = (minBalance + maxBalance) / 2
+            averageBalance = (minBalance + maxBalance) / 2
             
             if averageBalance < self.level["A"]:
                 averageBalance = "A"
@@ -28,3 +28,4 @@ class BalanceRankCalculater(XXCalculater.XXCalculater):
         except:
             print(sql)
             pass
+        return averageBalance

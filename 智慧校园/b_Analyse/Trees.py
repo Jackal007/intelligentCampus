@@ -1,7 +1,7 @@
-from Model import Student
 import random
-from math import log
 import operator
+from math import log
+from Model import Student
 from Tools import treePlotter
 from Tools import MyDataBase
 

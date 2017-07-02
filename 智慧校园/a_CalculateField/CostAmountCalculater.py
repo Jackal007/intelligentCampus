@@ -25,3 +25,4 @@ class CostAmountCalculater(XXCalculater.XXCalculater):
         except:
             print(sql)
             pass
+        return dealCost

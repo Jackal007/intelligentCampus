@@ -51,85 +51,73 @@ class Student:
         return self.score
     
     def setScore(self): 
-        r = self.ScoreRankCalculater.calculate()
-        self.score = r
+        self.score = self.ScoreRankCalculater.calculate()
     
     def getCost_amount(self): 
         return self.cost_amount
     
     def setCost_amount(self): 
-        r = self.CostAmountCalculater.calculate()
-        self.cost_amount = r
+        self.cost_amount = self.CostAmountCalculater.calculate()
     
     def getCost_avg_dinnerHall(self): 
         return self.cost_avg_dinnerHall
     
     def setCost_avg_dinnerHall(self): 
-        r = self.CostDinnerHallAverageCalculater.calculate()
-        self.cost_avg_dinnerHall = r
+        self.cost_avg_dinnerHall = self.CostDinnerHallAverageCalculater.calculate()
     
     def getCost_avg_superMarket(self): 
         return self.cost_avg_superMarket
     
     def setCost_avg_superMarket(self): 
-        r = self.CostSuperMarketAverageCalculater.calculate()
-        self.cost_avg_superMarket = r
+        self.cost_avg_superMarket = self.CostSuperMarketAverageCalculater.calculate()
     
     def getLibrary_borrow(self): 
         return self.library_borrow
     
     def setLibrary_borrow(self): 
-        r = self.LibraryBorrowCalculater.calculate()
-        self.library_borrow = r
+        self.library_borrow = self.LibraryBorrowCalculater.calculate()
     
     def getBalance_rank(self): 
         return self.balance_rank
     
     def setBalance_rank(self):
-        r = self.BalanceRankCalculater .calculate()
-        self.balance_rank = r
+        self.balance_rank = self.BalanceRankCalculater .calculate()
     
     def getLibrary_times(self): 
         return self.library_times
     
     def setLibrary_times(self): 
-        r = self.LibraryTimesCalculater.calculate()
-        self.library_times = r
+        self.library_times = self.LibraryTimesCalculater.calculate()
     
     def getLibrary_time_spand(self): 
         return self.library_time_spand
     
     def setLibrary_time_spand(self):
-        r = self.LibraryTimeSpandCalculater.calculate()
-        self.library_time_spand = r
+        self.library_time_spand = self.LibraryTimeSpandCalculater.calculate()
     
     def getCost_supermarket_rate(self): 
         return self.cost_supermarket_rate
     
     def setCost_supermarket_rate(self): 
-        r = self.CostSuperMarketRateCalculater.calculate()
-        self.cost_supermarket_rate = r
+        self.cost_supermarket_rate = self.CostSuperMarketRateCalculater.calculate()
     
     def getCost_dinnerhall_rate(self): 
         return self.cost_dinnerhall_rate
     
     def setCost_dinnerhall_rate(self):
-        r = self.CostDinnerHallRateCalculater.calculate()
-        self.cost_dinnerhall_rate = r
+        self.cost_dinnerhall_rate = self.CostDinnerHallRateCalculater.calculate()
     
     def getCost_times(self): 
         return self.cost_times
     
     def setCost_times(self): 
-        r = self.CostTimesCalculater.calculate()
-        self.cost_times = r
+        self.cost_times = self.CostTimesCalculater.calculate()
     
     def getSubsidy(self): 
         return self.subsidy
     
     def setSubsidy(self): 
-        r = self.SubsidyCalculater.calculate()
-        self.subsidy = r
+        self.subsidy = self.SubsidyCalculater.calculate()
 
     def setAll(self):
         self.setScore()
@@ -144,3 +132,13 @@ class Student:
         self.setCost_supermarket_rate()
         self.setCost_dinnerhall_rate()
         self.setCost_supermarket_rate()
+        
+    def getAll(self):
+        return [self.getScore(), \
+                self.getCost_amount(), \
+                self.getCost_avg_superMarket(), self.getCost_avg_dinnerHall(), \
+                self.getCost_supermarket_rate(), self.getCost_dinnerhall_rate(), \
+                self.getCost_times(), \
+                self.getLibrary_borrow(), self.getLibrary_times(), self.getLibrary_time_spand(), \
+                 self.getBalance_rank(), \
+                 self.getSubsidy()]
