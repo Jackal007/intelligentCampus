@@ -38,17 +38,16 @@ CostSuperMarketRateCalculater = CostSuperMarketRateCalculater.CostSuperMarketRat
 CostDinnerHallRateCalculater = CostDinnerHallRateCalculater.CostDinnerHallRateCalculater(MyConfig.CostDinnerHallRate_level)
 CostTimesCalculater = CostTimesCalculater.CostTimesCalculater(MyConfig.CostTimes_level)
 SubsidyCalculater = SubsidyCalculater.SubsidyCalculater(MyConfig.Subsidy_level)
-calculater = [ScoreRankCalculater, CostAmountCalculater, CostDinnerHallAverageCalculater, CostSuperMarketAverageCalculater, LibraryBorrowCalculater,\
-            BalanceRankCalculater, LibraryTimesCalculater, LibraryTimeSpandCalculater, LibraryTimeSpandCalculater,\
+calculater = [ScoreRankCalculater, CostAmountCalculater, CostDinnerHallAverageCalculater, CostSuperMarketAverageCalculater, LibraryBorrowCalculater, \
+            BalanceRankCalculater, LibraryTimesCalculater, LibraryTimeSpandCalculater, LibraryTimeSpandCalculater, \
             CostSuperMarketRateCalculater, CostDinnerHallRateCalculater, CostTimesCalculater, SubsidyCalculater]
 
 for i in tqdm(studentIds):
     print()
-    i=i[0]
+    i = i[0]
     student = Student([])
     student.setStudentId(i)
-    student.setCalculater(calculater)
-    student.setAll()
+    student.setAll(calculater)
 
 for i in calculater:
     i.afterCalculate()

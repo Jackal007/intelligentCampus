@@ -2048,3 +2048,6 @@
 <class 'OSError'>:[Errno 22] Invalid argument
 <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '2' for key 'PRIMARY'")
 <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '2' for key 'PRIMARY'")
+<class 'AttributeError'>:'ScoreRankCalculater' object has no attribute 'student'
+<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '2' for key 'PRIMARY'")
+<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '2' for key 'PRIMARY'")

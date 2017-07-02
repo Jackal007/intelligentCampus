@@ -22,4 +22,5 @@ class CostAmountCalculater(XXCalculater.XXCalculater):
         sql = "update students set cost_amount='" + dealCost + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
         self.conn.commit()
+        self.student.setBalance_rank(averageBalance)
         return dealCost
