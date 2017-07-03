@@ -1,20 +1,21 @@
 from _overlapped import NULL
 class Student:
-    def __init__(self, studnetId, attributes=NULL, subsidy="A"):
+    def __init__(self, attributes=NULL, subsidy="A"):
         self.attributes = {}
-        self.setAll(studnetId, attributes, subsidy)
+        if attributes != NULL:
+            self.setAll(attributes, subsidy)
         
     def fetch(self, calculater):
-        attributes = []
+        attributes = [self.getStudentId()]
         for i in calculater:
             i.setStudent(self)
             attributes.append(i.calculate())
-        self.setAll(self.attributes['studnetId'], attributes)
+        self.setAll(attributes=attributes, subsidy=attributes[-1])
         
-    def setAll(self, studnetId, attributes=NULL, subsidy="A"):
-        self.attributes['studnetId'] = studnetId
-        if len(attributes) > 0:
+    def setAll(self, attributes=NULL, subsidy="A"):
+        if attributes != NULL:
             self.attributes = {
+                'studentId':attributes[0],
                 'score':attributes[1],
                 'costAmount':attributes[2],
                 'costAvgSuperMarket':attributes[3],
@@ -28,13 +29,12 @@ class Student:
                 'libraryTimes':attributes[11],
                 'libraryTimeSpand':attributes[12],
                 'balanceRank':attributes[13],
-                'subsidy':"A",
                 }
-        if attributes[13]:
-            self.attributes['subsidy'] = attributes[13]
+        self.attributes['subsidy'] = subsidy
             
     def getAll(self):
-        return self.attributes.values()
+        all = list(self.attributes.values())
+        return all[1:-1]
 
     
     def setStudentId(self, studentId): 

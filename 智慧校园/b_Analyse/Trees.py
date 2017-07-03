@@ -1,27 +1,20 @@
 import random
 import operator
+import DataSetCreater
 from math import log
 from Model import Student
 from Tools import treePlotter
-from Tools import MyDataBase
 
 students = []
 Student = Student.Student
-def createDataSet():
-    db = MyDataBase.MyDataBase()
-    conn = db.getConn()
-    executer = db.getExcuter()
-    # get all the students
-    sql = "select student_id,score,cost_amount,cost_avg_superMarket,cost_avg_dinnerHall,cost_supermarket_rate,cost_dinnerhall_rate,cost_times,library_borrow,library_times,library_time_spand,balance_rank,subsidy from students"
-    executer.execute(sql)
-    dataSet = []
-    for i in executer.fetchall():
-        student = Student(i)
-        students.append(student)
-        dataSet.append([student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank(), student.getSubsidy()])
-    labels = ['score', 'cost_amount', 'cost_avg_superMarket', 'cost_avg_dinnerHall', 'cost_supermarket_rate', 'cost_dinner_rate', 'cost_times', 'library_borrow', 'library_times', 'library_time_spand', 'balance_rank']
-    # change to discrete values
+
+def createTrainDataSet():
+    st,dataSet, labels = DataSetCreater.createTrainDataSet()
     return dataSet, labels
+
+def createTestDataSet():
+    students,dataSet, labels = DataSetCreater.createTestDataSet()
+    return students,dataSet, labels
 
 """计算香农熵"""
 def calcShannonEnt(dataSet):
@@ -78,8 +71,8 @@ def majorityCnt(classList):
 
     return sortedClassCount[0][0]
 
-def randomClass() :    #随机生成一个'A'~'D'之间的字符并返回
-    classlabels = chr(random.randint(0,3)+ord('A'))
+def randomClass() :  # 随机生成一个'A'~'D'之间的字符并返回
+    classlabels = chr(random.randint(0, 3) + ord('A'))
     return classlabels
 
 
@@ -94,7 +87,7 @@ def classify(inputTree, featLabels, testVec):
     secondDict = inputTree[firstStr]  # 这时secondDict的内容就是决策树按照名称为 firstStr 的特征分类后的结果
     featIndex = featLabels.index(firstStr)  # 找到该特征处于第几列，赋值给featIndex
     print(featIndex)
-    new_item = 1    #标记当前的待分类记录是不是以前从未出现的情况（包括各节点所包含的key的组合），0表示假，1表示真
+    new_item = 1  # 标记当前的待分类记录是不是以前从未出现的情况（包括各节点所包含的key的组合），0表示假，1表示真
     for key in secondDict.keys() :
         if testVec[featIndex] == key:
             new_item = 0
@@ -102,7 +95,7 @@ def classify(inputTree, featLabels, testVec):
                 classLabel = classify(secondDict[key], featLabels, testVec)
             else:
                 classLabel = secondDict[key]
-    if new_item ==1:
+    if new_item == 1:
         return randomClass()
 
     return classLabel  # classLabel表示最后的分类类型
@@ -140,20 +133,22 @@ def storeTree(inputTree, filename):
 
 def grabTree(filename):
     import pickle
-    fr = open(filename,'rb')
+    fr = open(filename, 'rb')
     return pickle.load(fr)
 
-if __name__ == '__main__':
-    myDat, labels = createDataSet()
-#     myTree = createTree(myDat, labels)
-#     storeTree(myTree,'dtress.txt')
-    myTree=grabTree('dtress.txt')
-    # treePlotter.createPlot(myTree)
-    
-#     将结果写入文件
+def Train():
+    myDat, labels = createTrainDataSet()
+    myTree = createTree(myDat, labels)
+    storeTree(myTree, 'dtress.txt')
+#     treePlotter.createPlot(myTree)
+
+def Test():
+    students,myDat, labels = createTestDataSet()
+    myTree = grabTree('dtress.txt')
+    #     将结果写入文件
     with open('../d_CorrectRateTest/results.txt', 'w')as f:
         for student in students :
-            temp = classify(myTree, labels, [student.getScore(), student.getCost_amount(), student.getCost_avg_superMarket(), student.getCost_avg_dinnerHall(), student.getCost_supermarket_rate(), student.getCost_dinnerhall_rate(), student.getCost_times(), student.getLibrary_borrow(), student.getLibrary_times(), student.getLibrary_time_spand(), student.getBalance_rank()])
+            temp = classify(myTree, labels, student.getAll())
             if temp == "A":
                 temp = 0
             elif temp == "B":
@@ -166,3 +161,8 @@ if __name__ == '__main__':
                 print("!!!!!!!!!!!!!")
               
             f.write(str(student.getStudentId()) + "," + str(temp) + "\n")
+
+if __name__ == '__main__':
+    Train()
+    Test()
+

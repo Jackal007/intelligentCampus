@@ -1,9 +1,9 @@
 import pymysql
 
 class MyDataBase:
-    def __init__(self):
+    def __init__(self,database="train"):
 #         print("connect to data base......")
-        self.db = pymysql.connect("localhost", "root", "root", "intelligentCampustest", charset='utf8')
+        self.db = pymysql.connect("localhost", "root", "root", "intelligentCampus"+database, charset='utf8')
         self.cursor = self.db.cursor()
 #         print("connect success!")
 

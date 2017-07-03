@@ -53,3 +53,63 @@
 <class 'TypeError'>:'int' object is not iterable
 <class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
 <class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'

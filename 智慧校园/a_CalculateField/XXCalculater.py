@@ -5,7 +5,7 @@ class XXCalculater:
 
     def __init__(self):
         # levels about the weight
-        self.db = MyDataBase.MyDataBase()
+        self.db = MyDataBase.MyDataBase("train")
         self.conn = self.db.getConn()
         self.executer = self.db.getExcuter()
                 

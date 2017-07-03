@@ -1,7 +1,7 @@
 import pymysql
 from numpy import empty
 
-conn = pymysql.connect("localhost", "root", "root", "intelligentCampusTrain")
+conn = pymysql.connect("localhost", "root", "root", "intelligentCampustrain")
 cur = conn.cursor()
 
 

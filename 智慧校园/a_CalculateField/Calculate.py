@@ -32,12 +32,12 @@ LibraryTimesCalculater = LibraryTimesCalculater.LibraryTimesCalculater()
 LibraryTimeSpandCalculater = LibraryTimeSpandCalculater.LibraryTimeSpandCalculater() 
 SubsidyCalculater = SubsidyCalculater.SubsidyCalculater()
 calculater = [ScoreRankCalculater, \
-              BalanceRankCalculater, \
               CostAmountCalculater, \
               CostAverageDinnerHallCalculater, CostAverageLaundryRoomCalculater, CostAverageSuperMarketCalculater, \
               CostRateDinnerHallCalculater, CostRateLaundryRoomCalculater, CostRateSuperMarketCalculater, \
               CostTimesCalculater, \
-              LibraryBorrowCalculater, LibraryTimesCalculater, LibraryTimeSpandCalculater]#, \
+              LibraryBorrowCalculater, LibraryTimesCalculater, LibraryTimeSpandCalculater,
+              BalanceRankCalculater, ]#, \
              # SubsidyCalculater, ]
 
 def calculate():
@@ -59,7 +59,7 @@ def calculate():
     for i in tqdm(studentIds):
         print()
         i = i[0]
-        student = Student([])
+        student = Student()
         student.setStudentId(i)
         student.fetch(calculater)
     

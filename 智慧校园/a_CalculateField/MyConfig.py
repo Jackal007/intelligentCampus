@@ -1,6 +1,6 @@
 from Tools import MyDataBase
 
-db = MyDataBase.MyDataBase()
+db = MyDataBase.MyDataBase("train")
 conn = db.getConn()
 executer = db.getExcuter()
 
@@ -158,10 +158,10 @@ def CostRateLaundryRoom_levelConfig():
         '''
         洗衣房消费/总消费比例
         '''
-        A = 0.25
-        B = 0.5
-        C = 0.75
-        D = 1
+        A = 0.05
+        B = 0.1
+        C = 0.2
+        D = 0.4
         saveConfig("CostRateLaundryRoom_level", [A, B, C, D])
         
 def CostTimes_levelConfig():
@@ -207,18 +207,20 @@ def config():
 if __name__ == '__main__':
     config()
 
-Subsidy_level = {'A': 0, 'B': 1000, 'C': 1500, 'D': 2000}
-Score_level = {'A': 732, 'B': 1465, 'C': 1465, 'D': 2931}
-LibraryBorrow_level = {'A': 8, 'B': 20, 'C': 43, 'D': 424}
-LibraryTimes_level = {'A': 62, 'B': 168, 'C': 352, 'D': 2964}
-LibraryTimeSpand_level = {'A': 90, 'B': 120, 'C': 150, 'D': 180}
-BalanceRank_level = {'A': 110.0, 'B': 157.5, 'C': 250.0, 'D': 2313.0}
-CostAmount_level = {'A': 6003.13, 'B': 8912.93, 'C': 11138.1, 'D': 28700.05}
-CostAverageDinnerHall_level = {'A': 3.85589, 'B': 4.502174, 'C': 5.40595, 'D': 37.766668}
-CostAverageLaundryRoom_level = {'A': 1.283333, 'B': 2.322439, 'C': 3.257143, 'D': 30.0}
-CostAverageSupermarket_level = {'A': 5.848889, 'B': 7.588235, 'C': 9.951852, 'D': 211.199997}
-CostRateDinnerHall_level = {'A': 0.1, 'B': 0.2, 'C': 0.3, 'D': 0.4}
-CostRateLaundryRoom_level = {'A': 0.25, 'B': 0.5, 'C': 0.75, 'D': 1}
-CostRateSuperMarket_level = {'A': 0.25, 'B': 0.5, 'C': 0.75, 'D': 1}
-CostTimes_level = {'A': 840, 'B': 1255, 'C': 1571, 'D': 4878}
-CostType_level = {'A': 10, 'B': 20, 'C': 30, 'D': 40}
+
+
+Subsidy_level={'A': 0, 'B': 1000, 'C': 1500, 'D': 2000}
+Score_level={'A': 733, 'B': 1466, 'C': 1466, 'D': 2933}
+LibraryBorrow_level={'A': 8, 'B': 19, 'C': 42, 'D': 426}
+LibraryTimes_level={'A': 28, 'B': 81, 'C': 171, 'D': 1485}
+LibraryTimeSpand_level={'A': 90, 'B': 120, 'C': 150, 'D': 180}
+BalanceRank_level={'A': 110.0, 'B': 158.5, 'C': 250.0, 'D': 2200.0}
+CostAmount_level={'A': 6083.54, 'B': 8904.05, 'C': 11105.1, 'D': 30275.2}
+CostAverageDinnerHall_level={'A': 3.855575, 'B': 4.499582, 'C': 5.42988, 'D': 153.55}
+CostAverageLaundryRoom_level={'A': 1.28, 'B': 2.28, 'C': 3.235, 'D': 23.5}
+CostAverageSupermarket_level={'A': 5.88, 'B': 7.635392, 'C': 10.04717, 'D': 171.199997}
+CostRateDinnerHall_level={'A': 0.1, 'B': 0.2, 'C': 0.3, 'D': 0.4}
+CostRateLaundryRoom_level={'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4}
+CostRateSuperMarket_level={'A': 0.25, 'B': 0.5, 'C': 0.75, 'D': 1}
+CostTimes_level={'A': 837, 'B': 1246, 'C': 1566, 'D': 4159}
+CostType_level={'A': 10, 'B': 20, 'C': 30, 'D': 40}
