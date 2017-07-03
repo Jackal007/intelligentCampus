@@ -1,2 +1,0 @@
-<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '2' for key 'PRIMARY'")
-<class 'pymysql.err.InternalError'>:(1205, 'Lock wait timeout exceeded; try restarting transaction')

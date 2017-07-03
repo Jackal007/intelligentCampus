@@ -1,23 +1,18 @@
 from a_CalculateField import XXCalculater
+from Tools import MyLog
+from MyConfig import LibraryBorrow_level
 
 class LibraryBorrowCalculater(XXCalculater.XXCalculater):
-
+    @MyLog.myException
     def calculate(self):
         print("LibraryBorrowCalculater")
         # 对每一个学生统计其借书的次数
         studentId = self.student.getStudentId()
         sql = "select count(student_id) from borrow where student_id=" + str(studentId)
         self.executer.execute(sql)
-        readTimes = self.executer.fetchone()[0]
-        if readTimes < self.level["A"]:
-            readTimes = "A"
-        elif readTimes < self.level["B"]:
-            readTimes = "B"
-        elif readTimes < self.level["C"]:
-            readTimes = "C"
-        else:
-            readTimes = "D"
-        sql = "update students set library_borrow='" + readTimes + "' where student_id=" + str(studentId)
+        libraryBorrow = self.executer.fetchone()[0]
+        libraryBorrow = self.classify(libraryBorrow, LibraryBorrow_level)
+        sql = "update students set library_borrow='" + libraryBorrow + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
         self.conn.commit()
-        return readTimes
+        return libraryBorrow

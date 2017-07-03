@@ -1,0 +1,55 @@
+<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '2' for key 'PRIMARY'")
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'<' not supported between instances of 'NoneType' and 'int'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'<' not supported between instances of 'NoneType' and 'int'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'<' not supported between instances of 'NoneType' and 'int'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'<' not supported between instances of 'NoneType' and 'int'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable
+<class 'NameError'>:name 'CostAverageLaundryRom_level' is not defined
+<class 'TypeError'>:'int' object is not iterable
+<class 'AttributeError'>:'CostTimesCalculater' object has no attribute 'level'
+<class 'TypeError'>:'NoneType' object is not subscriptable

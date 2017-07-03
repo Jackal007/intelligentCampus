@@ -1,5 +1,6 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
+from MyConfig import LibraryTimeSpand_level
 
 class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
@@ -10,17 +11,11 @@ class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
         self.executer.execute(sql)
         sql = "SELECT sum(totaltime) FROM library_modify where student_id = " + str(studentId) 
         self.executer.execute(sql)
-        LibraryTimeRank = self.executer.fetchone()[0]
-        if LibraryTimeRank < self.level["A"]:
-            LibraryTimeRank = "A"
-        elif LibraryTimeRank < self.level["B"]:
-            LibraryTimeRank = "B"
-        elif LibraryTimeRank < self.level["C"]:
-            LibraryTimeRank = "C"
-        else:
-            LibraryTimeRank = "D"
         
-        sql = "update students set library_time_spand='" + LibraryTimeRank + "' where student_id=" + str(studentId)
+        libraryTimeSpand = self.executer.fetchone()[0]
+        libraryTimeSpand = self.classify(libraryTimeSpand, LibraryTimeSpand_level)
+        
+        sql = "update students set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
         self.conn.commit()
-        return LibraryTimeRank
+        return libraryTimeSpand

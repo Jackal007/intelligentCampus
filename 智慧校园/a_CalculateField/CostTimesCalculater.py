@@ -1,5 +1,6 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
+from MyConfig import CostTimes_level
 
 class CostTimesCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
@@ -11,14 +12,8 @@ class CostTimesCalculater(XXCalculater.XXCalculater):
         self.executer.execute(sql)
 
         costTimes = self.executer.fetchone()[0]
-        if costTimes < self.level["A"]:
-            costTimes = "A"
-        elif costTimes < self.level["B"]:
-            costTimes = "B"
-        elif costTimes < self.level["C"]:
-            costTimes = "C"
-        else:
-            costTimes = "D"
+        costTimes = self.classify(costTimes, CostTimes_level)
+        
         sql = "update students set cost_times='" + costTimes + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
         self.conn.commit()

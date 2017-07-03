@@ -1,5 +1,6 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
+from MyConfig import BalanceRank_level
 
 class BalanceRankCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
@@ -11,16 +12,9 @@ class BalanceRankCalculater(XXCalculater.XXCalculater):
         self.executer.execute(sql)
         s = self.executer.fetchone()
         minBalance,maxBalance = s[0],s[1]
-        averageBalance = (minBalance + maxBalance) / 2
         
-        if averageBalance < self.level["A"]:
-            averageBalance = "A"
-        elif averageBalance < self.level["B"]:
-            averageBalance = "B"
-        elif averageBalance < self.level["C"]:
-            averageBalance = "C"
-        else:
-            averageBalance="D"
+        averageBalance = (minBalance + maxBalance) / 2
+        averageBalance=self.classify(averageBalance,BalanceRank_level)
             
         sql = "update students set balance_rank='" + averageBalance + "' where student_id=" + str(studentId)
         self.executer.execute(sql)

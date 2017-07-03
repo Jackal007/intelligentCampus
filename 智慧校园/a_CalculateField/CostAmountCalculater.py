@@ -1,5 +1,6 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
+from MyConfig import CostAmount_level
 
 class CostAmountCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
@@ -10,17 +11,9 @@ class CostAmountCalculater(XXCalculater.XXCalculater):
         sql = "select sum(deal_cost) from card where student_id=" + str(studentId) 
         self.executer.execute(sql)
         dealCost = self.executer.fetchone()[0]
-        if dealCost < self.level["A"]:
-            dealCost = "A"
-        elif dealCost < self.level["B"]:
-            dealCost = "B"
-        elif dealCost < self.level["C"]:
-            dealCost = "C"
-        else:
-            dealCost = "D"
+        dealCost=self.classify(dealCost,CostAmount_level)
     
         sql = "update students set cost_amount='" + dealCost + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
         self.conn.commit()
-        self.student.setBalance_rank(averageBalance)
         return dealCost

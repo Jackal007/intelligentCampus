@@ -1,5 +1,6 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
+from MyConfig import Score_level
 
 class ScoreRankCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
@@ -9,17 +10,10 @@ class ScoreRankCalculater(XXCalculater.XXCalculater):
         studentId = self.student.getStudentId()
         sql = "select rank from score where student_id=" + str(studentId)
         self.executer.execute(sql)
-        scoreRank = self.executer.fetchone()[0]
-        if int(scoreRank) < self.level["A"]:
-            scoreRank = "A"
-        elif int(scoreRank) < self.level["B"]:
-            scoreRank = "B"
-        elif int(scoreRank) < self.level["C"]:
-            scoreRank = "C"
-        else:
-            scoreRank = "D"
+        score = self.executer.fetchone()[0]
+        score = self.classify(score, Score_level)
 
-        sql = "insert into students(student_id,score) values(" + str(studentId) + ",'" + scoreRank + "')" 
+        sql = "insert into students(student_id,score) values(" + str(studentId) + ",'" + score + "')" 
         self.executer.execute(sql)
         self.conn.commit()
-        return scoreRank
+        return score

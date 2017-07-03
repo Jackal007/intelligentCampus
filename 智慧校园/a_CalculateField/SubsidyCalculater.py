@@ -1,5 +1,6 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
+from MyConfig import Subsidy_level
 
 class SubsidyCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
@@ -11,14 +12,7 @@ class SubsidyCalculater(XXCalculater.XXCalculater):
         self.executer.execute(sql)
         subsidy = self.executer.fetchone()[0]
 
-        if subsidy <= self.level["A"]:
-            subsidy = "A"
-        elif subsidy <= self.level["B"]:
-            subsidy = "B"
-        elif subsidy <= self.level["C"]:
-            subsidy = "C"
-        else:
-            subsidy = "D"
+        subsidy = self.classify(subsidy, Subsidy_level)
 
         sql = "update students set subsidy= '" + subsidy + "' where student_id = " + str(studentId)
         self.executer.execute(sql)
