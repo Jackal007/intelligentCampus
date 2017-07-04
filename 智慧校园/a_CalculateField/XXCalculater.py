@@ -1,5 +1,6 @@
 from Tools import MyLog
 from Tools import MyDataBase
+from _overlapped import NULL
 
 class XXCalculater:
 
@@ -13,12 +14,12 @@ class XXCalculater:
         self.student = student
     
     def classify(self, param, level):
-        if param:
-            if param < level["A"]:
+        if param != NULL:
+            if param <= level["A"]:
                 param = "A"
-            elif param < level["B"]:
+            elif param <= level["B"]:
                 param = "B"
-            elif param < level["C"]:
+            elif param <= level["C"]:
                 param = "C"
             else:
                 param = "D"

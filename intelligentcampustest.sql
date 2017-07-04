@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2017-07-01 16:46:59
+Date: 2017-07-04 13:20:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -96,15 +96,26 @@ CREATE TABLE `students` (
   `score` char(5) DEFAULT 'A' COMMENT '成绩排名',
   `cost_amount` char(5) DEFAULT 'A' COMMENT '花费金额',
   `cost_avg_superMarket` char(5) DEFAULT 'A',
+  `cost_avg_laundryroom` char(5) DEFAULT NULL,
   `cost_avg_dinnerHall` char(5) DEFAULT 'A',
-  `cost_supermarket_rate` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
-  `cost_dinnerhall_rate` char(5) DEFAULT 'A' COMMENT '食堂消费占总消费的比例',
+  `cost_rate_supermarket` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
+  `cost_rate_laundryroom` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
+  `cost_rate_dinnerhall` char(5) DEFAULT 'A' COMMENT '食堂消费占总消费的比例',
   `cost_times` char(5) DEFAULT 'A' COMMENT '花费次数',
   `library_borrow` char(5) DEFAULT 'A' COMMENT '图书借阅量',
   `library_times` char(5) DEFAULT 'A' COMMENT '勤奋度',
   `library_time_spand` char(5) DEFAULT 'A' COMMENT '图书馆时长',
   `balance_rank` char(5) DEFAULT 'A' COMMENT '卡内余额',
   `subsidy` char(5) DEFAULT 'A' COMMENT '奖学金额',
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Table structure for stu_id
+-- ----------------------------
+DROP TABLE IF EXISTS `stu_id`;
+CREATE TABLE `stu_id` (
+  `student_id` int(11) NOT NULL,
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

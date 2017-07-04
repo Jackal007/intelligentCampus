@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2017-07-01 16:47:12
+Date: 2017-07-04 13:20:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -96,9 +96,11 @@ CREATE TABLE `students` (
   `score` char(5) DEFAULT 'A' COMMENT '成绩排名',
   `cost_amount` char(5) DEFAULT 'A' COMMENT '花费金额',
   `cost_avg_superMarket` char(5) DEFAULT 'A',
+  `cost_avg_laundryroom` char(5) DEFAULT NULL,
   `cost_avg_dinnerHall` char(5) DEFAULT 'A',
-  `cost_supermarket_rate` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
-  `cost_dinnerhall_rate` char(5) DEFAULT 'A' COMMENT '食堂消费占总消费的比例',
+  `cost_rate_supermarket` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
+  `cost_rate_laundryroom` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
+  `cost_rate_dinnerhall` char(5) DEFAULT 'A' COMMENT '食堂消费占总消费的比例',
   `cost_times` char(5) DEFAULT 'A' COMMENT '花费次数',
   `library_borrow` char(5) DEFAULT 'A' COMMENT '图书借阅量',
   `library_times` char(5) DEFAULT 'A' COMMENT '勤奋度',

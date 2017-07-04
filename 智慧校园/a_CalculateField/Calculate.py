@@ -32,6 +32,13 @@ LibraryTimesCalculater = LibraryTimesCalculater.LibraryTimesCalculater()
 LibraryTimeSpandCalculater = LibraryTimeSpandCalculater.LibraryTimeSpandCalculater() 
 SubsidyCalculater = SubsidyCalculater.SubsidyCalculater()
 calculater = [
+#             [ScoreRankCalculater, \
+#               CostAmountCalculater, \
+#               CostAverageDinnerHallCalculater, CostAverageLaundryRoomCalculater, CostAverageSuperMarketCalculater, \
+#               CostRateDinnerHallCalculater, CostRateLaundryRoomCalculater, CostRateSuperMarketCalculater, \
+#               CostTimesCalculater, \
+#               LibraryBorrowCalculater, LibraryTimesCalculater, LibraryTimeSpandCalculater,
+#               BalanceRankCalculater, \
             SubsidyCalculater, ]
 
 def calculate():
@@ -60,5 +67,5 @@ def calculate():
     for i in calculater:
         i.afterCalculate()
 
-if __name__=='__main__':
+if __name__ == '__main__':
     calculate()

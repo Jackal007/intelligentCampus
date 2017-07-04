@@ -20,10 +20,10 @@ class Student:
                 'costAmount':attributes[2],
                 'costAvgSuperMarket':attributes[3],
                 'costAvgDinnerHall':attributes[4],
-                'costAvgLaundry':attributes[5],
-                'costSupermarketRate':attributes[6],
-                'costDinnerhallRate':attributes[7],
-                'costLaundryRate':attributes[8],
+                'costAvgLaundryRoom':attributes[5],
+                'costRateSupermarket':attributes[6],
+                'costRateDinnerhall':attributes[7],
+                'costRateLaundryRoom':attributes[8],
                 'costTimes':attributes[9],
                 'libraryBorrow':attributes[10],
                 'libraryTimes':attributes[11],
@@ -36,7 +36,7 @@ class Student:
         all = list(self.attributes.values())
         return [self.attributes['costAmount'],self.attributes['costAvgSuperMarket'],\
                 self.attributes['costAvgDinnerHall'],\
-                self.attributes['costSupermarketRate'],self.attributes['costDinnerhallRate'],\
+                self.attributes['costRateSupermarket'],self.attributes['costRateDinnerhall'],\
                 self.attributes['costTimes'],\
                 self.attributes['balanceRank'],self.attributes['subsidy'],]
 
