@@ -31,25 +31,19 @@ LibraryBorrowCalculater = LibraryBorrowCalculater.LibraryBorrowCalculater()
 LibraryTimesCalculater = LibraryTimesCalculater.LibraryTimesCalculater()
 LibraryTimeSpandCalculater = LibraryTimeSpandCalculater.LibraryTimeSpandCalculater() 
 SubsidyCalculater = SubsidyCalculater.SubsidyCalculater()
-calculater = [ScoreRankCalculater, \
-              CostAmountCalculater, \
-              CostAverageDinnerHallCalculater, CostAverageLaundryRoomCalculater, CostAverageSuperMarketCalculater, \
-              CostRateDinnerHallCalculater, CostRateLaundryRoomCalculater, CostRateSuperMarketCalculater, \
-              CostTimesCalculater, \
-              LibraryBorrowCalculater, LibraryTimesCalculater, LibraryTimeSpandCalculater,
-              BalanceRankCalculater, ]#, \
-             # SubsidyCalculater, ]
+calculater = [
+            SubsidyCalculater, ]
 
 def calculate():
     db = MyDataBase.MyDataBase()
     conn = db.getConn()
     executer = db.getExcuter()
     
-    sql = "delete from students"
-    executer.execute(sql)
-    sql = "delete from library_modify"
-    executer.execute(sql)
-    conn.commit()
+#     sql = "delete from students"
+#     executer.execute(sql)
+#     sql = "delete from library_modify"
+#     executer.execute(sql)
+#     conn.commit()
     
     sql = "select student_id from score"
     executer.execute(sql)

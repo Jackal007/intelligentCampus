@@ -113,3 +113,43 @@
 <class 'ZeroDivisionError'>:division by zero
 <class 'ZeroDivisionError'>:division by zero
 <class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'ZeroDivisionError'>:division by zero
+<class 'TypeError'>:unsupported operand type(s) for +: 'NoneType' and 'NoneType'

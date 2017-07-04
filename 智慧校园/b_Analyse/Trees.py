@@ -4,12 +4,13 @@ import DataSetCreater
 from math import log
 from Model import Student
 from Tools import treePlotter
+from cProfile import label
 
 students = []
 Student = Student.Student
 
 def createTrainDataSet():
-    st,dataSet, labels = DataSetCreater.createTrainDataSet()
+    dataSet, labels = DataSetCreater.createTrainDataSet()
     return dataSet, labels
 
 def createTestDataSet():
@@ -80,13 +81,13 @@ def classify(inputTree, featLabels, testVec):
     firstSides = list(inputTree.keys())
 
     firstStr = firstSides[0]  # 挑选首选特征
-    print("###first= " + firstStr + "###")
+#     print("###first= " + firstStr + "###")
     # firstStr = inputTree.keys()[0]
     #  print(firstStr)
     #  print(featLabels)
     secondDict = inputTree[firstStr]  # 这时secondDict的内容就是决策树按照名称为 firstStr 的特征分类后的结果
     featIndex = featLabels.index(firstStr)  # 找到该特征处于第几列，赋值给featIndex
-    print(featIndex)
+#     print(featIndex)
     new_item = 1  # 标记当前的待分类记录是不是以前从未出现的情况（包括各节点所包含的key的组合），0表示假，1表示真
     for key in secondDict.keys() :
         if testVec[featIndex] == key:
@@ -141,14 +142,15 @@ def Train():
     myTree = createTree(myDat, labels)
     storeTree(myTree, 'dtress.txt')
 #     treePlotter.createPlot(myTree)
+    return myTree
 
-def Test():
+def Test(myTree):
     students,myDat, labels = createTestDataSet()
     myTree = grabTree('dtress.txt')
     #     将结果写入文件
     with open('../d_CorrectRateTest/results.txt', 'w')as f:
         for student in students :
-            temp = classify(myTree, labels, student.getAll())
+            temp = classify(myTree, labels, student.getAll()[:-1])
             if temp == "A":
                 temp = 0
             elif temp == "B":
@@ -163,6 +165,6 @@ def Test():
             f.write(str(student.getStudentId()) + "," + str(temp) + "\n")
 
 if __name__ == '__main__':
-    Train()
-    Test()
+    
+    Test(Train())
 

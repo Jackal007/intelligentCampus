@@ -1,7 +1,7 @@
 import pymysql
 from numpy import empty
 
-conn = pymysql.connect("localhost", "root", "root", "intelligentCampustrain")
+conn = pymysql.connect("localhost", "root", "root", "intelligentCampustest")
 cur = conn.cursor()
 
 
@@ -15,9 +15,17 @@ total = 0
 for ins in content :
     student_id = ins[0]
     presume = int(ins[1])
-    sql = "select stipend from subsidy where student_id = " + student_id
+    sql = "select subsidy from students where student_id = " + student_id
     cur.execute(sql)
-    real = (int)(cur.fetchone()[0])
+    real = cur.fetchone()[0]
+    if real=='A':
+        real=0
+    elif real=='B':
+        real=1000
+    elif real=='C':
+        real=1500
+    elif real=='D':
+        real=2000
     if real!=empty :
         total+=1
         if presume == real:         

@@ -10,7 +10,7 @@ class Student:
         for i in calculater:
             i.setStudent(self)
             attributes.append(i.calculate())
-        self.setAll(attributes=attributes, subsidy=attributes[-1])
+#         self.setAll(attributes=attributes, subsidy=attributes[-1])
         
     def setAll(self, attributes=NULL, subsidy="A"):
         if attributes != NULL:
@@ -34,7 +34,11 @@ class Student:
             
     def getAll(self):
         all = list(self.attributes.values())
-        return all[1:-1]
+        return [self.attributes['costAmount'],self.attributes['costAvgSuperMarket'],\
+                self.attributes['costAvgDinnerHall'],\
+                self.attributes['costSupermarketRate'],self.attributes['costDinnerhallRate'],\
+                self.attributes['costTimes'],\
+                self.attributes['balanceRank'],self.attributes['subsidy'],]
 
     
     def setStudentId(self, studentId): 
