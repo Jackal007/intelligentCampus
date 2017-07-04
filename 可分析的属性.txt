@@ -1,0 +1,15 @@
+1.score
+2.cost_amout
+3.cost_rate_dinnerhall
+4.cost_rate_laundryroom
+5.cost_rate_supermarket
+6.cost_avg_dinnerhall
+7.cost_avg_laundryroom
+8.cost_avg_supermarket
+9.library_time_spand
+10.book_borrow
+11.library_times
+12.cost_times
+13.balance_rank
+
+

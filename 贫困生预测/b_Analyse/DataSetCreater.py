@@ -20,7 +20,7 @@ def createTrainDataSet():
     for i in dataSet:
         classCount[i[-1]]+=1
     classCount_result=sorted(classCount.items(),key =lambda asd:asd[1], reverse = False)
-    print("===============================",classCount_result)
+#     print("===============================",classCount_result)
     flag=True
     while flag:
         flag=False
@@ -37,7 +37,7 @@ def createTrainDataSet():
                 
               
                 classCount_result=sorted(classCount.items(),key =lambda asd:asd[1], reverse = False)
-                print("===============================",classCount_result)
+#                 print("===============================",classCount_result)
             
     conn.close()
     executer.close()
