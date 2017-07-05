@@ -60,3 +60,14 @@ def createTestDataSet():
     executer.close()
     return students, dataSet, labels
 
+def transform(dataSet):
+    for i in range(len(dataSet)):
+        for j in range(len(dataSet[i])):
+            if dataSet[i][j] == 'A':
+                dataSet[i][j] = 1
+            elif dataSet[i][j] == 'B':
+                dataSet[i][j] = 2
+            elif dataSet[i][j] == 'C':
+                dataSet[i][j] = 3
+            elif dataSet[i][j] == 'D':
+                dataSet[i][j] = 4

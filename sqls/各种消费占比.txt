@@ -1,0 +1,15 @@
+SELECT
+	sum(deal_cost)/s
+FROM
+	card,
+	(
+		SELECT
+			sum(deal_cost) AS s
+		FROM
+			card
+		WHERE
+			student_id = 9996
+	)as t
+WHERE
+	deal_way = 'supermarket'
+AND student_id = 9996
