@@ -17,7 +17,6 @@ class TotalDinnerCostsCalculater(XXCalculater.XXCalculater):
         sql = "select sum(deal_cost) from card where student_id=" + studentId + " and deal_way = 'dinnerhall'"
         self.executer.execute(sql)
         s = self.executer.fetchone()[0]
-        print(s)
         s = str(self.classify(s))
         if s is not None:
             print(s)

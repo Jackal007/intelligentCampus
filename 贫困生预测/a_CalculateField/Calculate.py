@@ -3,14 +3,19 @@ from Tools import MyDataBase
 from tqdm import tqdm
 # from a_CalculateField.ScoreRankCalculater import ScoreRankCalculater
 # from a_CalculateField.BalanceRankCalculater import BalanceRankCalculater
-from a_CalculateField.modifying.TotalDinnerCostsCalculater import TotalDinnerCostsCalculater
+# from a_CalculateField.modifying.Time6_7CostsCalculater import Time6_7CostsCalculater
+# from a_CalculateField.modifying.Time7_8CostsCalculater import Time7_8CostsCalculater
+from a_CalculateField.modifying.AvgDaysCostsCalculater import AvgDaysCostsCalculater
 
 Student = Student.Student
 # ScoreRankCalculater = ScoreRankCalculater()
 # BalanceRankCalculater = BalanceRankCalculater()
 # ConsumeTimes11_12Calculater = ConsumeTimes11_12Calculater()
 # CountCost0_10Calculater=CountCost0_10Calculater()
-TotalDinnerCostsCalculater=TotalDinnerCostsCalculater()
+AvgDaysCostsCalculater=AvgDaysCostsCalculater()
+# TotalDinnerCostsCalculater=TotalDinnerCostsCalculater()
+# Time6_7CostsCalculater=Time6_7CostsCalculater()
+# Time7_8CostsCalculater=Time7_8CostsCalculater()
 # CostAmountCalculater = CostAmountCalculater.CostAmountCalculater()
 # CostAverageDayCalculater = CostAverageDayCalculater.CostAverageDayCalculater()
 # CostRateCalculater = CostRateCalculater.CostRateCalculater()
@@ -25,7 +30,7 @@ TotalDinnerCostsCalculater=TotalDinnerCostsCalculater()
 #               LibraryTimesCalculater,LibraryTimeSpandCalculater,\
 #               SubsidyCalculater]
 
-calculater = [TotalDinnerCostsCalculater]
+calculater = [AvgDaysCostsCalculater]
 
 def calculate():
     db = MyDataBase.MyDataBase()
@@ -43,8 +48,8 @@ def calculate():
     studentIds = executer.fetchall()
     students = []
     
-#     for i in calculater:
-#         i.setLevel()
+    for i in calculater:
+        i.setLevel()
     
     for i in tqdm(studentIds):
         print()

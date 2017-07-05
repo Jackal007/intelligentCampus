@@ -3,13 +3,10 @@ from Tools import MyLog
 
 class CosumeTimes0_25Calculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        sql = "select as a from card group by student_id order by a"
-        self.executer.execute(sql)
-        BalanceRanks = self.executer.fetchone()[0]
-        A = int(BalanceRanks * 0.25)
-        B = int(BalanceRanks * 0.5)
-        C = int(BalanceRanks * 0.5)
-        D = int(BalanceRanks * 1)
+        A = 0
+        B = 1000
+        C = 1500
+        D = 2000
         self.level = [A, B, C, D]
         
     @MyLog.myException
@@ -19,7 +16,8 @@ class CosumeTimes0_25Calculater(XXCalculater.XXCalculater):
         sql = "select count(*) from card where student_id=" + studentId +" and deal_cost between 0 and 2.5"  
         self.executer.execute(sql)
         s = self.executer.fetchone()[0]
+        s=self.classify(s)
         
-        sql = "update students set  consumetimes0_2.5='" + str(s) + "' where student_id=" + studentId
+        sql = "update students set  consumetimes0_25 ='" + str(s) + "' where student_id=" + studentId
         self.executer.execute(sql)
         self.conn.commit()

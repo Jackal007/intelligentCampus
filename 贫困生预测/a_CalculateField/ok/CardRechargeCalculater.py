@@ -3,13 +3,10 @@ from Tools import MyLog
 
 class CardRechargeCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        sql = "select as a from card group by student_id order by a"
-        self.executer.execute(sql)
-        BalanceRanks = self.executer.fetchone()[0]
-        A = int(BalanceRanks * 0.25)
-        B = int(BalanceRanks * 0.5)
-        C = int(BalanceRanks * 0.5)
-        D = int(BalanceRanks * 1)
+        A = 0
+        B = 1000
+        C = 1500
+        D = 2000
         self.level = [A, B, C, D]
         
     @MyLog.myException
@@ -19,6 +16,7 @@ class CardRechargeCalculater(XXCalculater.XXCalculater):
         sql = "select sum(deal_cost) from card where student_id=" + studentId +" and deal_type = '卡充值'"  
         self.executer.execute(sql)
         s = self.executer.fetchone()[0]
+        s=self.classify(s)
         
         sql = "update students set  cardrecharge='" + str(s) + "' where student_id=" + studentId
         self.executer.execute(sql)
