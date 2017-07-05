@@ -1,6 +1,5 @@
 from Tools import MyLog
 from Tools import MyDataBase
-from _overlapped import NULL
 
 class XXCalculater:
 
@@ -12,24 +11,20 @@ class XXCalculater:
                 
     def setStudent(self, student):
         self.student = student
-    
-    def classify(self, param, level):
-        if param != NULL:
-            if param <= level["A"]:
-                param = "A"
-            elif param <= level["B"]:
-                param = "B"
-            elif param <= level["C"]:
-                param = "C"
-            else:
-                param = "D"
-        else:
-            param = "A"
-        return param
         
+    def setLevel(self):
+        pass
+    
     @MyLog.myException
     def calculate(self):
         pass  
+    
+    def classify(self, param):
+        if param is not None:
+            for i in range(len(self.level)):
+                if param <= self.level[i]:
+                    return i+1
+        return 0
     
     def afterCalculate(self):
         self.db.close()

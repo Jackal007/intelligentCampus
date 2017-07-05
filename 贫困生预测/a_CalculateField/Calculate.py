@@ -1,45 +1,27 @@
 from Model import Student
 from Tools import MyDataBase
 from tqdm import tqdm
-from a_CalculateField import ScoreRankCalculater
-from a_CalculateField import BalanceRankCalculater
-from a_CalculateField import CostAmountCalculater
-from a_CalculateField import CostAverageDinnerHallCalculater
-from a_CalculateField import CostAverageLaundryRoomCalculater
-from a_CalculateField import CostAverageSuperMarketCalculater
-from a_CalculateField import CostRateDinnerHallCalculater
-from a_CalculateField import CostRateLaundryRoomCalculater
-from a_CalculateField import CostRateSuperMarketCalculater
-from a_CalculateField import CostTimesCalculater
-from a_CalculateField import LibraryBorrowCalculater
-from a_CalculateField import LibraryTimesCalculater
-from a_CalculateField import LibraryTimeSpandCalculater
-from a_CalculateField import SubsidyCalculater
+# from a_CalculateField.ScoreRankCalculater import ScoreRankCalculater
+from a_CalculateField.BalanceRankCalculater import BalanceRankCalculater
 
 Student = Student.Student
-ScoreRankCalculater = ScoreRankCalculater.ScoreRankCalculater()
-BalanceRankCalculater = BalanceRankCalculater.BalanceRankCalculater()
-CostAmountCalculater = CostAmountCalculater.CostAmountCalculater()
-CostAverageDinnerHallCalculater = CostAverageDinnerHallCalculater.CostAverageDinnerHallCalculater()
-CostAverageLaundryRoomCalculater = CostAverageLaundryRoomCalculater.CostAverageLaundryRoomCalculater()
-CostAverageSuperMarketCalculater = CostAverageSuperMarketCalculater.CostAverageSuperMarketCalculater()
-CostRateDinnerHallCalculater = CostRateDinnerHallCalculater.CostRateDinnerHallCalculater()
-CostRateLaundryRoomCalculater = CostRateLaundryRoomCalculater.CostRateLaundryRoomCalculater()
-CostRateSuperMarketCalculater = CostRateSuperMarketCalculater.CostRateSuperMarketCalculater()
-CostTimesCalculater = CostTimesCalculater.CostTimesCalculater()
-LibraryBorrowCalculater = LibraryBorrowCalculater.LibraryBorrowCalculater()
-LibraryTimesCalculater = LibraryTimesCalculater.LibraryTimesCalculater()
-LibraryTimeSpandCalculater = LibraryTimeSpandCalculater.LibraryTimeSpandCalculater() 
-SubsidyCalculater = SubsidyCalculater.SubsidyCalculater()
-calculater = [
-#             [ScoreRankCalculater, \
-#               CostAmountCalculater, \
-#               CostAverageDinnerHallCalculater, CostAverageLaundryRoomCalculater, CostAverageSuperMarketCalculater, \
-#               CostRateDinnerHallCalculater, CostRateLaundryRoomCalculater, CostRateSuperMarketCalculater, \
-#               CostTimesCalculater, \
-#               LibraryBorrowCalculater, LibraryTimesCalculater, LibraryTimeSpandCalculater,
-#               BalanceRankCalculater, \
-            SubsidyCalculater, ]
+# ScoreRankCalculater = ScoreRankCalculater()
+BalanceRankCalculater = BalanceRankCalculater()
+# CostAmountCalculater = CostAmountCalculater.CostAmountCalculater()
+# CostAverageDayCalculater = CostAverageDayCalculater.CostAverageDayCalculater()
+# CostRateCalculater = CostRateCalculater.CostRateCalculater()
+# LibraryBorrowCalculater = LibraryBorrowCalculater.LibraryBorrowCalculater()
+# LibraryTimesCalculater = LibraryTimesCalculater.LibraryTimesCalculater()
+# LibraryTimeSpandCalculater = LibraryTimeSpandCalculater.LibraryTimeSpandCalculater() 
+# SubsidyCalculater = SubsidyCalculater.SubsidyCalculater()
+
+# calculater = [ScoreRankCalculater,BalanceRankCalculater,\
+#               CostAmountCalculater,CostAverageDayCalculater,\
+#               CostRateCalculater,LibraryBorrowCalculater,\
+#               LibraryTimesCalculater,LibraryTimeSpandCalculater,\
+#               SubsidyCalculater]
+
+calculater = [BalanceRankCalculater]
 
 def calculate():
     db = MyDataBase.MyDataBase()
@@ -56,6 +38,9 @@ def calculate():
     executer.execute(sql)
     studentIds = executer.fetchall()
     students = []
+    
+    for i in calculater:
+        i.setLevel()
     
     for i in tqdm(studentIds):
         print()
