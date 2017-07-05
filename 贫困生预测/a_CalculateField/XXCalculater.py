@@ -20,11 +20,12 @@ class XXCalculater:
         pass  
     
     def classify(self, param):
-        if param is not None:
-            for i in range(len(self.level)):
-                if param <= self.level[i]:
-                    return i+1
-        return 0
+        if param is None:
+            return 0
+        for i in range(len(self.level)):
+            if float(param) <= float(self.level[i]):
+                return i+1
+        return len(self.level)+1
     
     def afterCalculate(self):
         self.db.close()

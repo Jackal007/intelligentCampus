@@ -2,11 +2,15 @@ from Model import Student
 from Tools import MyDataBase
 from tqdm import tqdm
 # from a_CalculateField.ScoreRankCalculater import ScoreRankCalculater
-from a_CalculateField.BalanceRankCalculater import BalanceRankCalculater
+# from a_CalculateField.BalanceRankCalculater import BalanceRankCalculater
+from a_CalculateField.modifying.TotalDinnerCostsCalculater import TotalDinnerCostsCalculater
 
 Student = Student.Student
 # ScoreRankCalculater = ScoreRankCalculater()
-BalanceRankCalculater = BalanceRankCalculater()
+# BalanceRankCalculater = BalanceRankCalculater()
+# ConsumeTimes11_12Calculater = ConsumeTimes11_12Calculater()
+# CountCost0_10Calculater=CountCost0_10Calculater()
+TotalDinnerCostsCalculater=TotalDinnerCostsCalculater()
 # CostAmountCalculater = CostAmountCalculater.CostAmountCalculater()
 # CostAverageDayCalculater = CostAverageDayCalculater.CostAverageDayCalculater()
 # CostRateCalculater = CostRateCalculater.CostRateCalculater()
@@ -21,7 +25,7 @@ BalanceRankCalculater = BalanceRankCalculater()
 #               LibraryTimesCalculater,LibraryTimeSpandCalculater,\
 #               SubsidyCalculater]
 
-calculater = [BalanceRankCalculater]
+calculater = [TotalDinnerCostsCalculater]
 
 def calculate():
     db = MyDataBase.MyDataBase()
@@ -39,8 +43,8 @@ def calculate():
     studentIds = executer.fetchall()
     students = []
     
-    for i in calculater:
-        i.setLevel()
+#     for i in calculater:
+#         i.setLevel()
     
     for i in tqdm(studentIds):
         print()
