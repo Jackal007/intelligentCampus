@@ -38,4 +38,3 @@ class CostTimesDayCalculater(XXCalculater.XXCalculater):
             print(result,"#")
             sql = "update students set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
             self.executer.execute(sql)
-        self.conn.commit()

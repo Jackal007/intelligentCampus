@@ -22,4 +22,3 @@ class CountCost0_10Calculater(XXCalculater.XXCalculater):
         
         sql = "update students set countcost0_10='" + s + "' where student_id=" + studentId
         self.executer.execute(sql)
-        self.conn.commit()

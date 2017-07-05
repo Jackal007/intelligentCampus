@@ -26,4 +26,3 @@ class BalanceRankCalculater(XXCalculater.XXCalculater):
             
         sql = "update students set balance_rank='" + averageBalance + "' where student_id=" + studentId
         self.executer.execute(sql)
-        self.conn.commit()

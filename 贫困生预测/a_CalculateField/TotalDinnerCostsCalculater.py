@@ -12,7 +12,6 @@ class TotalDinnerCostsCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         print("正在计算每个学生饭堂消费总额")
-        self.setLevel()
         studentId = str(self.student.getStudentId())
         sql = "select sum(deal_cost) from card where student_id=" + studentId + " and deal_way = 'dinnerhall'"
         self.executer.execute(sql)
@@ -22,4 +21,3 @@ class TotalDinnerCostsCalculater(XXCalculater.XXCalculater):
             print(s)
             sql = "update students set  totaldinnercosts='" + s + "' where student_id=" + studentId
             self.executer.execute(sql)
-            self.conn.commit()

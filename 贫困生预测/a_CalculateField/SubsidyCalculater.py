@@ -21,4 +21,3 @@ class SubsidyCalculater(XXCalculater.XXCalculater):
 
         sql = "update students set subsidy= '" + subsidy + "' where student_id = " + str(studentId)
         self.executer.execute(sql)
-        self.conn.commit()

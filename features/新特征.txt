@@ -47,7 +47,16 @@
  max(deal_cost)
  from card
  where student_id = 给定值 and hour(deal_date)  = 7
+
+
  ;
+
+  select
+  max(sum(deal_cost))
+  from card
+  where student_id = 给定值 and hour(deal_date)=7
+  group by student_id, date(deal_date)
+
 
 获得某学生每天 11点 - 12点消费的次数
  select

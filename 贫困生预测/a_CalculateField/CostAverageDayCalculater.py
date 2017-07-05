@@ -1,7 +1,7 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
 
-class CostAverageDinnerHallCalculater(XXCalculater.XXCalculater):
+class CostAverageDayCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
         sql = "select sum(deal_cost) as c from card group by student_id order by c"
         self.executer.execute(sql)
@@ -37,4 +37,3 @@ class CostAverageDinnerHallCalculater(XXCalculater.XXCalculater):
             result = self.classify(result)
             sql = "update students set cost_avg_day_" + i + "='" + result + "' where student_id=" + str(studentId) 
             self.executer.execute(sql)
-        self.conn.commit()

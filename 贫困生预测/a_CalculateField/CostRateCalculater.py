@@ -31,4 +31,3 @@ class CostRateCalculater(XXCalculater.XXCalculater):
             result = self.classify(result)
             sql = "update students set cost_avg_" + i + "='" + result + "' where student_id=" + str(studentId)
             self.executer.execute(sql)
-        self.conn.commit()

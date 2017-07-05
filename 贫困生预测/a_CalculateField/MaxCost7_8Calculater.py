@@ -20,4 +20,3 @@ class MaxCost7_8Calculater(XXCalculater.XXCalculater):
         
         sql = "update students set time7_8costs='" + str(s) + "' where student_id=" + studentId
         self.executer.execute(sql)
-        self.conn.commit()

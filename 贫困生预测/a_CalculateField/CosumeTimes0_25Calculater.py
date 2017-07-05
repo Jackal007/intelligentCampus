@@ -1,7 +1,7 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
 
-class AvgDaysCostsCalculater(XXCalculater.XXCalculater):
+class CosumeTimes0_25Calculater(XXCalculater.XXCalculater):
     def setLevel(self):
         A = 0
         B = 1000
@@ -11,13 +11,12 @@ class AvgDaysCostsCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生每日平均消费")
+        print("正在计算每个学生单次消费金额在0-2.5元之间的次数")
         studentId = str(self.student.getStudentId())
-        sql = "select avg(deal_cost) from card where student_id=" + studentId   
+        sql = "select count(*) from card where student_id=" + studentId +" and deal_cost between 0 and 2.5"  
         self.executer.execute(sql)
         s = self.executer.fetchone()[0]
         s=self.classify(s)
         
-        sql = "update students set avgdayscosts='" + str(s) + "' where student_id=" + studentId
+        sql = "update students set  consumetimes0_25 ='" + str(s) + "' where student_id=" + studentId
         self.executer.execute(sql)
-        self.conn.commit()

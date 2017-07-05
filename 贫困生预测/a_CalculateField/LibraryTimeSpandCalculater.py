@@ -23,5 +23,3 @@ class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
         
         sql = "update students set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
-        self.conn.commit()
-        return libraryTimeSpand

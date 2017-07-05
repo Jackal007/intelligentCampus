@@ -1,7 +1,7 @@
 from a_CalculateField import XXCalculater
 from Tools import MyLog
 
-class CostRateCalculater(XXCalculater.XXCalculater):
+class CostVarianceCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
         self.level = [0.1, 0.2, 0.3, 0.4]
         
@@ -37,4 +37,3 @@ class CostRateCalculater(XXCalculater.XXCalculater):
         result = self.classify(result)
         sql = "update students set cost_variance='" + result + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
-        self.conn.commit()

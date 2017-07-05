@@ -23,4 +23,3 @@ class ConsumeTimes11_12Calculater(XXCalculater.XXCalculater):
         
         sql = "update students set consumetimes11_12='" + s + "' where student_id=" + studentId
         self.executer.execute(sql)
-        self.conn.commit()

@@ -1,10 +1,11 @@
 import pymysql
 
 class MyDataBase:
-    def __init__(self,database="train"):
+    def __init__(self, database="train"):
 #         print("connect to data base......")
-        self.db = pymysql.connect("localhost", "root", "root", "intelligentCampus"+database, charset='utf8')
+        self.db = pymysql.connect("localhost", "root", "root", "intelligentCampus" + database, charset='utf8')
         self.cursor = self.db.cursor()
+        self.db.autocommit(True)
 #         print("connect success!")
 
     def getConn(self):

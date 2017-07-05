@@ -23,4 +23,3 @@ class ScoreRankCalculater(XXCalculater.XXCalculater):
 
         sql = "insert into students(student_id,score) values(" + studentId + ",'" + score + "')" 
         self.executer.execute(sql)
-        self.conn.commit()

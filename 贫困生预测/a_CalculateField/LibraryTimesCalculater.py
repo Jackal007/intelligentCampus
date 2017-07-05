@@ -22,4 +22,3 @@ class LibraryTimesCalculater(XXCalculater.XXCalculater):
         libraryTimes = self.classify(libraryTimes)
         sql = "update students set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
-        self.conn.commit()

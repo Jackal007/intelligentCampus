@@ -22,4 +22,3 @@ class LibraryBorrowCalculater(XXCalculater.XXCalculater):
         libraryBorrow = self.classify(libraryBorrow)
         sql = "update students set library_borrow='" + libraryBorrow + "' where student_id=" + str(studentId)
         self.executer.execute(sql)
-        self.conn.commit()
