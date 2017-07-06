@@ -3,7 +3,7 @@ from Tools import MyLog
 
 class CostTimesDayCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        sql = "select COUNT(*) as c from card group by student_id order by c"
+        sql = "select cost_times_day_ from students order by cost_times_day_"
         self.executer.execute(sql)
         AverageCosts = self.executer.fetchall()
         A = AverageCosts[int(len(AverageCosts) * 0.25)][0]
@@ -33,8 +33,9 @@ class CostTimesDayCalculater(XXCalculater.XXCalculater):
                                 date(deal_date)\
                         )as tt"
             self.executer.execute(sql)
-            result = self.executer.fetchone()[0]
-            result = self.classify(result)
-            print(result,"#")
+            result = str(self.executer.fetchone()[0])
             sql = "update students set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
+            if self.level is not None:
+                result = self.classify(result)
+                sql = "update students_rank set cost_amount='" + result + "' where student_id=" + str(studentId)
             self.executer.execute(sql)

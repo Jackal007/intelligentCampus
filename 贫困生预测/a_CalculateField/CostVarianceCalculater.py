@@ -3,7 +3,14 @@ from Tools import MyLog
 
 class CostVarianceCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        self.level = [0.1, 0.2, 0.3, 0.4]
+        sql = "select cost_variance from students order by cost_variance"
+        self.executer.execute(sql)
+        CostVariance = self.executer.fetchall()
+        A = CostVariance[int(len(CostVariance) * 0.25)][0]
+        B = CostVariance[int(len(CostVariance) * 0.5)][0]
+        C = CostVariance[int(len(CostVariance) * 0.75)][0]
+        D = CostVariance[int(len(CostVariance) * 1) - 1][0]
+        self.level = [A, B, C, D]
         
     @MyLog.myException
     def calculate(self):
@@ -33,7 +40,9 @@ class CostVarianceCalculater(XXCalculater.XXCalculater):
                             date(deal_date)\
                     ) AS b"
         self.executer.execute(sql)
-        result = self.executer.fetchone()[0]
-        result = self.classify(result)
+        result = str(self.executer.fetchone()[0])
         sql = "update students set cost_variance='" + result + "' where student_id=" + str(studentId)
+        if self.level is not None:
+            result = self.classify(result)
+            sql = "update students_rank set cost_variance='" + result + "' where student_id=" + str(studentId)
         self.executer.execute(sql)

@@ -3,10 +3,13 @@ from Tools import MyLog
 
 class SubsidyCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        A = 0
-        B = 1000
-        C = 1500
-        D = 2000
+        sql = "select subsidy from students order by subsidy"
+        self.executer.execute(sql)
+        Subsidy = self.executer.fetchall()
+        A = Subsidy[int(len(Subsidy) * 0.25)][0]
+        B = Subsidy[int(len(Subsidy) * 0.5)][0]
+        C = Subsidy[int(len(Subsidy) * 0.75)][0]
+        D = Subsidy[int(len(Subsidy) * 1) - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException
@@ -16,8 +19,8 @@ class SubsidyCalculater(XXCalculater.XXCalculater):
         sql = "select stipend from subsidy where student_id=" + str(studentId)
         self.executer.execute(sql)
         subsidy = self.executer.fetchone()[0]
-
-        subsidy = self.classify(subsidy)
-
         sql = "update students set subsidy= '" + subsidy + "' where student_id = " + str(studentId)
+        if self.level is not None:
+            subsidy = self.classify(subsidy)
+            sql = "update students_rank set subsidy= '" + subsidy + "' where student_id = " + str(studentId)
         self.executer.execute(sql)

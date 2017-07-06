@@ -1,0 +1,64 @@
+[1499335350.130406]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '0' for key 'PRIMARY'")
+[1499335361.6004057]: <class 'TypeError'>:must be str, not int
+[1499335361.6084058]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335361.7664058]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335361.7874057]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '1' for key 'PRIMARY'")
+[1499335372.2324057]: <class 'TypeError'>:'NoneType' object is not subscriptable
+[1499335372.9664059]: <class 'TypeError'>:must be str, not int
+[1499335373.1524057]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time7_8costs' at row 1")
+[1499335373.1554058]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335373.1564057]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '8' for key 'PRIMARY'")
+[1499335380.662406]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '0' for key 'PRIMARY'")
+[1499335383.2004058]: <class 'TypeError'>:must be str, not int
+[1499335383.2074058]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335383.482406]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335383.4874058]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '1' for key 'PRIMARY'")
+[1499335385.014406]: <class 'TypeError'>:'NoneType' object is not subscriptable
+[1499335385.015406]: <class 'TypeError'>:must be str, not int
+[1499335385.1174057]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time7_8costs' at row 1")
+[1499335385.123406]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335385.1244059]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '8' for key 'PRIMARY'")
+[1499335394.515406]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1499335394.5204058]: <class 'TypeError'>:'NoneType' object is not subscriptable
+[1499335394.5204058]: <class 'TypeError'>:must be str, not int
+[1499335394.5254056]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335394.5294056]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time7_8costs' at row 1")
+[1499335394.5334058]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335394.534406]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '9' for key 'PRIMARY'")
+[1499335414.2164059]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1499335414.3744059]: <class 'TypeError'>:must be str, not int
+[1499335414.6964056]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335414.7014058]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '10' for key 'PRIMARY'")
+[1499335426.5624058]: <class 'TypeError'>:must be str, not int
+[1499335426.7234058]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335426.7254057]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '11' for key 'PRIMARY'")
+[1499335440.9504058]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1499335441.0034058]: <class 'TypeError'>:must be str, not int
+[1499335441.0124059]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335441.0804057]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335441.0824058]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '19' for key 'PRIMARY'")
+[1499335447.4524057]: <class 'TypeError'>:must be str, not int
+[1499335447.4564059]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335447.6214056]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335447.6244059]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '20' for key 'PRIMARY'")
+[1499335458.3434057]: <class 'TypeError'>:must be str, not int
+[1499335458.5584059]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335458.5634058]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '21' for key 'PRIMARY'")
+[1499335463.8884058]: <class 'TypeError'>:must be str, not int
+[1499335463.8934057]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335464.070406]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335464.0754058]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '22' for key 'PRIMARY'")
+[1499335482.9244058]: <class 'TypeError'>:must be str, not int
+[1499335483.1574056]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335483.1594057]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '23' for key 'PRIMARY'")
+[1499335512.1344059]: <class 'TypeError'>:must be str, not int
+[1499335512.143406]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335512.2924058]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335512.2934058]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '28' for key 'PRIMARY'")
+[1499335531.086406]: <class 'TypeError'>:must be str, not int
+[1499335531.2694056]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335531.3194058]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '29' for key 'PRIMARY'")
+[1499335541.1694057]: <class 'TypeError'>:must be str, not int
+[1499335541.1764057]: <class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499335541.2394059]: <class 'TypeError'>:object of type 'NoneType' has no len()
+[1499335541.2414057]: <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '36' for key 'PRIMARY'")

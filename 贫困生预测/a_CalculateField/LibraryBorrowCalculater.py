@@ -3,13 +3,13 @@ from Tools import MyLog
 
 class LibraryBorrowCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        sql = "select COUNT(*) as c from borrow group by student_id order by c"
+        sql = "select library_borrow from students order by library_borrow"
         self.executer.execute(sql)
-        LibraryBorrows = self.executer.fetchone()[0]
-        A = int(LibraryBorrows * 0.25)
-        B = int(LibraryBorrows * 0.5)
-        C = int(LibraryBorrows * 0.5)
-        D = int(LibraryBorrows * 1)
+        LibraryBorrow = self.executer.fetchall()
+        A = LibraryBorrow[int(len(LibraryBorrow) * 0.25)][0]
+        B = LibraryBorrow[int(len(LibraryBorrow) * 0.5)][0]
+        C = LibraryBorrow[int(len(LibraryBorrow) * 0.75)][0]
+        D = LibraryBorrow[int(len(LibraryBorrow) * 1) - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException
@@ -18,7 +18,9 @@ class LibraryBorrowCalculater(XXCalculater.XXCalculater):
         studentId = self.student.getStudentId()
         sql = "select count(student_id) from borrow where student_id=" + str(studentId)
         self.executer.execute(sql)
-        libraryBorrow = self.executer.fetchone()[0]
-        libraryBorrow = self.classify(libraryBorrow)
+        libraryBorrow = str(self.executer.fetchone()[0])
         sql = "update students set library_borrow='" + libraryBorrow + "' where student_id=" + str(studentId)
+        if self.level is not None:
+            libraryBorrow = self.classify(libraryBorrow)
+            sql = "update students_rank set cost_amount='" + libraryBorrow + "' where student_id=" + str(studentId)
         self.executer.execute(sql)

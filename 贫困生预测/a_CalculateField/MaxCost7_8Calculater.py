@@ -3,20 +3,24 @@ from Tools import MyLog
 
 class MaxCost7_8Calculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        A = 0
-        B = 1000
-        C = 1500
-        D = 2000
+        sql = "select time7_8costs from students order by time7_8costs"
+        self.executer.execute(sql)
+        MaxCost7_8Ranks = self.executer.fetchall()
+        A = MaxCost7_8Ranks[int(len(MaxCost7_8Ranks) * 0.25)][0]
+        B = MaxCost7_8Ranks[int(len(MaxCost7_8Ranks) * 0.5)][0]
+        C = MaxCost7_8Ranks[int(len(MaxCost7_8Ranks) * 0.75)][0]
+        D = MaxCost7_8Ranks[len(MaxCost7_8Ranks) - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生每日7点-8点的消费总额")
+        print("正在计算每个学生每日7点-8点的消费总额的最大值")
         studentId = str(self.student.getStudentId())
-        sql = "select sum(deal_cost) from card where student_id=" + studentId +" and hour(deal_date)=7"  
+        sql = "select sum(deal_cost) as a from card where student_id=" + studentId + " and hour(deal_date)=7  group by date(deal_date) order by a  limit  1"  
         self.executer.execute(sql)
         s = self.executer.fetchone()[0]
-        s=self.classify(s)
-        
         sql = "update students set time7_8costs='" + str(s) + "' where student_id=" + studentId
+        if self.level is not None:
+            s = self.classify(s)
+            sql = "update students_rank set time7_8costs='" + s + "' where student_id=" + studentId
         self.executer.execute(sql)
