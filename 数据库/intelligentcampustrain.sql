@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2017-07-07 08:38:35
+Date: 2017-07-07 18:33:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -117,9 +117,9 @@ CREATE TABLE `score` (
 DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
   `student_id` int(10) NOT NULL,
-  `score` int(10) DEFAULT '0' COMMENT '成绩排名',
+  `score` float(10,0) DEFAULT '0' COMMENT '成绩排名',
   `cost_amount` float(10,0) DEFAULT '0' COMMENT '花费金额',
-  `cost_variance` float(10,0) DEFAULT '0' COMMENT '花费方差',
+  `cost_variance` float(10,0) DEFAULT '0',
   `cost_avg_day_superMarket` float(10,0) DEFAULT '0',
   `cost_avg_day_laundryroom` float(10,0) DEFAULT '0',
   `cost_avg_day_dinnerHall` float(10,0) DEFAULT '0',
@@ -129,7 +129,7 @@ CREATE TABLE `students` (
   `cost_times_day_supermarket` float(10,0) DEFAULT '0' COMMENT '食堂消费占总消费的比例',
   `cost_times_day_dinnerhall` float(10,0) DEFAULT '0' COMMENT '食堂消费占总消费的比例',
   `cost_times_day_laundry` float(10,0) DEFAULT '0' COMMENT '食堂消费占总消费的比例',
-  `cost_times_all` float(10,0) DEFAULT '0' COMMENT '花费次数',
+  `cost_times` float(10,0) DEFAULT '0' COMMENT '花费次数',
   `library_borrow` float(10,0) DEFAULT '0' COMMENT '图书借阅量',
   `library_times` float(10,0) DEFAULT '0' COMMENT '勤奋度',
   `library_time_spand` float(10,0) DEFAULT '0' COMMENT '图书馆时长',
@@ -145,16 +145,29 @@ CREATE TABLE `students` (
   `cardrecharge` float(10,0) DEFAULT '0' COMMENT '卡充值总额',
   `maxcost7_8` float(10,0) DEFAULT '0' COMMENT '7点 -8点间的最大单笔消费',
   `subsidy` float(10,0) DEFAULT '0' COMMENT '奖学金额',
-  `proportion2000` float(10,0) DEFAULT NULL,
-  `proportion1500` float(10,0) DEFAULT NULL,
-  `proportion1000` float(10,0) DEFAULT NULL,
-  `scorerank_divided_by_stunum` float(10,0) DEFAULT NULL,
-  `consume_rank` int(10) DEFAULT NULL,
-  `below_2.5_rank` float(10,0) DEFAULT NULL,
-  `avg_charge` float(10,2) DEFAULT NULL,
-  `below10_rank` float(10,0) DEFAULT NULL,
-  `time7_8consume_avg` float DEFAULT NULL,
-  `score_multiply_consumerank` int(10) DEFAULT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Table structure for students_old
+-- ----------------------------
+DROP TABLE IF EXISTS `students_old`;
+CREATE TABLE `students_old` (
+  `student_id` int(10) NOT NULL,
+  `score` char(5) DEFAULT 'A' COMMENT '成绩排名',
+  `cost_amount` char(5) DEFAULT 'A' COMMENT '花费金额',
+  `cost_avg_superMarket` char(5) DEFAULT 'A',
+  `cost_avg_laundryroom` char(5) DEFAULT NULL,
+  `cost_avg_dinnerHall` char(5) DEFAULT 'A',
+  `cost_rate_supermarket` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
+  `cost_rate_laundryroom` char(5) DEFAULT 'A' COMMENT '花费在超市占总消费的比例',
+  `cost_rate_dinnerhall` char(5) DEFAULT 'A' COMMENT '食堂消费占总消费的比例',
+  `cost_times` char(5) DEFAULT 'A' COMMENT '花费次数',
+  `library_borrow` char(5) DEFAULT 'A' COMMENT '图书借阅量',
+  `library_times` char(5) DEFAULT 'A' COMMENT '勤奋度',
+  `library_time_spand` char(5) DEFAULT 'A' COMMENT '图书馆时长',
+  `balance_rank` char(5) DEFAULT 'A' COMMENT '卡内余额',
+  `subsidy` char(5) DEFAULT 'A' COMMENT '奖学金额',
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -166,7 +179,7 @@ CREATE TABLE `students_rank` (
   `student_id` int(10) NOT NULL,
   `score` int(3) DEFAULT '0' COMMENT '成绩排名',
   `cost_amount` int(3) DEFAULT '0' COMMENT '花费金额',
-  `cost_variance` int(3) DEFAULT NULL,
+  `cost_variance` int(3) DEFAULT '0',
   `cost_avg_day_superMarket` int(3) DEFAULT '0',
   `cost_avg_day_laundryroom` int(3) DEFAULT '0',
   `cost_avg_day_dinnerHall` int(3) DEFAULT '0',
