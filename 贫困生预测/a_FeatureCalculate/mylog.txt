@@ -1,0 +1,116 @@
+[1499410506.7490058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '0' for key 'PRIMARY'")
+[1499410506.8140059]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '1' for key 'PRIMARY'")
+[1499410506.8630056]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '8' for key 'PRIMARY'")
+[1499410506.9070058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '9' for key 'PRIMARY'")
+[1499410506.9550056]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '10' for key 'PRIMARY'")
+[1499410507.0050058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '11' for key 'PRIMARY'")
+[1499410507.0410058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '19' for key 'PRIMARY'")
+[1499410507.1130059]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '20' for key 'PRIMARY'")
+[1499410507.1540058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '21' for key 'PRIMARY'")
+[1499410507.1910057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '22' for key 'PRIMARY'")
+[1499410507.2380059]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '23' for key 'PRIMARY'")
+[1499410507.2740057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '28' for key 'PRIMARY'")
+[1499410507.3300056]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '29' for key 'PRIMARY'")
+[1499410507.3800058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '36' for key 'PRIMARY'")
+[1499410507.4150057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '37' for key 'PRIMARY'")
+[1499410507.4550056]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '56' for key 'PRIMARY'")
+[1499410507.4900057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '57' for key 'PRIMARY'")
+[1499410507.556006]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '62' for key 'PRIMARY'")
+[1499410507.6060057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '63' for key 'PRIMARY'")
+[1499410507.6560059]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '64' for key 'PRIMARY'")
+[1499410507.7300057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '65' for key 'PRIMARY'")
+[1499410507.7790058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '66' for key 'PRIMARY'")
+[1499410507.8240058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '67' for key 'PRIMARY'")
+[1499410507.872006]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '70' for key 'PRIMARY'")
+[1499410507.9930058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '71' for key 'PRIMARY'")
+[1499410508.057006]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '74' for key 'PRIMARY'")
+[1499410508.1150057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '75' for key 'PRIMARY'")
+[1499410508.1540058]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '76' for key 'PRIMARY'")
+[1499410508.1950057]: *
+                        正在计算成绩
+        *
+	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '77' for key 'PRIMARY'")
