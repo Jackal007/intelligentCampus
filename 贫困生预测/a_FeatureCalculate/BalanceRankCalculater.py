@@ -1,8 +1,5 @@
 from a_FeatureCalculate import XXCalculater
 from Tools import MyLog
-'''
-计算每个学生每日平均消费
-'''
 
 class BalanceRankCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
@@ -17,7 +14,9 @@ class BalanceRankCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算卡内余额")
+        '''
+            BalanceRankCalculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select min(balance),max(balance) from card where student_id=" + studentId
         self.executer.execute(sql)

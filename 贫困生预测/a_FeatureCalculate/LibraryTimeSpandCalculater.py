@@ -14,7 +14,9 @@ class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算图书馆时长")
+        '''
+            LibraryTimeSpandCalculater
+        '''
         studentId = self.student.getStudentId()
         sql = "insert into library_modify(select student_id,date(date),min(time(date)),max(time(date)),TIMESTAMPDIFF(minute,min(date),max(date)) from library where student_id = " + str(studentId) + " group by date(date))"
         self.executer.execute(sql)

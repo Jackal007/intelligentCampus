@@ -14,7 +14,9 @@ class CardDaysCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("CardDaysCalculater")
+        '''
+            CardDaysCalculater
+        '''
         studentId = self.student.getStudentId()
         sql = "select count(*) from card_2 where studentid=" + str(studentId) 
         self.executer.execute(sql)

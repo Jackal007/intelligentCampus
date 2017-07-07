@@ -36,7 +36,6 @@ class Student:
         all = list(self.attributes.values())
         return [self.attributes['costAmount'],self.attributes['costAvgSuperMarket'],\
                 self.attributes['costAvgDinnerHall'],\
-                self.attributes['costRateSupermarket'],self.attributes['costRateDinnerhall'],\
                 self.attributes['costTimes'],\
                 self.attributes['balanceRank'],self.attributes['subsidy'],]
 

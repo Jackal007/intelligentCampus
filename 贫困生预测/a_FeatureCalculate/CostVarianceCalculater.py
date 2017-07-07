@@ -14,7 +14,9 @@ class CostVarianceCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算按日消费的方差")
+        '''
+            CostVarianceCalculater
+        '''
         studentId = self.student.getStudentId()
         sql = "SELECT\
                 sum(item) / days\

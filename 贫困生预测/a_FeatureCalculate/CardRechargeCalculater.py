@@ -14,7 +14,9 @@ class CardRechargeCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生的卡充值总额")
+        '''
+            CardRechargeCalculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select sum(deal_cost) from card where student_id=" + studentId +" and deal_type = '卡充值'"  
         self.executer.execute(sql)

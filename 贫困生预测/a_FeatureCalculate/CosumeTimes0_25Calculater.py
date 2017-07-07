@@ -12,10 +12,11 @@ class CosumeTimes0_25Calculater(XXCalculater.XXCalculater):
         D = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 1) - 1 ][0]
         self.level = [A, B, C, D]
         
-        
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生单次消费金额在0-2.5元之间的次数")
+        '''
+            CosumeTimes0_25Calculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select count(*) from card where student_id=" + studentId + " and deal_cost between 0 and 2.5"  
         self.executer.execute(sql)

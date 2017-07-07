@@ -14,7 +14,9 @@ class LibraryBorrowCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正字计算图书馆借阅量")
+        '''
+            LibraryBorrowCalculater
+        '''
         studentId = self.student.getStudentId()
         sql = "select count(student_id) from borrow where student_id=" + str(studentId)
         self.executer.execute(sql)

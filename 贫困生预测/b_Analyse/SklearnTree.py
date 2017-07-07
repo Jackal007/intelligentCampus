@@ -5,23 +5,23 @@ from Model import Student
 import Output
 
 def createTrainDataSet():
-    dataSet, labels = DataSetCreater.createTrainDataSet()
+    dataSet = DataSetCreater.createTrainDataSet()
     DataSetCreater.transform(dataSet)
-    return mat(dataSet), labels
+    return mat(dataSet)
 
 def createTestDataSet():
-    students, dataSet, labels = DataSetCreater.createTestDataSet()
+    students, dataSet = DataSetCreater.createTestDataSet()
     DataSetCreater.transform(dataSet)
-    return students, dataSet, labels
+    return students, dataSet
 
-dataSet, labels = createTrainDataSet()
+dataSet = createTrainDataSet()
 
 X = dataSet[:, :-1]
 Y = dataSet[:, -1]
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X, Y)
 
-students, dataSet, labels = createTestDataSet()
+students, dataSet = createTestDataSet()
 
 X = dataSet
 result = clf.predict(X)

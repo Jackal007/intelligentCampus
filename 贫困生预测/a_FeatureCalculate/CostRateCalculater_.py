@@ -15,7 +15,9 @@ class CostRateCalculater(XXCalculater.XXCalculater):
     
     @MyLog.myException
     def calculate(self):
-        print("正在计算每种消费占比")
+        '''
+            CostRateCalculater
+        '''
         studentId = self.student.getStudentId()
         dealWays = ['dinnerhall', 'supermarket', 'laundry']
         for i in dealWays:

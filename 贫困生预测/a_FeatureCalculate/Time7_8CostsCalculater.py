@@ -14,7 +14,9 @@ class Time7_8CostsCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生每日7点-8点的消费总额")
+        '''
+            Time7_8CostsCalculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select sum(deal_cost) from card where student_id=" + studentId +" and hour(deal_date)=7"  
         self.executer.execute(sql)

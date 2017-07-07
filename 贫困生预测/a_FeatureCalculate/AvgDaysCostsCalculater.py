@@ -15,7 +15,7 @@ class AvgDaysCostsCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-            计算每个学生每日平均消费
+            AvgDaysCostsCalculater
         '''
         studentId = str(self.student.getStudentId())
         sql = "select avg(deal_cost) from card where student_id=" + studentId   

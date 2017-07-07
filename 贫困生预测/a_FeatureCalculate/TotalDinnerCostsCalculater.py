@@ -13,7 +13,9 @@ class TotalDinnerCostsCalculater(XXCalculater.XXCalculater):
         self.level = [A, B, C, D]
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生饭堂消费总额")
+        '''
+            TotalDinnerCostsCalculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select sum(deal_cost) from card where student_id=" + studentId + " and deal_way = 'dinnerhall'"
         self.executer.execute(sql)

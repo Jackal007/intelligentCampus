@@ -44,29 +44,29 @@ Time6_7CostsCalculater = Time6_7CostsCalculater()
 Time7_8CostsCalculater = Time7_8CostsCalculater()                 
 TotalDinnerCostsCalculater = TotalDinnerCostsCalculater()                       
 
-# calculater = [ScoreRankCalculater,
-#             AvgDaysCostsCalculater,
-#             BalanceRankCalculater,
-# #             CardDaysCalculater,
-#             CardRechargeCalculater,
-#             ConsumeTimes11_12Calculater,
-#             CostAmountCalculater,
-# #             CostAverageDayCalculater,
-# #             CostTimesDayCalculater,
-#             CostVarianceCalculater,
-#             CosumeTimes0_25Calculater,
-#             CountCost0_10Calculater,
-#             LibraryBorrowCalculater,
-#             LibraryTimesCalculater,
-#             LibraryTimeSpandCalculater,
-#             MaxCost7_8Calculater,
-#             SubsidyCalculater,
-#             Time6_7CostsCalculater,
-#             Time7_8CostsCalculater,
-#             TotalDinnerCostsCalculater,
-#             ]
+calculater = [ScoreRankCalculater,
+            AvgDaysCostsCalculater,
+            BalanceRankCalculater,
+#             CardDaysCalculater,
+            CardRechargeCalculater,
+            ConsumeTimes11_12Calculater,
+            CostAmountCalculater,
+#             CostAverageDayCalculater,
+#             CostTimesDayCalculater,
+            CostVarianceCalculater,
+            CosumeTimes0_25Calculater,
+            CountCost0_10Calculater,
+            LibraryBorrowCalculater,
+            LibraryTimesCalculater,
+            LibraryTimeSpandCalculater,
+            MaxCost7_8Calculater,
+            SubsidyCalculater,
+            Time6_7CostsCalculater,
+            Time7_8CostsCalculater,
+            TotalDinnerCostsCalculater,
+            ]
 
-calculater = [ScoreRankCalculater]
+# calculater = [ScoreRankCalculater]
 
 def calculate():
     db = MyDataBase.MyDataBase()
@@ -75,9 +75,10 @@ def calculate():
     
     sql = "delete from students"
     executer.execute(sql)
+    sql = "delete from students_rank"
+    executer.execute(sql)
     sql = "delete from library_modify"
     executer.execute(sql)
-    conn.commit()
     
     sql = "select student_id from score"
     executer.execute(sql)

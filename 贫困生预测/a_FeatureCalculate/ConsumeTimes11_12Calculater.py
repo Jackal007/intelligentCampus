@@ -14,7 +14,9 @@ class ConsumeTimes11_12Calculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生每天 11点 - 12点消费的次数")
+        '''
+            ConsumeTimes11_12Calculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select count(*) from card where student_id=" + studentId + " and hour(deal_date)=11"  
         self.executer.execute(sql)

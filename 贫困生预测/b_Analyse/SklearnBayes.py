@@ -4,17 +4,17 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from numpy import mat
 from sklearn.ensemble import ExtraTreesClassifier
-import DataSetCreater
+import DataCarer
 import Output
 
 def createTrainDataSet():
-    dataSet, labels = DataSetCreater.createTrainDataSet()
-    DataSetCreater.transform(dataSet)
+    dataSet, labels = DataCarer.createTrainDataSet()
+    DataCarer.transform(dataSet)
     return mat(dataSet), labels
 
 def createTestDataSet():
-    students, dataSet, labels = DataSetCreater.createTestDataSet()
-    DataSetCreater.transform(dataSet)
+    students, dataSet, labels = DataCarer.createTestDataSet()
+    DataCarer.transform(dataSet)
     return students, dataSet, labels
 
 dataSet, labels = createTrainDataSet()

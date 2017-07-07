@@ -10,7 +10,7 @@ def myException(function):
             # log the exception
             info = sys.exc_info()  
             with open('mylog.txt', 'a') as f:
-                f.write("[" + str(time.time()) + "]: *" + function.__doc__ + "*\n\t")
+                f.write("[" + str(time.time()) + "]: " + function.__doc__ + "\t")
                 f.write(str(info[0]) + ":" + str(info[1]) + '\n')
                 print(function.__doc__)
     return wrapper

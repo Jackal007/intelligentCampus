@@ -14,7 +14,9 @@ class CostAverageDayCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每日每种消费的平均金额")
+        '''
+            CostAverageDayCalculater
+        '''
         studentId = self.student.getStudentId()
         dealWays = ['dinnerhall', 'supermarket', 'laundryroom']
         for i in dealWays:

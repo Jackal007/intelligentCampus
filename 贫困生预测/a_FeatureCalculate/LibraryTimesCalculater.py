@@ -14,7 +14,9 @@ class LibraryTimesCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算进图书馆次数")
+        '''
+            LibraryTimesCalculater
+        '''
         studentId = self.student.getStudentId()
         sql = "select count(student_id) from library where student_id=" + str(studentId)
         self.executer.execute(sql)

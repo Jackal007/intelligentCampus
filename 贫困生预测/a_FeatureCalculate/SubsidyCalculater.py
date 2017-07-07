@@ -14,12 +14,14 @@ class SubsidyCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算奖学金获得情况")
+        '''
+            SubsidyCalculater
+        '''
         studentId = self.student.getStudentId()
         sql = "select stipend from subsidy where student_id=" + str(studentId)
         self.executer.execute(sql)
         subsidy = self.executer.fetchone()[0]
-        sql = "update students set subsidy= '" + subsidy + "' where student_id = " + str(studentId)
+        sql = "update students set subsidy= '" + str(subsidy) + "' where student_id = " + str(studentId)
         if self.level is not None:
             subsidy = self.classify(subsidy)
             sql = "update students_rank set subsidy= '" + subsidy + "' where student_id = " + str(studentId)

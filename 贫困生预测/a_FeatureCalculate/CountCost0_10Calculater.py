@@ -14,7 +14,9 @@ class CountCost0_10Calculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生当日总消费在0-10元范围的天数")
+        '''
+            CountCost0_10Calculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select count(*) from card_2 where studentid=" + studentId
         self.executer.execute(sql)

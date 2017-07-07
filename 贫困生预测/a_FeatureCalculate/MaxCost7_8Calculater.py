@@ -14,7 +14,9 @@ class MaxCost7_8Calculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("正在计算每个学生每日7点-8点的消费总额的最大值")
+        '''
+            MaxCost7_8Calculater
+        '''
         studentId = str(self.student.getStudentId())
         sql = "select sum(deal_cost) as a from card where student_id=" + studentId + " and hour(deal_date)=7  group by date(deal_date) order by a  limit  1"  
         self.executer.execute(sql)

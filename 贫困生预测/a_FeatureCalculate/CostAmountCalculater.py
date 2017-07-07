@@ -14,7 +14,9 @@ class CostAmountCalculater(XXCalculater.XXCalculater):
         
     @MyLog.myException
     def calculate(self):
-        print("CostAmountCalculater")
+        '''
+            CostAmountCalculater
+        '''
         studentId = self.student.getStudentId()
         sql = "select sum(deal_cost) from card where student_id=" + str(studentId) 
         self.executer.execute(sql)
