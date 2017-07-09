@@ -1,6 +1,33 @@
-# s="CalculateBalanceRank,CalculateCostAmount"
-# o=""
-# for i in s.split(","):
-#     o=o+"'"+i+"',"
-#     
-# print( o)
+s="student_id,\
+score,\
+cost_amount,\
+cost_variance,\
+cost_avg_day_superMarket,\
+cost_avg_day_laundryroom,\
+cost_avg_day_dinnerHall,\
+cost_rate_supermarket,\
+cost_rate_laundryroom,\
+cost_rate_dinnerhall,\
+cost_times_day_supermarket,\
+cost_times_day_dinnerhall,\
+cost_times_day_laundry,\
+cost_times,\
+library_borrow,\
+library_times,\
+library_time_spand,\
+balance_rank,\
+card_days,\
+time6_7costs,\
+time7_8costs,\
+totaldinnercosts,\
+avgdayscosts,\
+consumetimes11_12,\
+consumetimes0_25,\
+countcost0_10,\
+cardrecharge,\
+maxcost7_8,\
+subsidy"
+ss=s.split(',')
+for i in range(len(ss)):
+    print("'"+ss[i]+"':attributes["+str(i)+"],")
+    

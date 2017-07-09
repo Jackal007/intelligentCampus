@@ -7,7 +7,7 @@ def createTrainDataSet():
     db = MyDataBase.MyDataBase("train")
     conn, executer = db.getConn(), db.getExcuter()
     # get all the students
-    sql = "select student_id,score,cost_amount,cost_avg_dinnerHall,cost_avg_laundryroom,cost_avg_superMarket,cost_rate_dinnerhall,cost_rate_laundryroom,cost_rate_supermarket,cost_times,library_borrow,library_times,library_time_spand,balance_rank,subsidy from students_old"
+    sql = "select student_id,score,cost_amount,cost_variance,cost_avg_day_superMarket,cost_avg_day_laundryroom,cost_avg_day_dinnerHall,cost_rate_supermarket,cost_rate_laundryroom,cost_rate_dinnerhall,cost_times_day_supermarket,cost_times_day_dinnerhall,cost_times_day_laundry,cost_times,library_borrow,library_times,library_time_spand,balance_rank,card_days,time6_7costs,time7_8costs,totaldinnercosts,avgdayscosts,consumetimes11_12,consumetimes0_25,countcost0_10,cardrecharge,maxcost7_8,subsidy from students_old"
     executer.execute(sql)
     dataSet = []
     for i in executer.fetchall():
@@ -43,7 +43,7 @@ def createTestDataSet():
     db = MyDataBase.MyDataBase("validate")
     conn, executer = db.getConn(), db.getExcuter()
     # get all the students
-    sql = "select student_id,score,cost_amount,cost_avg_dinnerHall,cost_avg_laundryroom,cost_avg_superMarket,cost_rate_dinnerhall,cost_rate_laundryroom,cost_rate_supermarket,cost_times,library_borrow,library_times,library_time_spand,balance_rank,subsidy from students_old"
+    sql = "student_id,score,cost_amount,cost_variance,cost_avg_day_superMarket,cost_avg_day_laundryroom,cost_avg_day_dinnerHall,cost_rate_supermarket,cost_rate_laundryroom,cost_rate_dinnerhall,cost_times_day_supermarket,cost_times_day_dinnerhall,cost_times_day_laundry,cost_times,library_borrow,library_times,library_time_spand,balance_rank,card_days,time6_7costs,time7_8costs,totaldinnercosts,avgdayscosts,consumetimes11_12,consumetimes0_25,countcost0_10,cardrecharge,maxcost7_8,subsidy from students_old"
     executer.execute(sql)
     students, dataSet = [], []
     for i in executer.fetchall():

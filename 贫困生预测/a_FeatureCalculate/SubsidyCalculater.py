@@ -9,7 +9,7 @@ class SubsidyCalculater(XXCalculater.XXCalculater):
         A = Subsidy[int(len(Subsidy) * 0.25)][0]
         B = Subsidy[int(len(Subsidy) * 0.5)][0]
         C = Subsidy[int(len(Subsidy) * 0.75)][0]
-        D = Subsidy[int(len(Subsidy) * 1) - 1][0]
+        D = Subsidy[len(Subsidy)  - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException

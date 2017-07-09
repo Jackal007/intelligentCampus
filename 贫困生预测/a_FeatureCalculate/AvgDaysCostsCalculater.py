@@ -18,12 +18,17 @@ class AvgDaysCostsCalculater(XXCalculater.XXCalculater):
             AvgDaysCostsCalculater
         '''
         studentId = str(self.student.getStudentId())
-        sql = "select avg(deal_cost) from card where student_id=" + studentId   
-        self.executer.execute(sql)
-        s = self.executer.fetchone()[0]
-        sql = "update students set avgdayscosts='" + str(s) + "' where student_id=" + studentId
-        
-        if self.level is not None:
+        if self.level is None:
+            sql = "select avg(deal_cost) from card where student_id=" + studentId   
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
+            sql = "update students set avgdayscosts='" + str(s) + "' where student_id=" + studentId
+            self.executer.execute(sql)
+        else:
+            sql = "select avgdayscosts from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
             s = self.classify(s)
             sql = "update students_rank set avgdayscosts='" + str(s) + "' where student_id=" + studentId
-        self.executer.execute(sql)
+            self.executer.execute(sql)
+        

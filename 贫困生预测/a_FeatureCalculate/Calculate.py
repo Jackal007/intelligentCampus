@@ -89,8 +89,8 @@ def calculate():
     
 #     sql = "delete from students"
 #     executer.execute(sql)
-#     sql = "delete from students_rank"
-#     executer.execute(sql)
+    sql = "delete from students_rank"
+    executer.execute(sql)
 #     sql = "delete from library_modify"
 #     executer.execute(sql)
     
@@ -103,18 +103,17 @@ def calculate():
     for i in calculater:
         i.level = None
     
-    for i in tqdm(studentIds):
-        print()
-        i = i[0]
-        student = Student()
-        student.setStudentId(i)
-        student.fetch(calculater)
+#     for i in tqdm(studentIds):
+#         print()
+#         i = i[0]
+#         student = Student()
+#         student.setStudentId(i)
+#         student.fetch(calculater)
         
     for i in calculater:
         i.setLevel()
     
     for i in tqdm(studentIds):
-        print()
         i = i[0]
         student = Student()
         student.setStudentId(i)

@@ -18,11 +18,16 @@ class ConsumeTimes11_12Calculater(XXCalculater.XXCalculater):
             ConsumeTimes11_12Calculater
         '''
         studentId = str(self.student.getStudentId())
-        sql = "select count(*) from card where student_id=" + studentId + " and hour(deal_date)=11"  
-        self.executer.execute(sql)
-        s = str(self.executer.fetchone()[0])
-        sql = "update students set consumetimes11_12='" + s + "' where student_id=" + studentId
-        if self.level is not None:
+        if self.level is None:
+            sql = "select count(*) from card where student_id=" + studentId + " and hour(deal_date)=11"  
+            self.executer.execute(sql)
+            s = str(self.executer.fetchone()[0])
+            sql = "update students set consumetimes11_12='" + s + "' where student_id=" + studentId
+            self.executer.execute(sql)
+        else:
+            sql = "select consumetimes11_12 from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
             s = self.classify(s)
             sql = "update students_rank set consumetimes11_12='" + s + "' where student_id=" + studentId
-        self.executer.execute(sql)
+            self.executer.execute(sql)

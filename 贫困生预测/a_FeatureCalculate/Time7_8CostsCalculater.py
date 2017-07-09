@@ -9,7 +9,7 @@ class Time7_8CostsCalculater(XXCalculater.XXCalculater):
         A = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.25)][0]
         B = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.5)][0]
         C = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.75)][0]
-        D = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 1)][0]
+        D = Time7_8CostsRanks[len(Time7_8CostsRanks)-1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException
@@ -18,11 +18,16 @@ class Time7_8CostsCalculater(XXCalculater.XXCalculater):
             Time7_8CostsCalculater
         '''
         studentId = str(self.student.getStudentId())
-        sql = "select sum(deal_cost) from card where student_id=" + studentId +" and hour(deal_date)=7"  
-        self.executer.execute(sql)
-        s = self.executer.fetchone()[0]
-        sql = "update students set time7_8costs='" + str(s) + "' where student_id=" + studentId
-        if self.level is not None:
+        if self.level is None:
+            sql = "select sum(deal_cost) from card where student_id=" + studentId +" and hour(deal_date)=7"  
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
+            sql = "update students set time7_8costs='" + str(s) + "' where student_id=" + studentId
+            self.executer.execute(sql)
+        else:
+            sql = "select time7_8costs from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
             s = self.classify(s)
             sql = "update students_rank set time7_8costs='" + str(s) + "' where student_id=" + studentId
-        self.executer.execute(sql)
+            self.executer.execute(sql)

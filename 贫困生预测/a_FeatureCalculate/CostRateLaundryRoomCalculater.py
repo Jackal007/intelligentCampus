@@ -17,28 +17,33 @@ class CostRateLaundryRoomCalculater(XXCalculater.XXCalculater):
         '''
         CostRateLaundryRoomCalculater
         '''
-        studentId = self.student.getStudentId()
-        dealWays = ['laundryroom']
-        for i in dealWays:
-            sql = "SELECT\
-                        sum(deal_cost)/s\
-                    FROM\
-                        card,\
-                        (\
-                            SELECT\
-                                sum(deal_cost) AS s\
-                            FROM\
-                                card\
-                            WHERE\
-                                student_id = " + str(studentId) + "\
-                        )as t\
-                    WHERE\
-                        deal_way = '" + i + "'\
-                    AND student_id = " + str(studentId)
+        studentId = str(self.student.getStudentId())
+        if self.level is None:
+            dealWays = ['LaundryRoom']
+            for i in dealWays:
+                sql = "SELECT\
+                            sum(deal_cost)/s\
+                        FROM\
+                            card,\
+                            (\
+                                SELECT\
+                                    sum(deal_cost) AS s\
+                                FROM\
+                                    card\
+                                WHERE\
+                                    student_id = " + str(studentId) + "\
+                            )as t\
+                        WHERE\
+                            deal_way = '" + i + "'\
+                        AND student_id = " + str(studentId)
+                self.executer.execute(sql)
+                s = self.executer.fetchone()[0]
+                sql = "update students set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)
+        else:
+            sql = "select set cost_rate_" + i + " from students where student_id=" + studentId   
             self.executer.execute(sql)
             s = self.executer.fetchone()[0]
-            sql = "update students set cost_avg_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
-            if self.level is not None:
-                s = self.classify(s)
-                sql = "update students_rank set cost_avg_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
+            s = self.classify(s)
+            sql = "update students_rank set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
             self.executer.execute(sql)

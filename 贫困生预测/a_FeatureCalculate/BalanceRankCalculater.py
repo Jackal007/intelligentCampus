@@ -18,13 +18,18 @@ class BalanceRankCalculater(XXCalculater.XXCalculater):
             BalanceRankCalculater
         '''
         studentId = str(self.student.getStudentId())
-        sql = "select min(balance),max(balance) from card where student_id=" + studentId
-        self.executer.execute(sql)
-        s = self.executer.fetchone()
-        minBalance, maxBalance = s[0], s[1]
-        averageBalance = str((minBalance + maxBalance) / 2)
-        sql = "update students set balance_rank='" + averageBalance + "' where student_id=" + studentId
-        if self.level is not None:
+        if self.level is None:
+            sql = "select min(balance),max(balance) from card where student_id=" + studentId
+            self.executer.execute(sql)
+            s = self.executer.fetchone()
+            minBalance, maxBalance = s[0], s[1]
+            averageBalance = str((minBalance + maxBalance) / 2)
+            sql = "update students set balance_rank='" + averageBalance + "' where student_id=" + studentId
+            self.executer.execute(sql)
+        else:
+            sql = "select balance_rank from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
             averageBalance = self.classify(s)
             sql = "update students_rank set balance_rank='" + averageBalance + "' where student_id=" + studentId
-        self.executer.execute(sql)
+            self.executer.execute(sql)

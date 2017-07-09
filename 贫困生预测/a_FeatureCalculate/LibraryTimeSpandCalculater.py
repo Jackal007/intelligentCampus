@@ -9,7 +9,7 @@ class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
         A = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.25)][0]
         B = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.5)][0]
         C = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.75)][0]
-        D = LibraryTimeSpand[int(len(LibraryTimeSpand) * 1) - 1][0]
+        D = LibraryTimeSpand[len(LibraryTimeSpand)  - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException
@@ -17,14 +17,20 @@ class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
         '''
             LibraryTimeSpandCalculater
         '''
-        studentId = self.student.getStudentId()
-        sql = "insert into library_modify(select student_id,date(date),min(time(date)),max(time(date)),TIMESTAMPDIFF(minute,min(date),max(date)) from library where student_id = " + str(studentId) + " group by date(date))"
-        self.executer.execute(sql)
-        sql = "SELECT sum(totaltime) FROM library_modify where student_id = " + str(studentId) 
-        self.executer.execute(sql)
-        libraryTimeSpand = str(self.executer.fetchone()[0])
-        sql = "update students set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
-        if self.level is not None:
+        studentId = str(self.student.getStudentId())
+        if self.level is None:
+            studentId = self.student.getStudentId()
+            sql = "insert into library_modify(select student_id,date(date),min(time(date)),max(time(date)),TIMESTAMPDIFF(minute,min(date),max(date)) from library where student_id = " + str(studentId) + " group by date(date))"
+            self.executer.execute(sql)
+            sql = "SELECT sum(totaltime) FROM library_modify where student_id = " + str(studentId) 
+            self.executer.execute(sql)
+            libraryTimeSpand = str(self.executer.fetchone()[0])
+            sql = "update students set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
+            self.executer.execute(sql)
+        else:
+            sql = "select library_time_spand from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            libraryTimeSpand = self.executer.fetchone()[0]
             libraryTimeSpand = self.classify(libraryTimeSpand)
             sql = "update students_rank set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
-        self.executer.execute(sql)
+            self.executer.execute(sql)

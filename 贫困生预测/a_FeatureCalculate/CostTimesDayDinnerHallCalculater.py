@@ -17,27 +17,32 @@ class CostTimesDayDinnerHallCalculater(XXCalculater.XXCalculater):
         '''
         CostTimesDayDinnerHallCalculater
         '''
-        studentId = self.student.getStudentId()
-        dealWays = ['dinnerhall']
-        for i in dealWays:
-            sql = "SELECT\
-                        avg(t)\
-                    FROM\
-                        (\
-                            SELECT\
-                                count(*) AS t\
-                            FROM\
-                                card\
-                            WHERE\
-                                deal_way = '" + i + "'\
-                            AND student_id = " + str(studentId) + "\
-                            GROUP BY\
-                                date(deal_date)\
-                        )as tt"
+        studentId = str(self.student.getStudentId())
+        if self.level is None:
+            dealWays = ['dinnerhall']
+            for i in dealWays:
+                sql = "SELECT\
+                            avg(t)\
+                        FROM\
+                            (\
+                                SELECT\
+                                    count(*) AS t\
+                                FROM\
+                                    card\
+                                WHERE\
+                                    deal_way = '" + i + "'\
+                                AND student_id = " + str(studentId) + "\
+                                GROUP BY\
+                                    date(deal_date)\
+                            )as tt"
+                self.executer.execute(sql)
+                result = str(self.executer.fetchone()[0])
+                sql = "update students set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)
+        else:
+            sql = "select cost_times_day_" + i + " from students where student_id=" + studentId   
             self.executer.execute(sql)
-            result = str(self.executer.fetchone()[0])
-            sql = "update students set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
-            if self.level is not None:
-                result = self.classify(result)
-                sql = "update students_rank set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
+            result = self.executer.fetchone()[0]
+            result = self.classify(result)
+            sql = "update students_rank set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
             self.executer.execute(sql)

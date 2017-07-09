@@ -18,11 +18,16 @@ class MaxCost7_8Calculater(XXCalculater.XXCalculater):
             MaxCost7_8Calculater
         '''
         studentId = str(self.student.getStudentId())
-        sql = "select sum(deal_cost) as a from card where student_id=" + studentId + " and hour(deal_date)=7  group by date(deal_date) order by a  limit  1"  
-        self.executer.execute(sql)
-        s = self.executer.fetchone()[0]
-        sql = "update students set time7_8costs='" + str(s) + "' where student_id=" + studentId
-        if self.level is not None:
+        if self.level is None:
+            sql = "select sum(deal_cost) as a from card where student_id=" + studentId + " and hour(deal_date)=7  group by date(deal_date) order by a  limit  1"  
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
+            sql = "update students set maxcost7_8='" + str(s) + "' where student_id=" + studentId
+            self.executer.execute(sql)
+        else:
+            sql = "select maxcost7_8 from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
             s = self.classify(s)
-            sql = "update students_rank set time7_8costs='" + s + "' where student_id=" + studentId
-        self.executer.execute(sql)
+            sql = "update students_rank set maxcost7_8='" + s + "' where student_id=" + studentId
+            self.executer.execute(sql)

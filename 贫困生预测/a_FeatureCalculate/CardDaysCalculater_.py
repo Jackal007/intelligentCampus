@@ -17,11 +17,18 @@ class CardDaysCalculater(XXCalculater.XXCalculater):
         '''
             CardDaysCalculater
         '''
-        studentId = self.student.getStudentId()
-        sql = "select count(*) from card_2 where studentid=" + str(studentId) 
-        self.executer.execute(sql)
-        dealCost = self.executer.fetchone()[0]
-        dealCost = self.classify(dealCost)
-    
-        sql = "update students set card_days='" + dealCost + "' where student_id=" + str(studentId)
-        self.executer.execute(sql)
+        studentId = str(self.student.getStudentId())
+        if self.level is None:
+            studentId = self.student.getStudentId()
+            sql = "select count(*) from card_2 where studentid=" + str(studentId) 
+            self.executer.execute(sql)
+            dealCost = self.executer.fetchone()[0]
+            dealCost = self.classify(dealCost)
+            self.executer.execute(sql)
+        else:
+            sql = "select card_days from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            s = self.executer.fetchone()[0]
+            dealCost = self.classify(s)
+            sql = "update students set card_days='" + dealCost + "' where student_id=" + str(studentId)
+            self.executer.execute(sql)

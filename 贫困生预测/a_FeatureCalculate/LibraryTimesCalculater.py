@@ -17,12 +17,17 @@ class LibraryTimesCalculater(XXCalculater.XXCalculater):
         '''
             LibraryTimesCalculater
         '''
-        studentId = self.student.getStudentId()
-        sql = "select count(student_id) from library where student_id=" + str(studentId)
-        self.executer.execute(sql)
-        libraryTimes = str(self.executer.fetchone()[0])
-        sql = "update students set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
-        if self.level is not None:
+        studentId = str(self.student.getStudentId())
+        if self.level is None:
+            sql = "select count(student_id) from library where student_id=" + str(studentId)
+            self.executer.execute(sql)
+            libraryTimes = str(self.executer.fetchone()[0])
+            sql = "update students set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
+            self.executer.execute(sql)
+        else:
+            sql = "select library_times from students where student_id=" + studentId   
+            self.executer.execute(sql)
+            libraryTimes = self.executer.fetchone()[0]
             libraryTimes = self.classify(libraryTimes)
             sql = "update students_rank set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
-        self.executer.execute(sql)
+            self.executer.execute(sql)

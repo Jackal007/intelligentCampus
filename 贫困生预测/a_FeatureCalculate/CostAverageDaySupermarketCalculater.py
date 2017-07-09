@@ -17,27 +17,32 @@ class CostAverageDaySupermarketCalculater(XXCalculater.XXCalculater):
         '''
         CostAverageDaySupermarketCalculater
         '''
-        studentId = self.student.getStudentId()
-        dealWays = ['supermarket']
-        for i in dealWays:
-            sql = "SELECT\
-                        avg(t)\
-                    FROM\
-                        (\
-                            SELECT\
-                                sum(deal_cost) AS t\
-                            FROM\
-                                card\
-                            WHERE\
-                                deal_way = '" + i + "'\
-                            AND student_id = " + str(studentId) + "\
-                            GROUP BY\
-                                date(deal_date)\
-                        )as tt"
+        studentId = str(self.student.getStudentId())
+        if self.level is None:
+            dealWays = ['Supermarket']
+            for i in dealWays:
+                sql = "SELECT\
+                            avg(t)\
+                        FROM\
+                            (\
+                                SELECT\
+                                    sum(deal_cost) AS t\
+                                FROM\
+                                    card\
+                                WHERE\
+                                    deal_way = '" + i + "'\
+                                AND student_id = " + str(studentId) + "\
+                                GROUP BY\
+                                    date(deal_date)\
+                            )as tt"
+                self.executer.execute(sql)
+                s = self.executer.fetchone()[0]
+                sql = "update students set cost_avg_day_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)
+        else:
+            sql = "select cost_avg_day_" + i + " from students where student_id=" + studentId   
             self.executer.execute(sql)
             s = self.executer.fetchone()[0]
-            sql = "update students set cost_avg_day_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
-            if self.level is not None:
-                s = self.classify(s)
-                sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
+            s = self.classify(s)
+            sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
             self.executer.execute(sql)
