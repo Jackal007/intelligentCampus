@@ -1,31 +1,31 @@
 from a_FeatureCalculate import XXCalculater
 from Tools import MyLog
 
-class CostTimesDayCalculater(XXCalculater.XXCalculater):
+class CostAverageDayDinnerHallCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        sql = "select cost_times_day_ from students order by cost_times_day_"
+        sql = "select cost_avg_day_dinnerhall from students order by cost_avg_day_dinnerhall"
         self.executer.execute(sql)
-        AverageCosts = self.executer.fetchall()
-        A = AverageCosts[int(len(AverageCosts) * 0.25)][0]
-        B = AverageCosts[int(len(AverageCosts) * 0.5)][0]
-        C = AverageCosts[int(len(AverageCosts) * 0.75)][0]
-        D = AverageCosts[int(len(AverageCosts) * 1) - 1][0]
+        CostAmounts = self.executer.fetchall()
+        A = CostAmounts[int(len(CostAmounts) * 0.25)][0]
+        B = CostAmounts[int(len(CostAmounts) * 0.5)][0]
+        C = CostAmounts[int(len(CostAmounts) * 0.75)][0]
+        D = CostAmounts[len(CostAmounts) - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException
     def calculate(self):
         '''
-            CostTimesDayCalculater
+        CostAverageDayDinnerHallCalculater
         '''
         studentId = self.student.getStudentId()
-        dealWays = ['dinnerhall', 'supermarket', 'laundry']
+        dealWays = ['dinnerhall']
         for i in dealWays:
             sql = "SELECT\
                         avg(t)\
                     FROM\
                         (\
                             SELECT\
-                                count(*) AS t\
+                                sum(deal_cost) AS t\
                             FROM\
                                 card\
                             WHERE\
@@ -35,9 +35,9 @@ class CostTimesDayCalculater(XXCalculater.XXCalculater):
                                 date(deal_date)\
                         )as tt"
             self.executer.execute(sql)
-            result = str(self.executer.fetchone()[0])
-            sql = "update students set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
+            s = self.executer.fetchone()[0]
+            sql = "update students set cost_avg_day_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
             if self.level is not None:
-                result = self.classify(result)
-                sql = "update students_rank set cost_amount='" + result + "' where student_id=" + str(studentId)
+                s = self.classify(s)
+                sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
             self.executer.execute(sql)

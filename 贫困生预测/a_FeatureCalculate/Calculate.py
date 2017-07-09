@@ -7,8 +7,15 @@ from a_FeatureCalculate.BalanceRankCalculater import BalanceRankCalculater
 from a_FeatureCalculate.CardRechargeCalculater import CardRechargeCalculater
 from a_FeatureCalculate.ConsumeTimes11_12Calculater import ConsumeTimes11_12Calculater
 from a_FeatureCalculate.CostAmountCalculater import CostAmountCalculater
-# from a_FeatureCalculate.CostAverageDayCalculater import CostAverageDayCalculater
-# from a_FeatureCalculate.CostTimesDayCalculater import CostTimesDayCalculater
+from a_FeatureCalculate.CostAverageDayDinnerHallCalculater import CostAverageDayDinnerHallCalculater
+from a_FeatureCalculate.CostAverageDayLaundryRoomCalculater import CostAverageDayLaundryRoomCalculater
+from a_FeatureCalculate.CostAverageDaySupermarketCalculater import CostAverageDaySupermarketCalculater
+from a_FeatureCalculate.CostTimesDayDinnerHallCalculater import CostTimesDayDinnerHallCalculater
+from a_FeatureCalculate.CostTimesDayLaundryRoomCalculater import CostTimesDayLaundryRoomCalculater
+from a_FeatureCalculate.CostTimesDaySupermarketCalculater import CostTimesDaySupermarketCalculater
+from a_FeatureCalculate.CostRateDinnerHallCalculater import CostRateDinnerHallCalculater
+from a_FeatureCalculate.CostRateLaundryRoomCalculater import CostRateLaundryRoomCalculater
+from a_FeatureCalculate.CostRateSupermarketCalculater import CostRateSupermarketCalculater
 from a_FeatureCalculate.CostVarianceCalculater import CostVarianceCalculater
 from a_FeatureCalculate.CosumeTimes0_25Calculater import CosumeTimes0_25Calculater
 from a_FeatureCalculate.CountCost0_10Calculater import CountCost0_10Calculater
@@ -29,8 +36,15 @@ BalanceRankCalculater = BalanceRankCalculater()
 CardRechargeCalculater = CardRechargeCalculater()                   
 ConsumeTimes11_12Calculater = ConsumeTimes11_12Calculater()                      
 CostAmountCalculater = CostAmountCalculater()                 
-# CostAverageDayCalculater = CostAverageDayCalculater()                     
-# CostTimesDayCalculater = CostTimesDayCalculater()                 
+CostAverageDayDinnerHallCalculater = CostAverageDayDinnerHallCalculater()                
+CostAverageDayLaundryRoomCalculater = CostAverageDayLaundryRoomCalculater()              
+CostAverageDaySupermarketCalculater = CostAverageDaySupermarketCalculater()                     
+CostTimesDayDinnerHallCalculater = CostTimesDayDinnerHallCalculater()                    
+CostTimesDayLaundryRoomCalculater = CostTimesDayLaundryRoomCalculater()                  
+CostTimesDaySupermarketCalculater = CostTimesDaySupermarketCalculater()                       
+CostRateDinnerHallCalculater = CostRateDinnerHallCalculater()                    
+CostRateLaundryRoomCalculater = CostRateLaundryRoomCalculater()                  
+CostRateSupermarketCalculater = CostRateSupermarketCalculater()    
 CostVarianceCalculater = CostVarianceCalculater()                 
 CosumeTimes0_25Calculater = CosumeTimes0_25Calculater()                    
 CountCost0_10Calculater = CountCost0_10Calculater()                    
@@ -73,12 +87,12 @@ def calculate():
     conn = db.getConn()
     executer = db.getExcuter()
     
-    sql = "delete from students"
-    executer.execute(sql)
-    sql = "delete from students_rank"
-    executer.execute(sql)
-    sql = "delete from library_modify"
-    executer.execute(sql)
+#     sql = "delete from students"
+#     executer.execute(sql)
+#     sql = "delete from students_rank"
+#     executer.execute(sql)
+#     sql = "delete from library_modify"
+#     executer.execute(sql)
     
     sql = "select student_id from score"
     executer.execute(sql)
