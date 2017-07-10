@@ -21,8 +21,7 @@ class TotalDinnerCostsCalculater(XXCalculater.XXCalculater):
             sql = "select sum(deal_cost) from card where student_id=" + studentId + " and deal_way = 'dinnerhall'"
             self.executer.execute(sql)
             s = self.executer.fetchone()[0]
-            s = str(self.classify(s))
-            sql = "update students set  totaldinnercosts='" + s + "' where student_id=" + studentId
+            sql = "update students set  totaldinnercosts='" + str(s) + "' where student_id=" + studentId
             self.executer.execute(sql)
         else:
             sql = "select totaldinnercosts from students where student_id=" + studentId   

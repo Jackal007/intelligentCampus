@@ -3,7 +3,7 @@ from Tools import MyLog
 
 class CardDaysCalculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        sql = "select count(*)as a from card_2 group by studentid order by a"
+        sql = "select card_days from students order by card_days"
         self.executer.execute(sql)
         cardDays = self.executer.fetchone()[0]
         A = int(cardDays * 0.25)

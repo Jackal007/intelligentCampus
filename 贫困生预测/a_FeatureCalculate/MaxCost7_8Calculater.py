@@ -3,7 +3,7 @@ from Tools import MyLog
 
 class MaxCost7_8Calculater(XXCalculater.XXCalculater):
     def setLevel(self):
-        sql = "select time7_8costs from students order by time7_8costs"
+        sql = "select maxcost7_8 from students order by maxcost7_8"
         self.executer.execute(sql)
         MaxCost7_8Ranks = self.executer.fetchall()
         A = MaxCost7_8Ranks[int(len(MaxCost7_8Ranks) * 0.25)][0]

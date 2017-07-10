@@ -8,6 +8,7 @@ class XXCalculater:
         self.db = MyDataBase.MyDataBase("validate")
         self.conn = self.db.getConn()
         self.executer = self.db.getExcuter()
+        self.level = None
                 
     def setStudent(self, student):
         self.student = student
@@ -24,8 +25,8 @@ class XXCalculater:
             return 0
         for i in range(len(self.level)):
             if float(param) <= float(self.level[i]):
-                return str(i+1)
-        return str(len(self.level)+1)
+                return str(i + 1)
+        return str(len(self.level) + 1)
     
     def afterCalculate(self):
         self.db.close()
