@@ -1,0 +1,315 @@
+[1499664339.0302007]: 
+        ScoreRankCalculater
+        	<class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '6' for key 'PRIMARY'")
+[1499664339.6542008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664339.8122008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664340.7452009]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664340.754201]: 
+            Time6_7CostsCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499664340.8112009]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664345.8872008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664346.0442007]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664346.6202006]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664346.6322007]: 
+            Time6_7CostsCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499664346.7062008]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664352.445201]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664352.6312008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664353.0442007]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664353.057201]: 
+            Time6_7CostsCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499664353.1222007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664357.2522006]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664357.3942008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664357.6472008]: 
+            LibraryTimeSpandCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1499664357.6862009]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664357.794201]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664360.5022008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664360.6522007]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664361.0852008]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664361.1902008]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664363.4522007]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664363.5942008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664364.218201]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664364.2242007]: 
+            Time6_7CostsCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499664364.2802007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664370.6342008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664370.793201]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664371.3592007]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664371.4882007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664377.0592008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664377.217201]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664377.850201]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664377.9752007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664381.258201]: 
+        CostAverageDayLaundryRoomCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_avg_day_laundryroom' at row 1")
+[1499664381.3792007]: 
+        CostRateLaundryRoomCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_rate_laundryroom' at row 1")
+[1499664381.533201]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664381.6832008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664382.1592007]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664382.2492008]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664389.149201]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664389.3152008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664389.5872009]: 
+            LibraryTimeSpandCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1499664389.6412008]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664389.7832007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664395.425201]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664395.6162007]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664396.365201]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664396.485201]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664403.5152009]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664403.7322006]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664404.2662008]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664404.3952007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664409.281201]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664409.7162006]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664410.3642006]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664410.4722006]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664416.5052009]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664416.7892008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664417.738201]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664417.7502007]: 
+            Time6_7CostsCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499664417.8182008]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664421.5712008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664421.721201]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664422.3712008]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664422.485201]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664428.909201]: 
+        CostAverageDayLaundryRoomCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_avg_day_laundryroom' at row 1")
+[1499664429.0442007]: 
+        CostRateLaundryRoomCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_rate_laundryroom' at row 1")
+[1499664429.2652009]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664429.4962008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664430.162201]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664430.1772008]: 
+            Time6_7CostsCalculater
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1499664430.261201]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664435.7872007]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664435.9792008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664436.6202006]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664436.7802007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664443.7782009]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664443.9532008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664444.6952007]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664444.8742008]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664451.6512008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664451.8192008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664452.5102007]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664452.6322007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664457.985201]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664458.1182008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664458.5852008]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664458.735201]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664466.4342008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664466.6372008]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664467.5092008]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664467.6992009]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664472.1502008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664472.350201]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664472.9002006]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664473.0002007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664477.3122008]: 
+        CostTimesDaySupermarketCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()
+[1499664478.053201]: 
+            CountCost0_10Calculater
+        	<class 'pymysql.err.ProgrammingError'>:(1146, "Table 'intelligentcampusvalidate.card_2' doesn't exist")
+[1499664479.5662007]: 
+            SubsidyCalculater
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1499664479.8722007]: 
+            TotalDinnerCostsCalculater
+        	<class 'TypeError'>:object of type 'NoneType' has no len()

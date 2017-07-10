@@ -9,7 +9,7 @@ class ScoreRankCalculater(XXCalculater.XXCalculater):
         A = scoreRank[int(len(scoreRank) * 0.25)][0]
         B = scoreRank[int(len(scoreRank) * 0.5)][0]
         C = scoreRank[int(len(scoreRank) * 0.75)][0]
-        D = scoreRank[int(len(scoreRank)) - 1][0]
+        D = scoreRank[len(scoreRank) - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException

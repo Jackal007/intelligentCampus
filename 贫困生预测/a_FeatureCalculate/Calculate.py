@@ -58,15 +58,23 @@ Time6_7CostsCalculater = Time6_7CostsCalculater()
 Time7_8CostsCalculater = Time7_8CostsCalculater()                 
 TotalDinnerCostsCalculater = TotalDinnerCostsCalculater()                       
 
-calculater = [ScoreRankCalculater,
+calculater = [
+            ScoreRankCalculater,
             AvgDaysCostsCalculater,
             BalanceRankCalculater,
 #             CardDaysCalculater,
             CardRechargeCalculater,
             ConsumeTimes11_12Calculater,
             CostAmountCalculater,
-#             CostAverageDayCalculater,
-#             CostTimesDayCalculater,
+            CostAverageDayDinnerHallCalculater,
+            CostAverageDayLaundryRoomCalculater,
+            CostAverageDaySupermarketCalculater,
+            CostRateDinnerHallCalculater,
+            CostRateLaundryRoomCalculater,
+            CostRateSupermarketCalculater,
+            CostTimesDayDinnerHallCalculater,
+            CostTimesDayLaundryRoomCalculater,
+            CostTimesDaySupermarketCalculater,
             CostVarianceCalculater,
             CosumeTimes0_25Calculater,
             CountCost0_10Calculater,
@@ -80,17 +88,17 @@ calculater = [ScoreRankCalculater,
             TotalDinnerCostsCalculater,
             ]
 
-# calculater = [ScoreRankCalculater]
+# calculater = [SubsidyCalculater]
 
 def calculate():
-    db = MyDataBase.MyDataBase()
+    db = MyDataBase.MyDataBase("validate")
     conn = db.getConn()
     executer = db.getExcuter()
     
 #     sql = "delete from students"
 #     executer.execute(sql)
-    sql = "delete from students_rank"
-    executer.execute(sql)
+#     sql = "delete from students_rank"
+#     executer.execute(sql)
 #     sql = "delete from library_modify"
 #     executer.execute(sql)
     
@@ -102,13 +110,12 @@ def calculate():
     
     for i in calculater:
         i.level = None
-    
-#     for i in tqdm(studentIds):
-#         print()
-#         i = i[0]
-#         student = Student()
-#         student.setStudentId(i)
-#         student.fetch(calculater)
+     
+    for i in tqdm(studentIds):
+        i = i[0]
+        student = Student()
+        student.setStudentId(i)
+        student.fetch(calculater)
         
     for i in calculater:
         i.setLevel()

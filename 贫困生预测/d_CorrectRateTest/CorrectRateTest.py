@@ -5,7 +5,7 @@ conn = pymysql.connect("localhost", "root", "root", "intelligentCampustest")
 cur = conn.cursor()
 
 
-fr = open("results.txt", 'r')
+fr = open("results_ExtraTreesClassifier.csv", 'r')
 content = [inst.strip('\n').split(',') for inst in fr.readlines()]
 
 correct = 0
@@ -15,18 +15,19 @@ total = 0
 for ins in content :
     student_id = ins[0]
     presume = int(ins[1])
-    sql = "select subsidy from students where student_id = " + student_id
+    sql = "select subsidy from students_rank where student_id = " + student_id
     cur.execute(sql)
-    real = cur.fetchone()[0]
-    if real=='A':
+    real = str(cur.fetchone()[0])
+    print(real)
+    if real=='1':
         real=0
-    elif real=='B':
+    elif real=='2':
         real=1000
-    elif real=='C':
+    elif real=='3':
         real=1500
-    elif real=='D':
+    elif real=='4':
         real=2000
-    if real!=empty :
+    if real is not None :
         total+=1
         if presume == real:         
             correct +=  1

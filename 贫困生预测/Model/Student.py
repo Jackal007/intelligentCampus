@@ -15,7 +15,7 @@ class Student:
     def setAll(self, attributes=NULL, subsidy="A"):
         if attributes != NULL:
             self.attributes = {
-                'student_id':attributes[0],
+                'studentId':attributes[0],
                 'score':attributes[1],
                 'cost_amount':attributes[2],
                 'cost_variance':attributes[3],
@@ -48,10 +48,16 @@ class Student:
             
     def getAll(self):
         all = list(self.attributes.values())
-        return [self.attributes['costAmount'], self.attributes['costAvgSuperMarket'], \
-                self.attributes['costAvgDinnerHall'], \
-                self.attributes['costTimes'], \
-                self.attributes['balanceRank'], self.attributes['subsidy'], ]
+#         return [self.attributes['score'],self.attributes['cost_amount'],\
+#                 self.attributes['cost_variance'],self.attributes['library_times'],\
+#                 self.attributes['library_time_spand'],self.attributes['balance_rank'],\
+#                 self.attributes['time6_7costs'],self.attributes['time7_8costs'],\
+#                 self.attributes['avgdayscosts'],self.attributes['consumetimes11_12'],\
+#                 self.attributes['consumetimes0_25'],self.attributes['countcost0_10'],\
+#                 self.attributes['cardrecharge'],\
+#                 self.attributes['subsidy'] ]
+        
+        return [self.attributes['score'],self.attributes['cost_amount'],self.attributes['balance_rank'], self.attributes['subsidy'] ]
 
     
     def setStudentId(self, studentId): 
