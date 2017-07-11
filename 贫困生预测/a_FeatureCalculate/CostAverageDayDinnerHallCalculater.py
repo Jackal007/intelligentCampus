@@ -44,5 +44,5 @@ class CostAverageDayDinnerHallCalculater(XXCalculater.XXCalculater):
                 self.executer.execute(sql)
                 s = self.executer.fetchone()[0]
                 s = self.classify(s)
-            sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
-            self.executer.execute(sql)
+                sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
+                self.executer.execute(sql)

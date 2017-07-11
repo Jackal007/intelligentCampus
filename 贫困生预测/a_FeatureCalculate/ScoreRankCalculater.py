@@ -22,7 +22,8 @@ class ScoreRankCalculater(XXCalculater.XXCalculater):
         self.executer.execute(sql)
         score = self.executer.fetchone()[0]
         sql = "insert into students(student_id,score) values(" + studentId + ",'" + str(score) + "')" 
-        if self.level is not None:
-            score = str(self.classify(score))
-            sql = "insert into students_rank(student_id,score) values(" + studentId + ",'" + score + "')" 
+#         if self.level is not None:
+#             print(self.level)
+#             score = str(self.classify(score))
+#             sql = "insert into students_rank(student_id,score) values(" + studentId + ",'" + score + "')" 
         self.executer.execute(sql)

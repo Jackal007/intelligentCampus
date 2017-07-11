@@ -28,6 +28,7 @@ from a_FeatureCalculate.SubsidyCalculater import SubsidyCalculater
 from a_FeatureCalculate.Time6_7CostsCalculater import Time6_7CostsCalculater
 from a_FeatureCalculate.Time7_8CostsCalculater import Time7_8CostsCalculater
 from a_FeatureCalculate.TotalDinnerCostsCalculater import TotalDinnerCostsCalculater
+from a_FeatureCalculate.Below10_RankCalculater import Below10_RankCalculater
 
 Student = Student.Student
 AvgDaysCostsCalculater = AvgDaysCostsCalculater()                 
@@ -56,36 +57,43 @@ ScoreRankCalculater = ScoreRankCalculater()
 SubsidyCalculater = SubsidyCalculater()           
 Time6_7CostsCalculater = Time6_7CostsCalculater()                 
 Time7_8CostsCalculater = Time7_8CostsCalculater()                 
-TotalDinnerCostsCalculater = TotalDinnerCostsCalculater()                       
+TotalDinnerCostsCalculater = TotalDinnerCostsCalculater()                      
+Below10_RankCalculater = Below10_RankCalculater()           
 
 calculater = [
             ScoreRankCalculater,
             AvgDaysCostsCalculater,
             BalanceRankCalculater,
-#             CardDaysCalculater,
+# #             CardDaysCalculater,
             CardRechargeCalculater,
             ConsumeTimes11_12Calculater,
             CostAmountCalculater,
             CostAverageDayDinnerHallCalculater,
             CostAverageDayLaundryRoomCalculater,
             CostAverageDaySupermarketCalculater,
+  
             CostRateDinnerHallCalculater,
             CostRateLaundryRoomCalculater,
             CostRateSupermarketCalculater,
+#              
             CostTimesDayDinnerHallCalculater,
             CostTimesDayLaundryRoomCalculater,
             CostTimesDaySupermarketCalculater,
             CostVarianceCalculater,
             CosumeTimes0_25Calculater,
-            CountCost0_10Calculater,
+#             CountCost0_10Calculater,
             LibraryBorrowCalculater,
             LibraryTimesCalculater,
             LibraryTimeSpandCalculater,
+  
             MaxCost7_8Calculater,
+              
             SubsidyCalculater,
             Time6_7CostsCalculater,
             Time7_8CostsCalculater,
+  
             TotalDinnerCostsCalculater,
+            Below10_RankCalculater,
             ]
 
 # calculater = [SubsidyCalculater]
@@ -95,8 +103,8 @@ def calculate():
     conn = db.getConn()
     executer = db.getExcuter()
     
-#     sql = "delete from students"
-#     executer.execute(sql)
+    sql = "delete from students"
+    executer.execute(sql)
 #     sql = "delete from students_rank"
 #     executer.execute(sql)
 #     sql = "delete from library_modify"
@@ -107,15 +115,12 @@ def calculate():
     studentIds = executer.fetchall()
     db.close()
     students = []
-    
-    for i in calculater:
-        i.level = None
      
     for i in tqdm(studentIds):
         i = i[0]
         student = Student()
         student.setStudentId(i)
-        student.fetch(calculater)
+        student.calculate(calculater)
         
     for i in calculater:
         i.setLevel()
@@ -124,7 +129,7 @@ def calculate():
         i = i[0]
         student = Student()
         student.setStudentId(i)
-        student.fetch(calculater)
+        student.calculate(calculater)
     
     for i in calculater:
         i.afterCalculate()

@@ -18,9 +18,9 @@ class CostTimesDayLaundryRoomCalculater(XXCalculater.XXCalculater):
         CostTimesDaySupermarketCalculater
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            dealWays = ['Supermarket']
-            for i in dealWays:
+        dealWays = ['Supermarket']
+        for i in dealWays:
+            if self.level is None:
                 sql = "SELECT\
                             avg(t)\
                         FROM\
