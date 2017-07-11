@@ -11,16 +11,16 @@ class CostAverageDayDinnerHallCalculater(XXCalculater.XXCalculater):
         C = CostAmounts[int(len(CostAmounts) * 0.75)][0]
         D = CostAmounts[len(CostAmounts) - 1][0]
         self.level = [A, B, C, D]
-        
+
     @MyLog.myException
     def calculate(self):
         '''
         CostAverageDayDinnerHallCalculater
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            dealWays = ['dinnerhall']
-            for i in dealWays:
+        dealWays = ['dinnerhall']
+        for i in dealWays:
+            if self.level is None:
                 sql = "SELECT\
                             avg(t)\
                         FROM\
@@ -39,10 +39,10 @@ class CostAverageDayDinnerHallCalculater(XXCalculater.XXCalculater):
                 s = self.executer.fetchone()[0]
                 sql = "update students set cost_avg_day_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
                 self.executer.execute(sql)
-        else:
-            sql = "select cost_avg_day_" + i + " from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            s = self.classify(s)
+            else:
+                sql = "select cost_avg_day_" + i + " from students where student_id=" + studentId   
+                self.executer.execute(sql)
+                s = self.executer.fetchone()[0]
+                s = self.classify(s)
             sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
             self.executer.execute(sql)

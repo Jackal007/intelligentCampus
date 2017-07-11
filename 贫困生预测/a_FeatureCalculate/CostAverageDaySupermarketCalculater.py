@@ -18,9 +18,9 @@ class CostAverageDaySupermarketCalculater(XXCalculater.XXCalculater):
         CostAverageDaySupermarketCalculater
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            dealWays = ['Supermarket']
-            for i in dealWays:
+        dealWays = ['Supermarket']
+        for i in dealWays:
+            if self.level is None:
                 sql = "SELECT\
                             avg(t)\
                         FROM\
@@ -39,10 +39,10 @@ class CostAverageDaySupermarketCalculater(XXCalculater.XXCalculater):
                 s = self.executer.fetchone()[0]
                 sql = "update students set cost_avg_day_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
                 self.executer.execute(sql)
-        else:
-            sql = "select cost_avg_day_" + i + " from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            s = self.classify(s)
-            sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
-            self.executer.execute(sql)
+            else:
+                sql = "select cost_avg_day_" + i + " from students where student_id=" + studentId   
+                self.executer.execute(sql)
+                s = self.executer.fetchone()[0]
+                s = self.classify(s)
+                sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
+                self.executer.execute(sql)

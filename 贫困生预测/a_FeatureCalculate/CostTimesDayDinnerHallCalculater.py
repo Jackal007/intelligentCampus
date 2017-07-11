@@ -18,9 +18,9 @@ class CostTimesDayDinnerHallCalculater(XXCalculater.XXCalculater):
         CostTimesDayDinnerHallCalculater
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            dealWays = ['dinnerhall']
-            for i in dealWays:
+        dealWays = ['dinnerhall']
+        for i in dealWays:
+            if self.level is None:
                 sql = "SELECT\
                             avg(t)\
                         FROM\
@@ -39,10 +39,10 @@ class CostTimesDayDinnerHallCalculater(XXCalculater.XXCalculater):
                 result = str(self.executer.fetchone()[0])
                 sql = "update students set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
                 self.executer.execute(sql)
-        else:
-            sql = "select cost_times_day_" + i + " from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            result = self.executer.fetchone()[0]
-            result = self.classify(result)
-            sql = "update students_rank set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
+            else:
+                sql = "select cost_times_day_" + i + " from students where student_id=" + studentId   
+                self.executer.execute(sql)
+                result = self.executer.fetchone()[0]
+                result = self.classify(result)
+                sql = "update students_rank set cost_times_day_" + i + "='" + result + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)

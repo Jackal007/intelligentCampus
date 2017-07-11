@@ -9,7 +9,8 @@ class Student:
         attributes = [self.getStudentId()]
         for i in calculater:
             i.setStudent(self)
-            attributes.append(i.calculate())
+            i.calculate()
+#             attributes.append(i.calculate())
 #         self.setAll(attributes=attributes, subsidy=attributes[-1])
         
     def rankit(self,calculater):

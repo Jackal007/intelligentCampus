@@ -18,9 +18,9 @@ class CostRateDinnerHallCalculater(XXCalculater.XXCalculater):
         CostRateDinnerHallCalculater
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            dealWays = ['dinnerhall']
-            for i in dealWays:
+        dealWays = ['dinnerhall']
+        for i in dealWays:
+            if self.level is None:
                 sql = "SELECT\
                             sum(deal_cost)/s\
                         FROM\
@@ -40,10 +40,10 @@ class CostRateDinnerHallCalculater(XXCalculater.XXCalculater):
                 s = self.executer.fetchone()[0]
                 sql = "update students set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
                 self.executer.execute(sql)
-        else:
-            sql = "select set cost_rate_" + i + " from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            s = self.classify(s)
-            sql = "update students_rank set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
+            else:
+                sql = "select cost_rate_" + i + " from students where student_id=" + studentId
+                self.executer.execute(sql)
+                s = self.executer.fetchone()[0]
+                s = self.classify(s)
+                sql = "update students_rank set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
+                self.executer.execute(sql)

@@ -61,17 +61,17 @@ TotalDinnerCostsCalculater = TotalDinnerCostsCalculater()
 Below10_RankCalculater = Below10_RankCalculater()           
 
 calculater = [
-            ScoreRankCalculater,
-            AvgDaysCostsCalculater,
-            BalanceRankCalculater,
+#             ScoreRankCalculater,
+#             AvgDaysCostsCalculater,
+#             BalanceRankCalculater,
 #             CardDaysCalculater,
-            CardRechargeCalculater,
-            ConsumeTimes11_12Calculater,
-            CostAmountCalculater,
+#             CardRechargeCalculater,
+#             ConsumeTimes11_12Calculater,
+#             CostAmountCalculater,
             CostAverageDayDinnerHallCalculater,
             CostAverageDayLaundryRoomCalculater,
             CostAverageDaySupermarketCalculater,
-
+# 
             CostRateDinnerHallCalculater,
             CostRateLaundryRoomCalculater,
             CostRateSupermarketCalculater,
@@ -79,27 +79,27 @@ calculater = [
             CostTimesDayDinnerHallCalculater,
             CostTimesDayLaundryRoomCalculater,
             CostTimesDaySupermarketCalculater,
-            CostVarianceCalculater,
-            CosumeTimes0_25Calculater,
-            CountCost0_10Calculater,
-            LibraryBorrowCalculater,
-            LibraryTimesCalculater,
-            LibraryTimeSpandCalculater,
+#             CostVarianceCalculater,
+#             CosumeTimes0_25Calculater,
+#             CountCost0_10Calculater,
+#             LibraryBorrowCalculater,
+#             LibraryTimesCalculater,
+#             LibraryTimeSpandCalculater,
 
             MaxCost7_8Calculater,
             
-            SubsidyCalculater,
-            Time6_7CostsCalculater,
-            Time7_8CostsCalculater,
+#             SubsidyCalculater,
+#             Time6_7CostsCalculater,
+#             Time7_8CostsCalculater,
 
-            TotalDinnerCostsCalculater,
+#             TotalDinnerCostsCalculater,
 #             Below10_RankCalculater,
             ]
 
 # calculater = [SubsidyCalculater]
 
 def calculate():
-    db = MyDataBase.MyDataBase("validate")
+    db = MyDataBase.MyDataBase("train")
     conn = db.getConn()
     executer = db.getExcuter()
     
@@ -116,11 +116,11 @@ def calculate():
     db.close()
     students = []
      
-    for i in tqdm(studentIds):
-        i = i[0]
-        student = Student()
-        student.setStudentId(i)
-        student.calculate(calculater)
+#     for i in tqdm(studentIds):
+#         i = i[0]
+#         student = Student()
+#         student.setStudentId(i)
+#         student.calculate(calculater)
         
     for i in calculater:
         i.setLevel()
