@@ -55,26 +55,7 @@ class Student:
             
     def getAll(self):
         all = list(self.attributes.values())
-#         return [self.attributes['score'],self.attributes['cost_amount'],\
-#                 self.attributes['cost_variance'],self.attributes['library_times'],\
-#                 self.attributes['library_time_spand'],self.attributes['balance_rank'],\
-#                 self.attributes['time6_7costs'],\
-#                 self.attributes['avgdayscosts'],self.attributes['consumetimes11_12'],\
-#                 self.attributes['consumetimes0_25'],self.attributes['countcost0_10'],\
-#                 self.attributes['cardrecharge'],\
-#                 self.attributes['subsidy'] ]
-# #         
-        return [self.attributes['score'],self.attributes['cost_amount'],\
-                self.attributes['cost_variance'],self.attributes['library_borrow'],\
-                self.attributes['library_times'],\
-                self.attributes['library_time_spand'],self.attributes['balance_rank'],\
-                self.attributes['time6_7costs'],\
-                self.attributes['avgdayscosts'],self.attributes['consumetimes11_12'],\
-                self.attributes['consumetimes0_25'],self.attributes['countcost0_10'],\
-                self.attributes['cardrecharge'],self.attributes['below10_rank'],\
-                self.attributes['subsidy'] ]
-#         return [self.attributes['score'],self.attributes['cost_amount'],self.attributes['balance_rank'], self.attributes['subsidy'] ]
-
+        return [self.attributes['score'],self.attributes['cost_amount'],self.attributes['cost_variance'],self.attributes['cost_avg_day_superMarket'],self.attributes['cost_avg_day_laundryroom'],self.attributes['cost_avg_day_dinnerHall'],self.attributes['cost_rate_supermarket'],self.attributes['cost_rate_laundryroom'],self.attributes['cost_rate_dinnerhall'],self.attributes['cost_times_day_supermarket'],self.attributes['cost_times_day_dinnerhall'],self.attributes['cost_times_day_laundry'],self.attributes['cost_times'],self.attributes['library_borrow'],self.attributes['library_times'],self.attributes['library_time_spand'],self.attributes['balance_rank'],self.attributes['card_days'],self.attributes['time6_7costs'],self.attributes['time7_8costs'],self.attributes['totaldinnercosts'],self.attributes['avgdayscosts'],self.attributes['consumetimes11_12'],self.attributes['consumetimes0_25'],self.attributes['countcost0_10'],self.attributes['cardrecharge'],self.attributes['maxcost7_8'],self.attributes['subsidy'],]
     
     def setStudentId(self, studentId): 
         self.attributes['studentId'] = studentId

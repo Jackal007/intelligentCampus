@@ -5,7 +5,7 @@ conn = pymysql.connect("localhost", "root", "root", "intelligentCampustest")
 cur = conn.cursor()
 
 
-fr = open("results_ExtraTreesClassifier.csv", 'r')
+fr = open("result.csv", 'r')
 content = [inst.strip('\n').split(',') for inst in fr.readlines()]
 
 correct = 0

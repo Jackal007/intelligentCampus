@@ -10,7 +10,7 @@
 # cost_rate_dinnerhall,\
 # cost_times_day_supermarket,\
 # cost_times_day_dinnerhall,\
-# cost_times_day_laundry,\
+# cost_times_day_laundryroom,\
 # cost_times,\
 # library_borrow,\
 # library_times,\
@@ -26,10 +26,22 @@
 # countcost0_10,\
 # cardrecharge,\
 # maxcost7_8,\
-# subsidy"
+# below10_rank,\
+# below2.5_rank,\
+# propotion_of_2000,\
+# propotion_of_1500,\
+# scorerank_divided_by_stunum,\
+# propotion_of_1000,\
+# score_rank*consume_rank,\
+# consume_rank,\
+# time7_8consume_avg,\
+# avg_charge,\
+# subsidy,\
+# "
 # ss=s.split(',')
 # sss=""
 # for i in ss:
-#     sss+="self.attributes['"+i+"'],"
+# #     sss+="self.attributes['"+i+"'],"
+#     sss+=i+","
 # print(sss)
-#      
+#        
