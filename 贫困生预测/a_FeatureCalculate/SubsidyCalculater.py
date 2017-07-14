@@ -8,14 +8,24 @@ class SubsidyCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-            SubsidyCalculater
+        SubsidyCalculater.calculate
         '''
         studentId = self.student.getStudentId()
         sql = "select stipend from subsidy where student_id=" + str(studentId)
         self.executer.execute(sql)
         subsidy = self.executer.fetchone()[0]
         sql = "update students set subsidy= '" + str(subsidy) + "' where student_id = " + str(studentId)
-        if self.level is not None:
-            subsidy = self.classify(subsidy)
-            sql = "update students_rank set subsidy= '" + subsidy + "' where student_id = " + str(studentId)
         self.executer.execute(sql)
+
+    @MyLog.myException
+    def rankit(self):
+        '''
+        ScoreRankCalculater.rankit
+        '''
+        studentId = self.student.getStudentId()
+        sql = "select subsidy from students where student_id=" + str(studentId)
+        self.executer.execute(sql)
+        subsidy = self.executer.fetchone()[0]
+        subsidy = self.classify(subsidy)
+        sql = "update students_rank set subsidy= '" + subsidy + "' where student_id = " + str(studentId)
+        self.executer.execute(sql)  

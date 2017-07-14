@@ -15,35 +15,40 @@ class CostRateSupermarketCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-        CostRateSupermarketCalculater
+        CostRateSupermarketCalculater.calculate
         '''
+        i='Supermarket'
         studentId = str(self.student.getStudentId())
-        dealWays = ['Supermarket']
-        for i in dealWays:
-            if self.level is None:
-                sql = "SELECT\
-                            sum(deal_cost)/s\
+        sql = "SELECT\
+                    sum(deal_cost)/s\
+                FROM\
+                    card,\
+                    (\
+                        SELECT\
+                            sum(deal_cost) AS s\
                         FROM\
-                            card,\
-                            (\
-                                SELECT\
-                                    sum(deal_cost) AS s\
-                                FROM\
-                                    card\
-                                WHERE\
-                                    student_id = " + str(studentId) + "\
-                            )as t\
+                            card\
                         WHERE\
-                            deal_way = '" + i + "'\
-                        AND student_id = " + str(studentId)
-                self.executer.execute(sql)
-                s = self.executer.fetchone()[0]
-                sql = "update students set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
-                self.executer.execute(sql)
-            else:
-                sql = "select cost_rate_" + i + " from students where student_id=" + studentId   
-                self.executer.execute(sql)
-                s = self.executer.fetchone()[0]
-                s = self.classify(s)
-                sql = "update students_rank set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
-                self.executer.execute(sql)
+                            student_id = " + str(studentId) + "\
+                    )as t\
+                WHERE\
+                    deal_way = '" + i + "'\
+                AND student_id = " + str(studentId)
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        sql = "update students set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
+        self.executer.execute(sql)
+                
+    @MyLog.myException
+    def rankit(self):
+        '''
+        CostRateSupermarketCalculater.rankit
+        '''
+        i='Supermarket'
+        studentId = str(self.student.getStudentId())
+        sql = "select cost_rate_" + i + " from students where student_id=" + studentId
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        s = self.classify(s)
+        sql = "update students_rank set cost_rate_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
+        self.executer.execute(sql)

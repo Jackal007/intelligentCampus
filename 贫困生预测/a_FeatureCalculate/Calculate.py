@@ -3,7 +3,7 @@ from Tools import MyDataBase
 from tqdm import tqdm
 from a_FeatureCalculate.AvgDaysCostsCalculater import AvgDaysCostsCalculater
 from a_FeatureCalculate.BalanceRankCalculater import BalanceRankCalculater
-# from a_FeatureCalculate.CardDaysCalculater import CardDaysCalculater
+from a_FeatureCalculate.CardDaysCalculater import CardDaysCalculater
 from a_FeatureCalculate.CardRechargeCalculater import CardRechargeCalculater
 from a_FeatureCalculate.ConsumeTimes11_12Calculater import ConsumeTimes11_12Calculater
 from a_FeatureCalculate.CostAmountCalculater import CostAmountCalculater
@@ -28,12 +28,23 @@ from a_FeatureCalculate.SubsidyCalculater import SubsidyCalculater
 from a_FeatureCalculate.Time6_7CostsCalculater import Time6_7CostsCalculater
 from a_FeatureCalculate.Time7_8CostsCalculater import Time7_8CostsCalculater
 from a_FeatureCalculate.TotalDinnerCostsCalculater import TotalDinnerCostsCalculater
+from a_FeatureCalculate.Avg_ChargeCaculater import Avg_ChargeCaculater
+from a_FeatureCalculate.Below2_5_RankCalculater import Below2_5_RankCalculater
 from a_FeatureCalculate.Below10_RankCalculater import Below10_RankCalculater
+from a_FeatureCalculate.Num_Of_1000Calculater import Num_Of_1000Calculater
+from a_FeatureCalculate.Num_Of_2000Calculater import Num_Of_2000Calculater
+from a_FeatureCalculate.Num_Of_1500Calculater import Num_Of_1500Calculater
+from a_FeatureCalculate.PropotionCalculater1000 import PropotionCalculater1000
+from a_FeatureCalculate.PropotionCalculater2000 import PropotionCalculater2000
+from a_FeatureCalculate.PropotionCalculater1500 import PropotionCalculater1500
+from a_FeatureCalculate.scorerank_divided_by_stunum import scorerank_divided_by_stunum
+from a_FeatureCalculate.Stu_Num_Calculater import Stu_Num_Calculater
 
 Student = Student.Student
-AvgDaysCostsCalculater = AvgDaysCostsCalculater()                 
+AvgDaysCostsCalculater = AvgDaysCostsCalculater()          
+Below10_RankCalculater=Below10_RankCalculater()       
 BalanceRankCalculater = BalanceRankCalculater()                  
-# CardDaysCalculater = CardDaysCalculater()               
+CardDaysCalculater = CardDaysCalculater()               
 CardRechargeCalculater = CardRechargeCalculater()                   
 ConsumeTimes11_12Calculater = ConsumeTimes11_12Calculater()                      
 CostAmountCalculater = CostAmountCalculater()                 
@@ -58,42 +69,59 @@ SubsidyCalculater = SubsidyCalculater()
 Time6_7CostsCalculater = Time6_7CostsCalculater()                 
 Time7_8CostsCalculater = Time7_8CostsCalculater()                 
 TotalDinnerCostsCalculater = TotalDinnerCostsCalculater()                      
-Below10_RankCalculater = Below10_RankCalculater()           
+Avg_ChargeCaculater = Avg_ChargeCaculater()                      
+Below2_5_RankCalculater = Below2_5_RankCalculater()                       
+Num_Of_1000Calculater = Num_Of_1000Calculater()                       
+Num_Of_2000Calculater = Num_Of_2000Calculater()                       
+Num_Of_1500Calculater = Num_Of_1500Calculater()                       
+PropotionCalculater1000 = PropotionCalculater1000()                       
+PropotionCalculater2000 = PropotionCalculater2000()                       
+PropotionCalculater1500 = PropotionCalculater1500()                       
+scorerank_divided_by_stunum = scorerank_divided_by_stunum()                       
+Stu_Num_Calculater = Stu_Num_Calculater()
 
 calculater = [
-#             ScoreRankCalculater,
-#             AvgDaysCostsCalculater,
-#             BalanceRankCalculater,
-#             CardDaysCalculater,
-#             CardRechargeCalculater,
-#             ConsumeTimes11_12Calculater,
-#             CostAmountCalculater,
+#             Stu_Num_Calculater,
+#             Num_Of_1000Calculater,
+#             Num_Of_2000Calculater,
+#             Num_Of_1500Calculater,
+            ScoreRankCalculater,
+            Below10_RankCalculater,
+            Time6_7CostsCalculater,
+            Time7_8CostsCalculater,
+            TotalDinnerCostsCalculater,
+            AvgDaysCostsCalculater,
+            BalanceRankCalculater,
+            CardDaysCalculater,
+            CardRechargeCalculater,
+            ConsumeTimes11_12Calculater,
+            CostAmountCalculater,
             CostAverageDayDinnerHallCalculater,
             CostAverageDayLaundryRoomCalculater,
             CostAverageDaySupermarketCalculater,
-# 
+ 
             CostRateDinnerHallCalculater,
             CostRateLaundryRoomCalculater,
             CostRateSupermarketCalculater,
-            
+             
             CostTimesDayDinnerHallCalculater,
             CostTimesDayLaundryRoomCalculater,
             CostTimesDaySupermarketCalculater,
-#             CostVarianceCalculater,
-#             CosumeTimes0_25Calculater,
-#             CountCost0_10Calculater,
-#             LibraryBorrowCalculater,
-#             LibraryTimesCalculater,
-#             LibraryTimeSpandCalculater,
-
+            CostVarianceCalculater,
+            CosumeTimes0_25Calculater,
+            CountCost0_10Calculater,
+            LibraryBorrowCalculater,
+            LibraryTimesCalculater,
+            LibraryTimeSpandCalculater,
             MaxCost7_8Calculater,
-            
-#             SubsidyCalculater,
-#             Time6_7CostsCalculater,
-#             Time7_8CostsCalculater,
-
-#             TotalDinnerCostsCalculater,
-#             Below10_RankCalculater,
+            Avg_ChargeCaculater,
+            Below2_5_RankCalculater,
+                         
+            PropotionCalculater1000,
+            PropotionCalculater2000,
+            PropotionCalculater1500,
+            scorerank_divided_by_stunum,
+            SubsidyCalculater,
             ]
 
 # calculater = [SubsidyCalculater]
@@ -103,34 +131,31 @@ def calculate():
     conn = db.getConn()
     executer = db.getExcuter()
     
-#     sql = "delete from students"
-#     executer.execute(sql)
-#     sql = "delete from students_rank"
-#     executer.execute(sql)
-#     sql = "delete from library_modify"
-#     executer.execute(sql)
+    sql = "delete from students"
+    executer.execute(sql)
+    sql = "delete from students_rank"
+    executer.execute(sql)
+    sql = "delete from library_modify"
+    executer.execute(sql)
     
     sql = "select student_id from score"
     executer.execute(sql)
     studentIds = executer.fetchall()
     db.close()
-    students = []
      
-#     for i in tqdm(studentIds):
-#         i = i[0]
-#         student = Student()
-#         student.setStudentId(i)
-#         student.calculate(calculater)
-        
-    for i in calculater:
-        i.setLevel()
-    
     for i in tqdm(studentIds):
         i = i[0]
-        student = Student()
-        student.setStudentId(i)
+        student = Student(studentId=i)
         student.calculate(calculater)
-    
+         
+    for i in calculater:
+        i.setLevel()
+     
+    for i in tqdm(studentIds):
+        i = i[0]
+        student = Student(studentId=i)
+        student.calculate(calculater)
+     
     for i in calculater:
         i.afterCalculate()
 

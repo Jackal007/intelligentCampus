@@ -15,19 +15,24 @@ class MaxCost7_8Calculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-            MaxCost7_8Calculater
+        MaxCost7_8Calculater.calculate
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            sql = "select sum(deal_cost) as a from card where student_id=" + studentId + " and hour(deal_date)=7  group by date(deal_date) order by a  limit  1"  
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            sql = "update students set maxcost7_8='" + str(s) + "' where student_id=" + studentId
-            self.executer.execute(sql)
-        else:
-            sql = "select maxcost7_8 from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            s = self.classify(s)
-            sql = "update students_rank set maxcost7_8='" + s + "' where student_id=" + studentId
-            self.executer.execute(sql)
+        sql = "select sum(deal_cost) as a from card where student_id=" + studentId + " and hour(deal_date)=7  group by date(deal_date) order by a  limit  1"  
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        sql = "update students set maxcost7_8='" + str(s) + "' where student_id=" + studentId
+        self.executer.execute(sql)
+
+    @MyLog.myException
+    def rankit(self):
+        '''
+        MaxCost7_8Calculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select maxcost7_8 from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        s = self.classify(s)
+        sql = "update students_rank set maxcost7_8='" + s + "' where student_id=" + studentId
+        self.executer.execute(sql)

@@ -15,34 +15,37 @@ class CostAverageDayDinnerHallCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-        CostAverageDayDinnerHallCalculater
+        CostAverageDayDinnerHallCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
-        dealWays = ['dinnerhall']
-        for i in dealWays:
-            if self.level is None:
-                sql = "SELECT\
-                            avg(t)\
+        sql = "SELECT\
+                    avg(t)\
+                FROM\
+                    (\
+                        SELECT\
+                            sum(deal_cost) AS t\
                         FROM\
-                            (\
-                                SELECT\
-                                    sum(deal_cost) AS t\
-                                FROM\
-                                    card\
-                                WHERE\
-                                    deal_way = '" + i + "'\
-                                AND student_id = " + str(studentId) + "\
-                                GROUP BY\
-                                    date(deal_date)\
-                            )as tt"
-                self.executer.execute(sql)
-                s = self.executer.fetchone()[0]
-                sql = "update students set cost_avg_day_" + i + "='" + str(s) + "' where student_id=" + str(studentId)
-                self.executer.execute(sql)
-            else:
-                sql = "select cost_avg_day_" + i + " from students where student_id=" + studentId   
-                self.executer.execute(sql)
-                s = self.executer.fetchone()[0]
-                s = self.classify(s)
-                sql = "update students_rank set cost_avg_day_" + i + "='" + s + "' where student_id=" + str(studentId) 
-                self.executer.execute(sql)
+                            card\
+                        WHERE\
+                            deal_way = 'dinnerhall'\
+                        AND student_id = " + str(studentId) + "\
+                        GROUP BY\
+                            date(deal_date)\
+                    )as tt"
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        sql = "update students set cost_avg_day_dinnerhall='" + str(s) + "' where student_id=" + str(studentId)
+        self.executer.execute(sql)
+
+    @MyLog.myException
+    def rankit(self):
+        '''
+        CostAverageDayDinnerHallCalculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select cost_avg_day_dinnerhall from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        s = self.classify(s)
+        sql = "update students_rank set cost_avg_day_dinnerhall='" + s + "' where student_id=" + str(studentId) 
+        self.executer.execute(sql)

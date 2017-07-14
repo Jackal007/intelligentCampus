@@ -29,6 +29,16 @@ from a_FeatureCalculate.Time6_7CostsCalculater import Time6_7CostsCalculater
 from a_FeatureCalculate.Time7_8CostsCalculater import Time7_8CostsCalculater
 from a_FeatureCalculate.TotalDinnerCostsCalculater import TotalDinnerCostsCalculater
 from a_FeatureCalculate.Below10_RankCalculater import Below10_RankCalculater
+from a_FeatureCalculate.Avg_ChargeCaculater import Avg_ChargeCaculater
+from a_FeatureCalculate.Below2_5_RankCalculater import Below2_5_RankCalculater
+from a_FeatureCalculate.Num_Of_1000Calculater import Num_Of_1000Calculater
+from a_FeatureCalculate.Num_Of_2000Calculater import Num_Of_2000Calculater
+from a_FeatureCalculate.Num_Of_1500Calculater import Num_Of_1500Calculater
+from a_FeatureCalculate.PropotionCalculater1000 import PropotionCalculater1000
+from a_FeatureCalculate.PropotionCalculater2000 import PropotionCalculater2000
+from a_FeatureCalculate.PropotionCalculater1500 import PropotionCalculater1500
+from a_FeatureCalculate.scorerank_divided_by_stunum import scorerank_divided_by_stunum
+from a_FeatureCalculate.Stu_Num_Calculater import Stu_Num_Calculater
 
 Student = Student.Student
 AvgDaysCostsCalculater = AvgDaysCostsCalculater()                 
@@ -58,9 +68,22 @@ SubsidyCalculater = SubsidyCalculater()
 Time6_7CostsCalculater = Time6_7CostsCalculater()                 
 Time7_8CostsCalculater = Time7_8CostsCalculater()                 
 TotalDinnerCostsCalculater = TotalDinnerCostsCalculater()                      
-Below10_RankCalculater = Below10_RankCalculater()           
+Avg_ChargeCaculater = Avg_ChargeCaculater()                      
+Below2_5_RankCalculater = Below2_5_RankCalculater()                       
+Num_Of_1000Calculater = Num_Of_1000Calculater()                       
+Num_Of_2000Calculater = Num_Of_2000Calculater()                       
+Num_Of_1500Calculater = Num_Of_1500Calculater()                       
+PropotionCalculater1000 = PropotionCalculater1000()                       
+PropotionCalculater2000 = PropotionCalculater2000()                       
+PropotionCalculater1500 = PropotionCalculater1500()                       
+scorerank_divided_by_stunum = scorerank_divided_by_stunum()                       
+Stu_Num_Calculater = Stu_Num_Calculater()           
 
 calculater = [
+#             Stu_Num_Calculater,
+#             Num_Of_1000Calculater,
+#             Num_Of_2000Calculater,
+#             Num_Of_1500Calculater,
 #             ScoreRankCalculater,
 #             AvgDaysCostsCalculater,
 #             BalanceRankCalculater,
@@ -71,9 +94,11 @@ calculater = [
 #             CostAverageDayDinnerHallCalculater,
 #             CostAverageDayLaundryRoomCalculater,
 #             CostAverageDaySupermarketCalculater,
-            CostRateDinnerHallCalculater,
-            CostRateLaundryRoomCalculater,
-            CostRateSupermarketCalculater,
+# 
+#             CostRateDinnerHallCalculater,
+#             CostRateLaundryRoomCalculater,
+#             CostRateSupermarketCalculater,
+#             
 #             CostTimesDayDinnerHallCalculater,
 #             CostTimesDayLaundryRoomCalculater,
 #             CostTimesDaySupermarketCalculater,
@@ -83,18 +108,28 @@ calculater = [
 #             LibraryBorrowCalculater,
 #             LibraryTimesCalculater,
 #             LibraryTimeSpandCalculater,
-            MaxCost7_8Calculater,
+
+#             MaxCost7_8Calculater,
+            Avg_ChargeCaculater,
+            Below2_5_RankCalculater,
+                         
+            PropotionCalculater1000,
+            PropotionCalculater2000,
+            PropotionCalculater1500,
+            scorerank_divided_by_stunum,
+            
 #             SubsidyCalculater,
 #             Time6_7CostsCalculater,
 #             Time7_8CostsCalculater,
-            TotalDinnerCostsCalculater,
-            Below10_RankCalculater,
+
+#             TotalDinnerCostsCalculater,
+#             Below10_RankCalculater,
             ]
 
 # calculater = [SubsidyCalculater]
 
 def calculate():
-    db = MyDataBase.MyDataBase("train")
+    db = MyDataBase.MyDataBase("test")
     conn = db.getConn()
     executer = db.getExcuter()
     
@@ -105,17 +140,17 @@ def calculate():
 #     sql = "delete from library_modify"
 #     executer.execute(sql)
     
-    sql = "select student_id from score"
+    sql = "select student_id from students_rank"
     executer.execute(sql)
     studentIds = executer.fetchall()
     db.close()
     students = []
      
-    for i in tqdm(studentIds):
-        i = i[0]
-        student = Student()
-        student.setStudentId(i)
-        student.calculate(calculater)
+#     for i in tqdm(studentIds):
+#         i = i[0]
+#         student = Student()
+#         student.setStudentId(i)
+#         student.calculate(calculater)
         
     for i in calculater:
         i.setLevel()

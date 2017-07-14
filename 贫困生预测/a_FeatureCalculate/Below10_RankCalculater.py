@@ -15,7 +15,7 @@ class Below10_RankCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-        Below10_RankCalculater.calculate
+        Below10_CostCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
         sql = "SELECT count(*) from card_2 where studentid = " + studentId + " and date_cost<10.0"
@@ -31,7 +31,7 @@ class Below10_RankCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def rankit(self):
         '''
-        Below10_RankCalculater.rankit
+        Below10_CostCalculater.rankit
         '''
         studentId = str(self.student.getStudentId())
         sql = "select below10_rank from students where student_id=" + studentId   

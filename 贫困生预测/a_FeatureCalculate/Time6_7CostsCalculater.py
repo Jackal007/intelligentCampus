@@ -9,25 +9,30 @@ class Time6_7CostsCalculater(XXCalculater.XXCalculater):
         A = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.25)][0]
         B = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.5)][0]
         C = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.75)][0]
-        D = Time6_7CostsRanks[len(Time6_7CostsRanks) -1][0]
+        D = Time6_7CostsRanks[len(Time6_7CostsRanks) - 1][0]
         self.level = [A, B, C, D]
         
     @MyLog.myException
     def calculate(self):
         '''
-            Time6_7CostsCalculater
+        Time6_7CostsCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            sql = "select sum(deal_cost) from card where student_id=" + studentId +" and hour(deal_date)=6"  
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            sql = "update students set time6_7costs='" + str(s) + "' where student_id=" + studentId
-            self.executer.execute(sql)
-        else:
-            sql = "select time6_7costs from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            s = self.classify(s)
-            sql = "update students_rank set time6_7costs='" + str(s) + "' where student_id=" + studentId
-            self.executer.execute(sql)
+        sql = "select sum(deal_cost) from card where student_id=" + studentId + " and hour(deal_date)=6"  
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        sql = "update students set time6_7costs='" + str(s) + "' where student_id=" + studentId
+        self.executer.execute(sql)
+
+    @MyLog.myException
+    def rankit(self):
+        '''
+        Time6_7CostsCalculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select time6_7costs from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        s = self.classify(s)
+        sql = "update students_rank set time6_7costs='" + str(s) + "' where student_id=" + studentId
+        self.executer.execute(sql)

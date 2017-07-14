@@ -15,15 +15,24 @@ class ScoreRankCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-        ScoreRankCalculater
+        ScoreRankCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
         sql = "select rank from score where student_id=" + studentId
         self.executer.execute(sql)
         score = self.executer.fetchone()[0]
         sql = "insert into students(student_id,score) values(" + studentId + ",'" + str(score) + "')" 
-#         if self.level is not None:
-#             print(self.level)
-#             score = str(self.classify(score))
-#             sql = "insert into students_rank(student_id,score) values(" + studentId + ",'" + score + "')" 
+        self.executer.execute(sql)
+
+    @MyLog.myException
+    def rankit(self):
+        '''
+        ScoreRankCalculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select score from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        score = self.executer.fetchone()[0]
+        score = self.classify(score)
+        sql = "update students_rank set score='" + score + "' where student_id=" + str(studentId)
         self.executer.execute(sql)

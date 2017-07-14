@@ -15,19 +15,24 @@ class LibraryTimesCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-            LibraryTimesCalculater
+        LibraryTimesCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            sql = "select count(student_id) from library where student_id=" + str(studentId)
-            self.executer.execute(sql)
-            libraryTimes = str(self.executer.fetchone()[0])
-            sql = "update students set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
-        else:
-            sql = "select library_times from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            libraryTimes = self.executer.fetchone()[0]
-            libraryTimes = self.classify(libraryTimes)
-            sql = "update students_rank set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
+        sql = "select count(student_id) from library where student_id=" + str(studentId)
+        self.executer.execute(sql)
+        libraryTimes = str(self.executer.fetchone()[0])
+        sql = "update students set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
+        self.executer.execute(sql)
+
+    @MyLog.myException
+    def rankit(self):
+        '''
+        LibraryTimesCalculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select library_times from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        libraryTimes = self.executer.fetchone()[0]
+        libraryTimes = self.classify(libraryTimes)
+        sql = "update students_rank set library_times='" + libraryTimes + "' where student_id=" + str(studentId)
+        self.executer.execute(sql)

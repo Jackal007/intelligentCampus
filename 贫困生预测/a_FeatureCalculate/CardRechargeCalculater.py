@@ -15,19 +15,24 @@ class CardRechargeCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-            CardRechargeCalculater
+        CardRechargeCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            sql = "select sum(deal_cost) from card where student_id=" + studentId + " and deal_type = '卡充值'"  
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            sql = "update students set cardrecharge='" + str(s) + "' where student_id=" + studentId
-            self.executer.execute(sql)
-        else:
-            sql = "select cardrecharge from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            s = self.classify(s)
-            sql = "update students_rank set cardrecharge='" + s + "' where student_id=" + studentId
-            self.executer.execute(sql)
+        sql = "select sum(deal_cost) from card where student_id=" + studentId + " and deal_type = 'charge'"  
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        sql = "update students set cardrecharge='" + str(s) + "' where student_id=" + studentId
+        self.executer.execute(sql)
+            
+    @MyLog.myException
+    def rankit(self):
+        '''
+        CardRechargeCalculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select cardrecharge from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        s = self.classify(s)
+        sql = "update students_rank set cardrecharge='" + s + "' where student_id=" + studentId
+        self.executer.execute(sql)

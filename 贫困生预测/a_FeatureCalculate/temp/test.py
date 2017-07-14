@@ -1,12 +1,12 @@
 from Model import Student
 from Tools import MyDataBase
 from tqdm import tqdm
-from a_FeatureCalculate.modifying.Below10_RankCalculater import Below10_RankCalculater
+from a_FeatureCalculate.modifying.Time7_8Consume_Avg import Time7_8Consume_Avg
 
 Student = Student.Student
-Below10_RankCalculater = Below10_RankCalculater()                       
+Time7_8Consume_Avg = Time7_8Consume_Avg()                       
 
-calculater = [Below10_RankCalculater]
+calculater = [Time7_8Consume_Avg]
 
 def calculate():
     db = MyDataBase.MyDataBase("train")

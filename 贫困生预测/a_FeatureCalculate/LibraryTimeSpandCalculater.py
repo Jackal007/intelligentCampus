@@ -15,22 +15,26 @@ class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-            LibraryTimeSpandCalculater
+        LibraryTimeSpandCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            studentId = self.student.getStudentId()
-            sql = "insert into library_modify(select student_id,date(date),min(time(date)),max(time(date)),TIMESTAMPDIFF(minute,min(date),max(date)) from library where student_id = " + str(studentId) + " group by date(date))"
-            self.executer.execute(sql)
-            sql = "SELECT sum(totaltime) FROM library_modify where student_id = " + str(studentId) 
-            self.executer.execute(sql)
-            libraryTimeSpand = str(self.executer.fetchone()[0])
-            sql = "update students set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
-        else:
-            sql = "select library_time_spand from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            libraryTimeSpand = self.executer.fetchone()[0]
-            libraryTimeSpand = self.classify(libraryTimeSpand)
-            sql = "update students_rank set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
-            self.executer.execute(sql)
+        sql = "insert into library_modify(select student_id,date(date),min(time(date)),max(time(date)),TIMESTAMPDIFF(minute,min(date),max(date)) from library where student_id = " + str(studentId) + " group by date(date))"
+        self.executer.execute(sql)
+        sql = "SELECT sum(totaltime) FROM library_modify where student_id = " + str(studentId) 
+        self.executer.execute(sql)
+        libraryTimeSpand = str(self.executer.fetchone()[0])
+        sql = "update students set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
+        self.executer.execute(sql)
+
+    @MyLog.myException
+    def rankit(self):
+        '''
+        LibraryTimeSpandCalculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select library_time_spand from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        libraryTimeSpand = self.executer.fetchone()[0]
+        libraryTimeSpand = self.classify(libraryTimeSpand)
+        sql = "update students_rank set library_time_spand='" + libraryTimeSpand + "' where student_id=" + str(studentId)
+        self.executer.execute(sql)

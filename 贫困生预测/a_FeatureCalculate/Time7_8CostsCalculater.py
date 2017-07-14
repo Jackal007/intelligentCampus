@@ -15,19 +15,24 @@ class Time7_8CostsCalculater(XXCalculater.XXCalculater):
     @MyLog.myException
     def calculate(self):
         '''
-            Time7_8CostsCalculater
+        Time7_8CostsCalculater.calculate
         '''
         studentId = str(self.student.getStudentId())
-        if self.level is None:
-            sql = "select sum(deal_cost) from card where student_id=" + studentId +" and hour(deal_date)=7"  
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            sql = "update students set time7_8costs='" + str(s) + "' where student_id=" + studentId
-            self.executer.execute(sql)
-        else:
-            sql = "select time7_8costs from students where student_id=" + studentId   
-            self.executer.execute(sql)
-            s = self.executer.fetchone()[0]
-            s = self.classify(s)
-            sql = "update students_rank set time7_8costs='" + str(s) + "' where student_id=" + studentId
-            self.executer.execute(sql)
+        sql = "select sum(deal_cost) from card where student_id=" + studentId +" and hour(deal_date)=7"  
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        sql = "update students set time7_8costs='" + str(s) + "' where student_id=" + studentId
+        self.executer.execute(sql)
+    
+    @MyLog.myException
+    def rankit(self):
+        '''
+        Time7_8CostsCalculater.rankit
+        '''
+        studentId = str(self.student.getStudentId())
+        sql = "select time7_8consume_avg from students where student_id=" + studentId   
+        self.executer.execute(sql)
+        s = self.executer.fetchone()[0]
+        s = self.classify(s)
+        sql = "update students_rank set time7_8consume_avg = '" + str(s) + "' where student_id=" + studentId
+        self.executer.execute(sql)

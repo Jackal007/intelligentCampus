@@ -42,7 +42,7 @@ students, dataSet = createTestDataSet()
 X_test = dataSet
 
 # strong classifier
-ada_real=AdaBoostClassifier(base_estimator=clf2,learning_rate=1,n_estimators=50,algorithm='SAMME')
+ada_real=AdaBoostClassifier(base_estimator=clf1,learning_rate=1,n_estimators=100,algorithm='SAMME')
 
 #feature selection 
 fetureSelection=SelectFromModel(ada_real)

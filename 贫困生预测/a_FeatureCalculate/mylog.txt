@@ -1,0 +1,108 @@
+[1500017987.2004004]: 
+        Time6_7CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1500017987.6494002]: 
+        CostAverageDayLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_avg_day_laundryroom' at row 1")
+[1500017987.7614002]: 
+        CostRateLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_rate_laundryroom' at row 1")
+[1500017987.8744006]: 
+        CostTimesDayLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_times_day_laundryroom' at row 1")
+[1500017988.6674004]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500017988.9204004]: 
+        Time7_8CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time7_8costs' at row 1")
+[1500017990.2554004]: 
+        MaxCost7_8Calculater.calculate
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1500017990.5014002]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500017990.6234004]: 
+        Time6_7CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1500017990.6364005]: 
+        Time7_8CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time7_8costs' at row 1")
+[1500017991.8944006]: 
+        LibraryTimeSpandCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1500017991.9064004]: 
+        MaxCost7_8Calculater.calculate
+        	<class 'TypeError'>:'NoneType' object is not subscriptable
+[1500017992.2354004]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500017993.0554004]: 
+        CostAverageDaySupermarketCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_avg_day_superMarket' at row 1")
+[1500017993.2504005]: 
+        CostRateSupermarketCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_rate_supermarket' at row 1")
+[1500017993.3554006]: 
+        CostTimesDaySupermarketCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_times_day_supermarket' at row 1")
+[1500017993.6434004]: 
+        LibraryTimeSpandCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1500017993.9834003]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500017995.9164004]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500017996.2064004]: 
+        Time6_7CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1500017998.1454003]: 
+        LibraryTimeSpandCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'library_time_spand' at row 1")
+[1500017998.4674006]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500017998.6614003]: 
+        Time6_7CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1500017999.1194005]: 
+        CostAverageDayLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_avg_day_laundryroom' at row 1")
+[1500017999.2044003]: 
+        CostRateLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_rate_laundryroom' at row 1")
+[1500017999.2954004]: 
+        CostTimesDayLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_times_day_laundryroom' at row 1")
+[1500018000.1444004]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500018001.8034005]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500018001.9614003]: 
+        Time6_7CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1500018002.2774003]: 
+        CostAverageDayLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_avg_day_laundryroom' at row 1")
+[1500018002.4294002]: 
+        CostRateLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_rate_laundryroom' at row 1")
+[1500018002.5194004]: 
+        CostTimesDayLaundryRoomCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'cost_times_day_laundryroom' at row 1")
+[1500018003.3094003]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500018005.6514006]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
+[1500018005.9024005]: 
+        Time6_7CostsCalculater.calculate
+        	<class 'pymysql.err.DataError'>:(1265, "Data truncated for column 'time6_7costs' at row 1")
+[1500018007.9504006]: 
+        scorerank_divided_by_stunum.calculate
+        	<class 'TypeError'>:unsupported operand type(s) for /: 'int' and 'NoneType'
