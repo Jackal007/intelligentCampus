@@ -34,5 +34,5 @@ class ScoreRankCalculater(XXCalculater.XXCalculater):
         self.executer.execute(sql)
         score = self.executer.fetchone()[0]
         score = self.classify(score)
-        sql = "update students_rank set score='" + score + "' where student_id=" + str(studentId)
+        sql = "insert into students_rank(student_id,score) values(" + studentId + ",'" + str(score) + "')" 
         self.executer.execute(sql)

@@ -131,12 +131,12 @@ def calculate():
     conn = db.getConn()
     executer = db.getExcuter()
     
-    sql = "delete from students"
-    executer.execute(sql)
-    sql = "delete from students_rank"
-    executer.execute(sql)
-    sql = "delete from library_modify"
-    executer.execute(sql)
+#     sql = "delete from students"
+#     executer.execute(sql)
+#     sql = "delete from students_rank"
+#     executer.execute(sql)
+#     sql = "delete from library_modify"
+#     executer.execute(sql)
     
     sql = "select student_id from score"
     executer.execute(sql)
@@ -154,7 +154,7 @@ def calculate():
     for i in tqdm(studentIds):
         i = i[0]
         student = Student(studentId=i)
-        student.calculate(calculater)
+        student.rankit(calculater)
      
     for i in calculater:
         i.afterCalculate()
