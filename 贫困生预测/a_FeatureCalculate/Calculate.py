@@ -81,10 +81,10 @@ scorerank_divided_by_stunum = scorerank_divided_by_stunum()
 Stu_Num_Calculater = Stu_Num_Calculater()
 
 calculater = [
-#             Stu_Num_Calculater,
-#             Num_Of_1000Calculater,
-#             Num_Of_2000Calculater,
-#             Num_Of_1500Calculater,
+            Stu_Num_Calculater,
+            Num_Of_1000Calculater,
+            Num_Of_2000Calculater,
+            Num_Of_1500Calculater,
             ScoreRankCalculater,
             Below10_RankCalculater,
             Time6_7CostsCalculater,
@@ -127,7 +127,7 @@ calculater = [
 # calculater = [SubsidyCalculater]
 
 def calculate():
-    db = MyDataBase.MyDataBase("train")
+    db = MyDataBase.MyDataBase("validate")
     conn = db.getConn()
     executer = db.getExcuter()
     
