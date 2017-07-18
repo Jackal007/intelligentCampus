@@ -20,6 +20,7 @@ class Time7_8Consume_Avg(XXCalculater.XXCalculater):
         studentId = str(self.student.getStudentId())
         sql = "select sum(deal_cost) as a from card where student_id=" + studentId + " and hour(deal_date)=7  group by date(deal_date) order by a  limit  1"  
         self.executer.execute(sql)
+        
         s = self.executer.fetchone()[0]
         sql = "update students set time7_8consume_avg ='" + str(s) + "' where student_id=" + studentId
         

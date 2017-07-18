@@ -1,8 +1,11 @@
-from _overlapped import NULL
+# from _overlapped import NULL
 class Student:
-    def __init__(self, studentId, attributes=NULL, subsidy="A"):
+    def __init__(self, studentId, attributes=None, subsidy="A"):
         self.studentId = studentId
-        self.attributes = attributes
+        try:
+            self.attributes = list(attributes)
+        except:
+            pass
         self.subsidy = subsidy
         
     def calculate(self, calculater):
@@ -16,7 +19,8 @@ class Student:
             i.rankit()
         
     def getAll(self):
-        return self.attributes.append(self.subsidy)
+        (self.attributes).append(self.subsidy)
+        return self.attributes
     
     def setStudentId(self, studentId): 
         self.studentId = studentId

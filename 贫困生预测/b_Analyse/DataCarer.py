@@ -12,10 +12,10 @@ def createTrainDataSet():
     db = MyDataBase.MyDataBase("train")
     conn, executer = db.getConn(), db.getExcuter()
     # get all the students
-    executer.execute("select * from students_rank")
+    executer.execute("select * from students_rank_copy")
     dataSet = []
     for i in executer.fetchall():
-        student = Student(attributes=i, subsidy=i[-1])
+        student = Student(studentId=i[0],attributes=list(i[1:-1]), subsidy=i[-1])
         dataSet.append(student.getAll())
     # 处理数据不平衡问题
     # 统计每种类别的个数
@@ -52,7 +52,7 @@ def createTestDataSet():
     executer.execute("select * from students_rank")
     students, dataSet = [], []
     for i in executer.fetchall():
-        student = Student(attributes=i)
+        student = Student(studentId=i[0],attributes=i[1:-1])
         students.append(student)
         dataSet.append(student.getAll()[0:-1])
     conn.close();executer.close()

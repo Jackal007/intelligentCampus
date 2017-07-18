@@ -28,7 +28,7 @@ class PropotionCalculater1500(XXCalculater.XXCalculater):
         sql = "select 1000_num from college_info where college_id = "+str(collegeId)     
         self.executer.execute(sql)
         s = self.executer.fetchone()[0]/sum1500
-        sql = "update students set propotion_of_1000 ='" + str(s) + "' where student_id=" + studentId
+        sql = "update students set propotion_of_1500 ='" + str(s) + "' where student_id=" + studentId
         self.executer.execute(sql)
         
     @MyLog.myException

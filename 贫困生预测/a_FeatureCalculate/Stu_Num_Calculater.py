@@ -10,13 +10,11 @@ class Stu_Num_Calculater(XXCalculater.XXCalculater):
         i = 1
         while i <= 19:
             
-            sql ="SELECT count(*) from score JOIN subsidy WHERE college_id = "+ str(i)
+            sql ="SELECT count(*) from score WHERE college_id = "+ str(i)
             self.executer.execute(sql)
-            s = self.executer.fetchall()
+            s = self.executer.fetchone()[0]
             
-            sql="update college_info set stu_num = "+str(s)+"where college_id ="+str(i)
-            if self.level is not None:
-                s = self.classify(s)
-                sql="update college_info set stu_num = "+str(s)+"where college_id ="+str(i)
-                self.executer.execute(sql)
+            sql="update college_info set stu_num = "+str(s)+" where college_id ="+str(i)
+            print(sql)
+            self.executer.execute(sql)
             i = i + 1
