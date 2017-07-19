@@ -53,9 +53,9 @@ clf7 = AdaBoostClassifier(base_estimator=clf7, learning_rate=1, n_estimators=150
 
 # final classifier
 finalClassifier = VotingClassifier(estimators=[
-       ('0', clf0)],
+       ('0', clf0),('1', clf1),('2', clf2),('4', clf4),('6', clf6),],
        voting='soft',
-       weights=[1])
+       weights=[1,3,1,1,3])
 
 # feature selection 
 fetureSelection = SelectFromModel(clf0)

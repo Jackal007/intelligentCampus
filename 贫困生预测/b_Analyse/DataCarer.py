@@ -27,7 +27,7 @@ def createTrainDataSet():
     while flag:
         flag = False
         for i in classCount_result[:-1]:
-            if i[1] > 0 and 4 * i[1] < classCount_result[-1][1]:
+            if i[1] > 0 and 20 * i[1] < classCount_result[-1][1]:
                 flag = True
                 type = i[0]
                 temp = []
