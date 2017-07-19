@@ -1,7 +1,9 @@
 import DataCarer
 from numpy import *
+from sklearn.pipeline import Pipeline
+from sklearn.feature_selection import SelectFromModel, SelectKBest, chi2
+from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, VotingClassifier, AdaBoostClassifier
 from sklearn import tree
-from sklearn.ensemble import ExtraTreesClassifier
 from sklearn import svm
 from sklearn.svm import LinearSVC 
 from sklearn.neural_network import MLPClassifier
@@ -9,14 +11,9 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.neighbors.nearest_centroid import NearestCentroid
 from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import RandomForestClassifier, VotingClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import  AdaBoostClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.feature_selection import SelectFromModel
-from sklearn.feature_selection import SelectKBest
-from sklearn.feature_selection import chi2
+from sklearn.feature_selection import RFE
+from sklearn.feature_selection import f_regression
+import d_CorrectRateTest.CorrectRateTest as CorrectRateTest
 
 def createTrainDataSet():
     dataSet = DataCarer.createTrainDataSet()
@@ -38,39 +35,52 @@ X_test = dataSet
 clf0 = tree.DecisionTreeClassifier()
 clf1 = ExtraTreesClassifier(n_estimators=10, max_depth=None, min_samples_split=2, random_state=0)
 clf2 = svm.SVC(probability=True)
-clf3 = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
-clf4 = SGDClassifier(loss="hinge", penalty="l2")
-clf5 = NearestCentroid()
+clf4 = SGDClassifier(alpha=0.0001, average=False, class_weight=None, epsilon=0.1,
+        eta0=0.0, fit_intercept=True, l1_ratio=0.15,
+        learning_rate='optimal', loss='modified_huber', n_iter=5, n_jobs=1,
+        penalty='l2', power_t=0.5, random_state=None, shuffle=True,
+        verbose=0, warm_start=False)
 clf6 = RandomForestClassifier(random_state=1)
 clf7 = GaussianNB()
 
 # stronger classifier
-clf0 = AdaBoostClassifier(base_estimator=clf0, learning_rate=1, n_estimators=100, algorithm='SAMME')
-clf1 = AdaBoostClassifier(base_estimator=clf1, learning_rate=1, n_estimators=100, algorithm='SAMME')
+clf0 = AdaBoostClassifier(base_estimator=clf0, learning_rate=1, n_estimators=110, algorithm='SAMME')
+clf1 = AdaBoostClassifier(base_estimator=clf1, learning_rate=1, n_estimators=50, algorithm='SAMME')
 clf2 = AdaBoostClassifier(base_estimator=clf2, learning_rate=1, n_estimators=1, algorithm='SAMME')
-clf3 = AdaBoostClassifier(base_estimator=clf3, learning_rate=1, n_estimators=100, algorithm='SAMME')
-clf4 = AdaBoostClassifier(base_estimator=clf4, learning_rate=1, n_estimators=100, algorithm='SAMME')
-clf5 = AdaBoostClassifier(base_estimator=clf5, learning_rate=1, n_estimators=100, algorithm='SAMME')
-clf6 = AdaBoostClassifier(base_estimator=clf6, learning_rate=1, n_estimators=100, algorithm='SAMME')
-clf7 = AdaBoostClassifier(base_estimator=clf7, learning_rate=1, n_estimators=100, algorithm='SAMME')
+clf4 = AdaBoostClassifier(base_estimator=clf4, learning_rate=1, n_estimators=1, algorithm='SAMME')
+clf6 = AdaBoostClassifier(base_estimator=clf6, learning_rate=1, n_estimators=150, algorithm='SAMME')
+clf7 = AdaBoostClassifier(base_estimator=clf7, learning_rate=1, n_estimators=150, algorithm='SAMME')
 
 # final classifier
 finalClassifier = VotingClassifier(estimators=[
-       ('0', clf0), ('1', clf1), ('2', clf2),  ('6', clf7), ('7', clf7)],
-       voting='soft',weights=[1,3,3,1,1])
+       ('0', clf0)],
+       voting='soft',
+       weights=[1])
 
 # feature selection 
-fetureSelection = SelectFromModel(clf1)
-
+fetureSelection = SelectFromModel(clf0)
+anova_filter = SelectKBest(f_regression, k=10)
 clf = Pipeline([
 #   ('feature_selection', SelectKBest(chi2, k=2)),
-  ('feature_selection', fetureSelection),
+  ('anova_filter', anova_filter),
   ('classification', finalClassifier)
 ])
-clf.fit(X_train, Y_train)
-result = clf.predict(X_test)
+k=37
 
-# result=ada_real.predict(X_test)
-DataCarer.saveResult(students, result, "result")
+outfile=open("outFile",'w')
+print(len(X_train))
+print(len(X_test))
+while(k>0):
+    clf.set_params(anova_filter__k=k)
+    clf.fit(X_train, Y_train)
+    result = clf.predict(X_test)
+    
+    # result=ada_real.predict(X_test)
+    DataCarer.saveResult(students, result, str("result"+str(k)))
 
+    outfile.write(str(str(k)+"___"+str(CorrectRateTest.CorrectRate(str("result"+str(k))))))
+    outfile.write("\n")
+    k=k-1
+# print(anova_filter.get_support(indices))
+# print(anova_filter.scores_)
 
