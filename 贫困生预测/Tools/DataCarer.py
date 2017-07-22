@@ -1,3 +1,8 @@
+'''
+Created on 2017年7月22日
+
+@author: zhenglongtian
+'''
 from FeatureCalculate import Student
 from Tools import MyDataBase
 import random
@@ -67,7 +72,7 @@ def saveResult(students, results, filename):
     '''
     save the result to a file
     '''
-    with open('../d_CorrectRateTest/' + filename + '.csv', 'w')as f:
+    with open('../AccuracyValidation/results' + filename + '.csv', 'w')as f:
         # 提交到网上要求的第一行
         f.write("studentid,subsidy\n")
         temp = ""
@@ -81,38 +86,38 @@ def saveResult(students, results, filename):
             elif result == 4:
                 temp = 2000
             else:
-                print("!!!!!!!!!!!!!")
+                print("it is weird")
               
             f.write(str(student.getStudentId()) + "," + str(temp) + "\n")
 class Smote:
-    def __init__(self,samples,N=10,k=5):
-        self.n_samples,self.n_attrs=samples.shape
-        self.N=N
-        self.k=k
-        self.samples=samples
-        self.newindex=0
+    def __init__(self, samples, N=10, k=5):
+        self.n_samples, self.n_attrs = samples.shape
+        self.N = N
+        self.k = k
+        self.samples = samples
+        self.newindex = 0
        # self.synthetic=np.zeros((self.n_samples*N,self.n_attrs))
 
     def over_sampling(self):
-        N=int(self.N/100)
+        N = int(self.N / 100)
         self.synthetic = np.zeros((self.n_samples * N, self.n_attrs))
-        neighbors=NearestNeighbors(n_neighbors=self.k).fit(self.samples)
-        print 'neighbors',neighbors
+        neighbors = NearestNeighbors(n_neighbors=self.k).fit(self.samples)
+        print 'neighbors', neighbors
         for i in range(len(self.samples)):
-            nnarray=neighbors.kneighbors(self.samples[i].reshape(1,-1),return_distance=False)[0]
-            #print nnarray
-            self._populate(N,i,nnarray)
+            nnarray = neighbors.kneighbors(self.samples[i].reshape(1, -1), return_distance=False)[0]
+            # print nnarray
+            self._populate(N, i, nnarray)
         return self.synthetic
 
 
     # for each minority class samples,choose N of the k nearest neighbors and generate N synthetic samples.
-    def _populate(self,N,i,nnarray):
+    def _populate(self, N, i, nnarray):
         for j in range(N):
-            nn=random.randint(0,self.k-1)
-            dif=self.samples[nnarray[nn]]-self.samples[i]
-            gap=random.random()
-            self.synthetic[self.newindex]=self.samples[i]+gap*dif
-            self.newindex+=1
-a=np.array([[1,2,3],[4,5,6],[2,3,1],[2,1,2],[2,3,4],[2,3,4]])
-s=Smote(a,N=100)
+            nn = random.randint(0, self.k - 1)
+            dif = self.samples[nnarray[nn]] - self.samples[i]
+            gap = random.random()
+            self.synthetic[self.newindex] = self.samples[i] + gap * dif
+            self.newindex += 1
+a = np.array([[1, 2, 3], [4, 5, 6], [2, 3, 1], [2, 1, 2], [2, 3, 4], [2, 3, 4]])
+s = Smote(a, N=100)
 print s.over_sampling()
