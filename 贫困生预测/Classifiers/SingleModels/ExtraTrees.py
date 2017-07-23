@@ -3,7 +3,7 @@ Created on 2017年7月22日
 
 @author: zhenglongtian
 '''
-from Models.SingleModels import SingleClassifier
+from Classifiers.SingleModels import SingleClassifier
 from sklearn import ExtraTreesClassifier
 
 class ExtraTrees(SingleClassifier):

@@ -3,9 +3,10 @@ Created on 2017年7月22日
  
 @author: zhenglongtian
 '''
-import DataCarer
+from Tools import DataCarer
 from numpy import *
 from Tools import DataCarer
+from sklearn.model_selection import train_test_split
 from sklearn.ensemble import AdaBoostClassifier
 from AccuracyValidation import OfflineValidation
  
@@ -13,33 +14,33 @@ class SingleClassifier():
     def __init__(self):
         # weak classifier
         self.clf = None
+        # get train data
+        self.X, self.Y = DataCarer.createTrainDataSet()
          
     def getBeastOne(self, name):
-        from sklearn.externals import joblib
-        # if it has already generated
+        # if the classifier has already generated
         try:
+            from sklearn.externals import joblib
             clf = joblib.load(name + '.pkl')
             return clf
         except:
             pass
-        # get train data and test data
-        dataSet = mat(DataCarer.createTrainDataSet())
-        X_train, Y_train = dataSet[:, :-1], dataSet[:, -1]
-        students, dataSet = DataCarer.createTestDataSet()
-        X_test = dataSet
          
+        # if the classifier is not exists
         # search for the best loop time 
         bestAccuracyRate, n_estimators = 0, 1
-        for i in range(2, 200):
-            sclf = AdaBoostClassifier(base_estimator=self.clf, learning_rate=1, n_estimators=i, algorithm='SAMME')
-            sclf.fit(X_train, Y_train)
-            DataCarer.saveResult(students, sclf.predit(X_test), 'temp')
+        for loopTimes in range(2, 200):
             
-            # the accuracy is the criteria
-            accuracyRate = OfflineValidation.getAccuracy('temp')
+            sclf = AdaBoostClassifier(base_estimator=self.clf, learning_rate=1, n_estimators=loopTimes, algorithm='SAMME')
+            
+            #cross validation to get the score
+            X_train, X_test, Y_train, Y_test = train_test_split(self.X, self.Y, test_size=0.1, random_state=0)
+            sclf.fit(X_train, Y_train)
+            accuracyRate = sclf.score(X_test, Y_test)
+            
             if accuracyRate > bestAccuracyRate:
                 bestAccuracyRate = accuracyRate
-                n_estimators = i
+                n_estimators = loopTimes
         
         # save the classifier as a dump
         clf = joblib.dump(name + '.pkl')

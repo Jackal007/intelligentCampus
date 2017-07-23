@@ -1,25 +1,11 @@
 '''
 测试准确率
 '''
-import pymysql
+from Tools import DataCarer
+from sklearn.model_selection import train_test_split
 
 def getAccuracy(filename):
-    conn = pymysql.connect("localhost", "root", "root", "intelligentCampustest")
-    cur = conn.cursor()
-    
-    fr = open('../AccuracyValidation/results' + filename + ".csv", 'r')
-    content = [inst.strip('\n').split(',') for inst in fr.readlines()]
-    
-    correct = total = 0
-    for ins in content :
-        student_id = ins[0]
-        presume = int(ins[1])
-        sql = "select subsidy from students where student_id = " + student_id
-        cur.execute(sql)
-        real = str(cur.fetchone()[0])
-        if real is not None :
-            total += 1
-            if presume == real:         
-                correct += 1
-    cur.close();conn.commit();conn.close()
+    X, Y = DataCarer.createTrainDataSet()
+    X_train, X_test, Y_train, Y_test = train_test_split(
+    X, Y, test_size=0.4, random_state=0)
     return correct / total

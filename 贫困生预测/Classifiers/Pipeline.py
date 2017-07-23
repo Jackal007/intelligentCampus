@@ -26,9 +26,8 @@ def createTestDataSet():
     return students, dataSet
 
 # get train data and test data
-dataSet = mat(createTrainDataSet())
-X_train, Y_train = dataSet[:, :-1], dataSet[:, -1]
-students, dataSet = createTestDataSet()
+X_train, Y_train = DataCarer.createTrainDataSet()
+students, dataSet = DataCarer.createTestDataSet()
 X_test = dataSet
 
 # weak classifiers

@@ -7,8 +7,7 @@ from FeatureCalculate import Student
 from Tools import MyDataBase
 import random
 from sklearn.neighbors import NearestNeighbors
-import numpy as np
-
+import numpy as np,mat
 
 '''
 used to deal with the data
@@ -22,29 +21,13 @@ def createTrainDataSet():
     conn, executer = db.getConn(), db.getExcuter()
     # get all the students
     executer.execute("select * from students_rank_copy")
-    dataSet = []
+    dataSet = mat()
     for i in executer.fetchall():
         student = Student(studentId=i[0], attributes=list(i[1:-1]), subsidy=i[-1])
         dataSet.append(student.getAll())
     conn.close();executer.close()
-    return dataSet
+    return dataSet[:, :-1], dataSet[:, -1]
     
-def createTestDataSet():
-    '''
-    get test data
-    '''
-    db = MyDataBase.MyDataBase("test")
-    conn, executer = db.getConn(), db.getExcuter()
-    # get all the students
-    executer.execute("select * from students_rank")
-    students, dataSet = [], []
-    for i in executer.fetchall():
-        student = Student(studentId=i[0], attributes=i[1:-1])
-        students.append(student)
-        dataSet.append(student.getAll()[0:-1])
-    conn.close();executer.close()
-    return students, dataSet
-     
 def DataImbalanceProcessing(dataSet):
     # 处理数据不平衡问题
     # 统计每种类别的个数

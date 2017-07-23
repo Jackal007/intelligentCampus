@@ -1,9 +1,9 @@
 '''
 Created on 2017年7月22日
-
+随机梯度下降
 @author: zhenglongtian
 '''
-from Models.SingleModels import SingleClassifier
+from Classifiers.SingleModels import SingleClassifier
 from sklearn.linear_model import SGDClassifier
 
 class ExtraTrees(SingleClassifier):

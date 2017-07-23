@@ -1,6 +1,6 @@
 # from _overlapped import NULL
 class Student:
-    def __init__(self, studentId, attributes=None, subsidy="A"):
+    def __init__(self, studentId, attributes=None, subsidy="1"):
         self.studentId = studentId
         try:
             self.attributes = list(attributes)
