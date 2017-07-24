@@ -1,5 +1,6 @@
 from Tools import DataCarer
 from sklearn.pipeline import Pipeline
+from numpy import mat
 from sklearn.feature_selection import SelectFromModel, SelectKBest, chi2
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import VotingClassifier
@@ -44,4 +45,4 @@ for i in range(1,10):
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.1, random_state=0)
     clf.fit(X_train, Y_train)
     accuracyRates.append(clf.score(X_test, Y_test))
-print(accuracyRates.mean())
+print(mat(accuracyRates).mean())
