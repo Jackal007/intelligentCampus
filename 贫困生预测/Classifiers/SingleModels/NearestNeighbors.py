@@ -6,9 +6,9 @@ Created on 2017年7月22日
 from Classifiers.SingleModels import SingleClassifier
 from sklearn.neighbors import NearestNeighbors
 
-class ExtraTrees(SingleClassifier):
+class NearestNeighbors(SingleClassifier.SingleClassifier):
     def __init__(self):
+        SingleClassifier.SingleClassifier.__init__(self)
         # weak classifier
         algorithms = ['brute', 'ball_tree', 'kd_tree']
-        self.clf = NearestNeighbors(n_neighbors=2, algorithm=algorithms[0])
-# 
+        self.clf =  NearestNeighbors(n_neighbors=2, algorithm='ball_tree')
