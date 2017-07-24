@@ -20,14 +20,31 @@ def createTrainDataSet():
     db = MyDataBase.MyDataBase("train")
     conn, executer = db.getConn(), db.getExcuter()
     # get all the students
-    executer.execute("select * from students_rank_copy")
+    executer.execute("select * from students_rank")
     dataSet = []
     for i in executer.fetchall():
         student = Student(studentId=i[0], attributes=list(i[1:-1]), subsidy=i[-1])
         dataSet.append(student.getAll())
     conn.close();executer.close()
-    dataSet=mat(dataSet)
+    dataSet = mat(dataSet)
     return dataSet[:, :-1], dataSet[:, -1]
+
+def createValidateDataSet():
+    '''
+    get validate data
+    '''
+    db = MyDataBase.MyDataBase("validate")
+    conn, executer = db.getConn(), db.getExcuter()
+    # get all the students
+    executer.execute("select * from students_rank")
+    students,dataSet = [],[]
+    for i in executer.fetchall():
+        student = Student(studentId=i[0], attributes=list(i[1:-1]), subsidy=i[-1])
+        dataSet.append(student.getAll())
+        students.append(student)
+    conn.close();executer.close()
+    dataSet = mat(dataSet)
+    return students,dataSet[:, :-1]
     
 def DataImbalanceProcessing(dataSet):
     # 处理数据不平衡问题
@@ -56,7 +73,7 @@ def saveResult(students, results, filename):
     '''
     save the result to a file
     '''
-    with open('../AccuracyValidation/results' + filename + '.csv', 'w')as f:
+    with open('../AccuracyValidation/results/' + filename + '.csv', 'w')as f:
         # 提交到网上要求的第一行
         f.write("studentid,subsidy\n")
         temp = ""
