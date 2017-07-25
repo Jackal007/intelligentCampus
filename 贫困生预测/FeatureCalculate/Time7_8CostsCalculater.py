@@ -6,11 +6,15 @@ class Time7_8CostsCalculater(XXCalculater.XXCalculater):
         sql = "select time7_8costs from students order by time6_7costs "
         self.executer.execute(sql)
         Time7_8CostsRanks = self.executer.fetchall()
-        A = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.25)][0]
-        B = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.5)][0]
-        C = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.75)][0]
-        D = Time7_8CostsRanks[len(Time7_8CostsRanks)-1][0]
-        self.level = [A, B, C, D]
+        A = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.125)][0]
+        B = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.25)][0]
+        C = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.375)][0]
+        D = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.5)][0]
+        E = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.625)][0]
+        F = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.75)][0]
+        G = Time7_8CostsRanks[int(len(Time7_8CostsRanks) * 0.875)][0]
+        H = Time7_8CostsRanks[len(Time7_8CostsRanks) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
         
     @MyLog.myException
     def calculate(self):

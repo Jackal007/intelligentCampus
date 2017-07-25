@@ -1,0 +1,572 @@
+2017-07-25 21:39:30 MyLog.py[line:44] DEBUG This is debug message!
+2017-07-25 21:39:30 MyLog.py[line:45] INFO This is info message!
+2017-07-25 21:39:30 MyLog.py[line:46] WARNING This is warning message!
+2017-07-25 21:39:30 MyLog.py[line:47] ERROR This is error message!
+2017-07-25 21:47:43 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:43 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '0' for key 'PRIMARY'")
+2017-07-25 21:47:45 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:45 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '1' for key 'PRIMARY'")
+2017-07-25 21:47:46 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:46 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '8' for key 'PRIMARY'")
+2017-07-25 21:47:47 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:47 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '9' for key 'PRIMARY'")
+2017-07-25 21:47:49 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:49 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '10' for key 'PRIMARY'")
+2017-07-25 21:47:51 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:51 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '11' for key 'PRIMARY'")
+2017-07-25 21:47:53 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:53 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '19' for key 'PRIMARY'")
+2017-07-25 21:47:54 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:54 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '20' for key 'PRIMARY'")
+2017-07-25 21:47:56 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:56 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '21' for key 'PRIMARY'")
+2017-07-25 21:47:58 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:58 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '22' for key 'PRIMARY'")
+2017-07-25 21:47:59 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:47:59 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '23' for key 'PRIMARY'")
+2017-07-25 21:48:01 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:01 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '28' for key 'PRIMARY'")
+2017-07-25 21:48:04 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:04 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '29' for key 'PRIMARY'")
+2017-07-25 21:48:06 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:06 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '36' for key 'PRIMARY'")
+2017-07-25 21:48:08 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:08 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '37' for key 'PRIMARY'")
+2017-07-25 21:48:09 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:09 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '56' for key 'PRIMARY'")
+2017-07-25 21:48:11 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:11 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '57' for key 'PRIMARY'")
+2017-07-25 21:48:14 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:14 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '62' for key 'PRIMARY'")
+2017-07-25 21:48:15 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:15 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '63' for key 'PRIMARY'")
+2017-07-25 21:48:17 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:17 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '64' for key 'PRIMARY'")
+2017-07-25 21:48:19 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:19 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '65' for key 'PRIMARY'")
+2017-07-25 21:48:21 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:21 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '66' for key 'PRIMARY'")
+2017-07-25 21:48:23 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:23 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '67' for key 'PRIMARY'")
+2017-07-25 21:48:25 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:25 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '70' for key 'PRIMARY'")
+2017-07-25 21:48:27 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:27 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '71' for key 'PRIMARY'")
+2017-07-25 21:48:29 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:29 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '74' for key 'PRIMARY'")
+2017-07-25 21:48:30 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:30 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '75' for key 'PRIMARY'")
+2017-07-25 21:48:32 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:32 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '76' for key 'PRIMARY'")
+2017-07-25 21:48:34 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:34 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '77' for key 'PRIMARY'")
+2017-07-25 21:48:36 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:36 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '82' for key 'PRIMARY'")
+2017-07-25 21:48:38 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:38 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '83' for key 'PRIMARY'")
+2017-07-25 21:48:40 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:40 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '88' for key 'PRIMARY'")
+2017-07-25 21:48:41 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:41 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '89' for key 'PRIMARY'")
+2017-07-25 21:48:43 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:43 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '92' for key 'PRIMARY'")
+2017-07-25 21:48:45 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:45 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '93' for key 'PRIMARY'")
+2017-07-25 21:48:47 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:47 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '98' for key 'PRIMARY'")
+2017-07-25 21:48:49 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:49 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '99' for key 'PRIMARY'")
+2017-07-25 21:48:50 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:50 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '112' for key 'PRIMARY'")
+2017-07-25 21:48:52 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:52 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '113' for key 'PRIMARY'")
+2017-07-25 21:48:54 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:54 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '118' for key 'PRIMARY'")
+2017-07-25 21:48:55 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:55 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '119' for key 'PRIMARY'")
+2017-07-25 21:48:57 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:57 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '138' for key 'PRIMARY'")
+2017-07-25 21:48:59 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:48:59 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '139' for key 'PRIMARY'")
+2017-07-25 21:49:00 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:00 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '142' for key 'PRIMARY'")
+2017-07-25 21:49:02 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:02 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '143' for key 'PRIMARY'")
+2017-07-25 21:49:03 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:03 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '152' for key 'PRIMARY'")
+2017-07-25 21:49:05 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:05 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '153' for key 'PRIMARY'")
+2017-07-25 21:49:06 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:06 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '154' for key 'PRIMARY'")
+2017-07-25 21:49:08 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:08 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '155' for key 'PRIMARY'")
+2017-07-25 21:49:10 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:10 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '158' for key 'PRIMARY'")
+2017-07-25 21:49:12 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:12 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '159' for key 'PRIMARY'")
+2017-07-25 21:49:13 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:13 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '160' for key 'PRIMARY'")
+2017-07-25 21:49:15 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:15 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '161' for key 'PRIMARY'")
+2017-07-25 21:49:17 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:17 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '162' for key 'PRIMARY'")
+2017-07-25 21:49:20 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:20 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '163' for key 'PRIMARY'")
+2017-07-25 21:49:22 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:22 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '172' for key 'PRIMARY'")
+2017-07-25 21:49:24 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:24 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '173' for key 'PRIMARY'")
+2017-07-25 21:49:25 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:25 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '178' for key 'PRIMARY'")
+2017-07-25 21:49:27 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:27 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '179' for key 'PRIMARY'")
+2017-07-25 21:49:28 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:28 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '184' for key 'PRIMARY'")
+2017-07-25 21:49:30 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:30 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '185' for key 'PRIMARY'")
+2017-07-25 21:49:32 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:32 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '186' for key 'PRIMARY'")
+2017-07-25 21:49:34 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:34 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '187' for key 'PRIMARY'")
+2017-07-25 21:49:35 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:35 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '192' for key 'PRIMARY'")
+2017-07-25 21:49:37 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:37 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '193' for key 'PRIMARY'")
+2017-07-25 21:49:39 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:39 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '194' for key 'PRIMARY'")
+2017-07-25 21:49:41 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:41 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '195' for key 'PRIMARY'")
+2017-07-25 21:49:43 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:43 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '198' for key 'PRIMARY'")
+2017-07-25 21:49:45 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:45 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '199' for key 'PRIMARY'")
+2017-07-25 21:49:46 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:46 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '206' for key 'PRIMARY'")
+2017-07-25 21:49:48 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:48 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '207' for key 'PRIMARY'")
+2017-07-25 21:49:50 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:50 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '212' for key 'PRIMARY'")
+2017-07-25 21:49:52 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:52 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '213' for key 'PRIMARY'")
+2017-07-25 21:49:54 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:54 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '216' for key 'PRIMARY'")
+2017-07-25 21:49:56 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:56 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '217' for key 'PRIMARY'")
+2017-07-25 21:49:58 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:58 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '220' for key 'PRIMARY'")
+2017-07-25 21:49:59 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:49:59 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '221' for key 'PRIMARY'")
+2017-07-25 21:50:01 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:01 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '224' for key 'PRIMARY'")
+2017-07-25 21:50:03 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:03 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '225' for key 'PRIMARY'")
+2017-07-25 21:50:05 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:05 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '230' for key 'PRIMARY'")
+2017-07-25 21:50:07 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:07 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '231' for key 'PRIMARY'")
+2017-07-25 21:50:08 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:08 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '232' for key 'PRIMARY'")
+2017-07-25 21:50:10 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:10 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '233' for key 'PRIMARY'")
+2017-07-25 21:50:12 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:12 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '236' for key 'PRIMARY'")
+2017-07-25 21:50:14 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:14 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '237' for key 'PRIMARY'")
+2017-07-25 21:50:16 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:16 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '238' for key 'PRIMARY'")
+2017-07-25 21:50:17 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:17 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '239' for key 'PRIMARY'")
+2017-07-25 21:50:19 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:19 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '244' for key 'PRIMARY'")
+2017-07-25 21:50:21 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:21 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '245' for key 'PRIMARY'")
+2017-07-25 21:50:23 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:23 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '254' for key 'PRIMARY'")
+2017-07-25 21:50:24 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:24 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '255' for key 'PRIMARY'")
+2017-07-25 21:50:26 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:26 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '258' for key 'PRIMARY'")
+2017-07-25 21:50:28 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:28 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '259' for key 'PRIMARY'")
+2017-07-25 21:50:30 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:30 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '266' for key 'PRIMARY'")
+2017-07-25 21:50:31 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:31 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '267' for key 'PRIMARY'")
+2017-07-25 21:50:33 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:33 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '282' for key 'PRIMARY'")
+2017-07-25 21:50:35 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:35 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '283' for key 'PRIMARY'")
+2017-07-25 21:50:37 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:37 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '288' for key 'PRIMARY'")
+2017-07-25 21:50:39 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:39 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '289' for key 'PRIMARY'")
+2017-07-25 21:50:41 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:41 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '294' for key 'PRIMARY'")
+2017-07-25 21:50:43 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:43 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '295' for key 'PRIMARY'")
+2017-07-25 21:50:44 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:44 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '296' for key 'PRIMARY'")
+2017-07-25 21:50:47 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:47 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '297' for key 'PRIMARY'")
+2017-07-25 21:50:48 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:48 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '300' for key 'PRIMARY'")
+2017-07-25 21:50:50 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:50 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '301' for key 'PRIMARY'")
+2017-07-25 21:50:51 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:51 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '306' for key 'PRIMARY'")
+2017-07-25 21:50:53 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:53 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '307' for key 'PRIMARY'")
+2017-07-25 21:50:55 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:55 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '322' for key 'PRIMARY'")
+2017-07-25 21:50:57 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:57 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '323' for key 'PRIMARY'")
+2017-07-25 21:50:59 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:50:59 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '330' for key 'PRIMARY'")
+2017-07-25 21:51:01 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:01 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '331' for key 'PRIMARY'")
+2017-07-25 21:51:03 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:03 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '346' for key 'PRIMARY'")
+2017-07-25 21:51:04 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:04 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '347' for key 'PRIMARY'")
+2017-07-25 21:51:06 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:06 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '352' for key 'PRIMARY'")
+2017-07-25 21:51:09 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:09 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '353' for key 'PRIMARY'")
+2017-07-25 21:51:10 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:10 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '354' for key 'PRIMARY'")
+2017-07-25 21:51:12 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:12 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '355' for key 'PRIMARY'")
+2017-07-25 21:51:14 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:14 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '366' for key 'PRIMARY'")
+2017-07-25 21:51:15 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:15 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '367' for key 'PRIMARY'")
+2017-07-25 21:51:17 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:17 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '368' for key 'PRIMARY'")
+2017-07-25 21:51:19 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:19 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '369' for key 'PRIMARY'")
+2017-07-25 21:51:21 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:21 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '372' for key 'PRIMARY'")
+2017-07-25 21:51:22 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:22 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '373' for key 'PRIMARY'")
+2017-07-25 21:51:24 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:24 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '398' for key 'PRIMARY'")
+2017-07-25 21:51:26 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:26 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '399' for key 'PRIMARY'")
+2017-07-25 21:51:27 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:27 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '400' for key 'PRIMARY'")
+2017-07-25 21:51:29 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:29 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '401' for key 'PRIMARY'")
+2017-07-25 21:51:31 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:31 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '406' for key 'PRIMARY'")
+2017-07-25 21:51:33 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:33 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '407' for key 'PRIMARY'")
+2017-07-25 21:51:34 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:34 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '408' for key 'PRIMARY'")
+2017-07-25 21:51:36 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:36 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '409' for key 'PRIMARY'")
+2017-07-25 21:51:38 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:38 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '412' for key 'PRIMARY'")
+2017-07-25 21:51:40 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:40 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '413' for key 'PRIMARY'")
+2017-07-25 21:51:42 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:42 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '426' for key 'PRIMARY'")
+2017-07-25 21:51:44 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:44 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '427' for key 'PRIMARY'")
+2017-07-25 21:51:45 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:45 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '430' for key 'PRIMARY'")
+2017-07-25 21:51:47 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:47 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '431' for key 'PRIMARY'")
+2017-07-25 21:51:49 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:49 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '438' for key 'PRIMARY'")
+2017-07-25 21:51:51 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:51 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '439' for key 'PRIMARY'")
+2017-07-25 21:51:52 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:52 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '440' for key 'PRIMARY'")
+2017-07-25 21:51:54 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:54 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '441' for key 'PRIMARY'")
+2017-07-25 21:51:57 MyLog.py[line:68] ERROR 
+        ScoreRankCalculater.rankit
+        
+2017-07-25 21:51:57 MyLog.py[line:69] ERROR <class 'pymysql.err.IntegrityError'>:(1062, "Duplicate entry '448' for key 'PRIMARY'")

@@ -6,11 +6,16 @@ class TotalDinnerCostsCalculater(XXCalculater.XXCalculater):
         sql = "select totaldinnercosts from students order by totaldinnercosts"
         self.executer.execute(sql)
         TotalDinnerCostsRanks = self.executer.fetchall()
-        A = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.25)][0]
-        B = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.5)][0]
-        C = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.75)][0]
-        D = TotalDinnerCostsRanks[len(TotalDinnerCostsRanks) - 1][0]
-        self.level = [A, B, C, D]
+        A = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.125)][0]
+        B = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.25)][0]
+        C = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.375)][0]
+        D = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.5)][0]
+        E = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.625)][0]
+        F = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.75)][0]
+        G = TotalDinnerCostsRanks[int(len(TotalDinnerCostsRanks) * 0.875)][0]
+        H = TotalDinnerCostsRanks[len(TotalDinnerCostsRanks) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+        
     @MyLog.myException
     def calculate(self):
         '''

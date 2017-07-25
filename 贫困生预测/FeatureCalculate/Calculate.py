@@ -88,43 +88,44 @@ calculater = [
 #             Num_Of_1000Calculater,
 #             Num_Of_2000Calculater,
 #             Num_Of_1500Calculater,
-#             ScoreRankCalculater,
-#             Below10_RankCalculater,
-#             Time6_7CostsCalculater,
-#             Time7_8CostsCalculater,
-#             TotalDinnerCostsCalculater,
-#             AvgDaysCostsCalculater,
-#             BalanceRankCalculater,
-#             CardDaysCalculater,
-#             CardRechargeCalculater,
-#             ConsumeTimes11_12Calculater,
-#             CostAmountCalculater,
-#             CostAverageDayDinnerHallCalculater,
-#             CostAverageDayLaundryRoomCalculater,
-#             CostAverageDaySupermarketCalculater,
-#   
-#             CostRateDinnerHallCalculater,
-#             CostRateLaundryRoomCalculater,
-#             CostRateSupermarketCalculater,
-#               
-#             CostTimesDayDinnerHallCalculater,
-#             CostTimesDayLaundryRoomCalculater,
-#             CostTimesDaySupermarketCalculater,
-#             CostVarianceCalculater,
-#             CosumeTimes0_25Calculater,
-#             CountCost0_10Calculater,
-#             LibraryBorrowCalculater,
-#             LibraryTimesCalculater,
-#             LibraryTimeSpandCalculater,
-#             MaxCost7_8Calculater,
-#             Avg_ChargeCaculater,
-#             Below2_5_RankCalculater,
-#                           
-#             PropotionCalculater1000,
-#             PropotionCalculater2000,
-#              PropotionCalculater1500,
-#             scorerank_divided_by_stunum,
-#             SubsidyCalculater,
+
+            ScoreRankCalculater,
+            Below10_RankCalculater,
+            Time6_7CostsCalculater,
+            Time7_8CostsCalculater,
+            TotalDinnerCostsCalculater,
+            AvgDaysCostsCalculater,
+            BalanceRankCalculater,
+            CardDaysCalculater,
+            CardRechargeCalculater,
+            ConsumeTimes11_12Calculater,
+            CostAmountCalculater,
+            CostAverageDayDinnerHallCalculater,
+            CostAverageDayLaundryRoomCalculater,
+            CostAverageDaySupermarketCalculater,
+   
+            CostRateDinnerHallCalculater,
+            CostRateLaundryRoomCalculater,
+            CostRateSupermarketCalculater,
+               
+            CostTimesDayDinnerHallCalculater,
+            CostTimesDayLaundryRoomCalculater,
+            CostTimesDaySupermarketCalculater,
+            CostVarianceCalculater,
+            CosumeTimes0_25Calculater,
+            CountCost0_10Calculater,
+            LibraryBorrowCalculater,
+            LibraryTimesCalculater,
+            LibraryTimeSpandCalculater,
+            MaxCost7_8Calculater,
+            Avg_ChargeCaculater,
+            Below2_5_RankCalculater,
+                           
+            PropotionCalculater1000,
+            PropotionCalculater2000,
+             PropotionCalculater1500,
+            scorerank_divided_by_stunum,
+            SubsidyCalculater,
             Time7_8Consume_Avg
             ]
 
@@ -141,10 +142,10 @@ def calculate():
     studentIds = executer.fetchall()
     db.close()
      
-    for i in tqdm(studentIds):
-        i = i[0]
-        student = Student(studentId=i)
-        student.calculate(calculater)
+#     for i in tqdm(studentIds):
+#         i = i[0]
+#         student = Student(studentId=i)
+#         student.calculate(calculater)
            
     for i in calculater:
         i.setLevel()

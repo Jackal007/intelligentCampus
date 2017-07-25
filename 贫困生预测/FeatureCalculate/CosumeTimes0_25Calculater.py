@@ -6,11 +6,16 @@ class CosumeTimes0_25Calculater(XXCalculater.XXCalculater):
         sql = "select consumetimes0_25 from students order by consumetimes0_25"
         self.executer.execute(sql)
         CosumeTimes0_25Ranks = self.executer.fetchall()
-        A = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.25)][0]
-        B = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.5)][0]
-        C = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.75)][0]
-        D = CosumeTimes0_25Ranks[len(CosumeTimes0_25Ranks) - 1 ][0]
-        self.level = [A, B, C, D]
+        A = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.125)][0]
+        B = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.25)][0]
+        C = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.375)][0]
+        D = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.5)][0]
+        E = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.625)][0]
+        F = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.75)][0]
+        G = CosumeTimes0_25Ranks[int(len(CosumeTimes0_25Ranks) * 0.875)][0]
+        H = CosumeTimes0_25Ranks[len(CosumeTimes0_25Ranks) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+        
         
     @MyLog.myException
     def calculate(self):

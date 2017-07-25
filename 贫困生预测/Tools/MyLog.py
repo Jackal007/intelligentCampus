@@ -63,9 +63,9 @@ def myException(function):
         try:
             return function(*args, **kwargs)
         except:
-            logger()
+            logger=Logger()
             info = sys.exc_info()
-            logger.error(function.__doc__)
-            logger.error(str(info[0]) + ":" + str(info[1]))
+            logging.error(function.__doc__)
+            logging.error(str(info[0]) + ":" + str(info[1]))
             print(function.__doc__)
     return wrapper

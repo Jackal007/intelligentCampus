@@ -6,11 +6,15 @@ class LibraryTimesCalculater(XXCalculater.XXCalculater):
         sql = "select library_times from students order by library_times"
         self.executer.execute(sql)
         LibraryTimes = self.executer.fetchall()
-        A = LibraryTimes[int(len(LibraryTimes) * 0.25)][0]
-        B = LibraryTimes[int(len(LibraryTimes) * 0.5)][0]
-        C = LibraryTimes[int(len(LibraryTimes) * 0.75)][0]
-        D = LibraryTimes[len(LibraryTimes) - 1][0]
-        self.level = [A, B, C, D]
+        A = LibraryTimes[int(len(LibraryTimes) * 0.125)][0]
+        B = LibraryTimes[int(len(LibraryTimes) * 0.25)][0]
+        C = LibraryTimes[int(len(LibraryTimes) * 0.375)][0]
+        D = LibraryTimes[int(len(LibraryTimes) * 0.5)][0]
+        E = LibraryTimes[int(len(LibraryTimes) * 0.625)][0]
+        F = LibraryTimes[int(len(LibraryTimes) * 0.75)][0]
+        G = LibraryTimes[int(len(LibraryTimes) * 0.875)][0]
+        H = LibraryTimes[len(LibraryTimes) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
         
     @MyLog.myException
     def calculate(self):

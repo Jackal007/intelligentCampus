@@ -5,12 +5,16 @@ class scorerank_divided_by_stunum(XXCalculater.XXCalculater):
     def setLevel(self):
         sql = "select scorerank_divided_by_stunum from students order by scorerank_divided_by_stunum "
         self.executer.execute(sql)
-        Time6_7CostsRanks = self.executer.fetchall()
-        A = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.25)][0]
-        B = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.5)][0]
-        C = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.75)][0]
-        D = Time6_7CostsRanks[len(Time6_7CostsRanks) - 1][0]
-        self.level = [A, B, C, D]
+        scorerank_divided_by_stunum = self.executer.fetchall()
+        A = scorerank_divided_by_stunum[int(len(scorerank_divided_by_stunum) * 0.125)][0]
+        B = scorerank_divided_by_stunum[int(len(scorerank_divided_by_stunum) * 0.25)][0]
+        C = scorerank_divided_by_stunum[int(len(scorerank_divided_by_stunum) * 0.375)][0]
+        D = scorerank_divided_by_stunum[int(len(scorerank_divided_by_stunum) * 0.5)][0]
+        E = scorerank_divided_by_stunum[int(len(scorerank_divided_by_stunum) * 0.625)][0]
+        F = scorerank_divided_by_stunum[int(len(scorerank_divided_by_stunum) * 0.75)][0]
+        G = scorerank_divided_by_stunum[int(len(scorerank_divided_by_stunum) * 0.875)][0]
+        H = scorerank_divided_by_stunum[len(scorerank_divided_by_stunum) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
         
     @MyLog.myException
     def calculate(self):

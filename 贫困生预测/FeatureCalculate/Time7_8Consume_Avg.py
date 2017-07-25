@@ -5,12 +5,17 @@ class Time7_8Consume_Avg(XXCalculater.XXCalculater):
     def setLevel(self):
         sql = "select time7_8costs from students order by time7_8costs"
         self.executer.execute(sql)
-        MaxCost7_8Ranks = self.executer.fetchall()
-        A = MaxCost7_8Ranks[int(len(MaxCost7_8Ranks) * 0.25)][0]
-        B = MaxCost7_8Ranks[int(len(MaxCost7_8Ranks) * 0.5)][0]
-        C = MaxCost7_8Ranks[int(len(MaxCost7_8Ranks) * 0.75)][0]
-        D = MaxCost7_8Ranks[len(MaxCost7_8Ranks) - 1][0]
-        self.level = [A, B, C, D]
+        Time7_8Consume_Avg = self.executer.fetchall()
+        A = Time7_8Consume_Avg[int(len(Time7_8Consume_Avg) * 0.125)][0]
+        B = Time7_8Consume_Avg[int(len(Time7_8Consume_Avg) * 0.25)][0]
+        C = Time7_8Consume_Avg[int(len(Time7_8Consume_Avg) * 0.375)][0]
+        D = Time7_8Consume_Avg[int(len(Time7_8Consume_Avg) * 0.5)][0]
+        E = Time7_8Consume_Avg[int(len(Time7_8Consume_Avg) * 0.625)][0]
+        F = Time7_8Consume_Avg[int(len(Time7_8Consume_Avg) * 0.75)][0]
+        G = Time7_8Consume_Avg[int(len(Time7_8Consume_Avg) * 0.875)][0]
+        H = Time7_8Consume_Avg[len(Time7_8Consume_Avg) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+       
         
     @MyLog.myException
     def calculate(self):

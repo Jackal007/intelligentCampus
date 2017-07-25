@@ -6,11 +6,16 @@ class LibraryTimeSpandCalculater(XXCalculater.XXCalculater):
         sql = "select library_time_spand from students order by library_time_spand"
         self.executer.execute(sql)
         LibraryTimeSpand = self.executer.fetchall()
-        A = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.25)][0]
-        B = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.5)][0]
-        C = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.75)][0]
-        D = LibraryTimeSpand[len(LibraryTimeSpand)  - 1][0]
-        self.level = [A, B, C, D]
+        A = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.125)][0]
+        B = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.25)][0]
+        C = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.375)][0]
+        D = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.5)][0]
+        E = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.625)][0]
+        F = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.75)][0]
+        G = LibraryTimeSpand[int(len(LibraryTimeSpand) * 0.875)][0]
+        H = LibraryTimeSpand[len(LibraryTimeSpand) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+       
         
     @MyLog.myException
     def calculate(self):

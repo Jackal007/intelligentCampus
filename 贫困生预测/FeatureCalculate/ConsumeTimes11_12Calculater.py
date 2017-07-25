@@ -5,12 +5,17 @@ class ConsumeTimes11_12Calculater(XXCalculater.XXCalculater):
     def setLevel(self):
         sql = "select consumetimes11_12 from students order by consumetimes11_12"
         self.executer.execute(sql)
+        
         ConsumeTimes11_12Ranks = self.executer.fetchall()
-        A = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.25)][0]
-        B = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.5)][0]
-        C = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.75)][0]
-        D = ConsumeTimes11_12Ranks[len(ConsumeTimes11_12Ranks) - 1][0]
-        self.level = [A, B, C, D]
+        A = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.125)][0]
+        B = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.25)][0]
+        C = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.375)][0]
+        D = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.5)][0]
+        E = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.625)][0]
+        F = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.75)][0]
+        G = ConsumeTimes11_12Ranks[int(len(ConsumeTimes11_12Ranks) * 0.875)][0]
+        H = ConsumeTimes11_12Ranks[len(ConsumeTimes11_12Ranks) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
 
     @MyLog.myException
     def calculate(self):

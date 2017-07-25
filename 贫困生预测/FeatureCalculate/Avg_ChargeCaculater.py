@@ -6,11 +6,16 @@ class Avg_ChargeCaculater(XXCalculater.XXCalculater):
         sql="select avg_charge from students order by avg_charge"
         self.executer.execute(sql)
         avg_charge = self.executer.fetchall()
-        A = avg_charge[int(len(avg_charge) * 0.25)][0]
-        B = avg_charge[int(len(avg_charge) * 0.5)][0]
-        C = avg_charge[int(len(avg_charge) * 0.75)][0]
-        D = avg_charge[len(avg_charge) - 1][0]
-        self.level = [A, B, C, D]
+        A = avg_charge[int(len(avg_charge) * 0.125)][0]
+        B = avg_charge[int(len(avg_charge) * 0.25)][0]
+        C = avg_charge[int(len(avg_charge) * 0.375)][0]
+        D = avg_charge[int(len(avg_charge) * 0.5)][0]
+        E = avg_charge[int(len(avg_charge) * 0.625)][0]
+        F = avg_charge[int(len(avg_charge) * 0.75)][0]
+        G = avg_charge[int(len(avg_charge) * 0.875)][0]
+        H = avg_charge[len(avg_charge) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+
         
     @MyLog.myException
     def calculate(self):

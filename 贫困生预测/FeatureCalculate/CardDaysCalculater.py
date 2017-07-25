@@ -6,11 +6,16 @@ class CardDaysCalculater(XXCalculater.XXCalculater):
         sql = "select card_days from students order by card_days"
         self.executer.execute(sql)
         card_days = self.executer.fetchall()
-        A = card_days[int(len(card_days) * 0.25)][0]
-        B = card_days[int(len(card_days) * 0.5)][0]
-        C = card_days[int(len(card_days) * 0.75)][0]
-        D = card_days[len(card_days)- 1][0]
-        self.level = [A, B, C, D]
+        A = card_days[int(len(card_days) * 0.125)][0]
+        B = card_days[int(len(card_days) * 0.25)][0]
+        C = card_days[int(len(card_days) * 0.375)][0]
+        D = card_days[int(len(card_days) * 0.5)][0]
+        E = card_days[int(len(card_days) * 0.625)][0]
+        F = card_days[int(len(card_days) * 0.75)][0]
+        G = card_days[int(len(card_days) * 0.875)][0]
+        H = card_days[len(card_days) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+
         
     @MyLog.myException
     def calculate(self):

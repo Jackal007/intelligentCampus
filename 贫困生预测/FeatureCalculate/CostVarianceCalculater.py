@@ -6,11 +6,15 @@ class CostVarianceCalculater(XXCalculater.XXCalculater):
         sql = "select cost_variance from students order by cost_variance"
         self.executer.execute(sql)
         CostVariance = self.executer.fetchall()
-        A = CostVariance[int(len(CostVariance) * 0.25)][0]
-        B = CostVariance[int(len(CostVariance) * 0.5)][0]
-        C = CostVariance[int(len(CostVariance) * 0.75)][0]
-        D = CostVariance[len(CostVariance) - 1][0]
-        self.level = [A, B, C, D]
+        A = CostVariance[int(len(CostVariance) * 0.125)][0]
+        B = CostVariance[int(len(CostVariance) * 0.25)][0]
+        C = CostVariance[int(len(CostVariance) * 0.375)][0]
+        D = CostVariance[int(len(CostVariance) * 0.5)][0]
+        E = CostVariance[int(len(CostVariance) * 0.625)][0]
+        F = CostVariance[int(len(CostVariance) * 0.75)][0]
+        G = CostVariance[int(len(CostVariance) * 0.875)][0]
+        H = CostVariance[len(CostVariance) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
         
     @MyLog.myException
     def calculate(self):

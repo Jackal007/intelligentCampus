@@ -6,11 +6,16 @@ class CardRechargeCalculater(XXCalculater.XXCalculater):
         sql = "select cardrecharge from students order by cardrecharge"
         self.executer.execute(sql)
         CardRechargeRanks = self.executer.fetchall()
-        A = CardRechargeRanks[int(len(CardRechargeRanks) * 0.25)][0]
-        B = CardRechargeRanks[int(len(CardRechargeRanks) * 0.5)][0]
-        C = CardRechargeRanks[int(len(CardRechargeRanks) * 0.75)][0]
-        D = CardRechargeRanks[len(CardRechargeRanks) - 1][0]
-        self.level = [A, B, C, D]
+        A = CardRechargeRanks[int(len(CardRechargeRanks) * 0.125)][0]
+        B = CardRechargeRanks[int(len(CardRechargeRanks) * 0.25)][0]
+        C = CardRechargeRanks[int(len(CardRechargeRanks) * 0.375)][0]
+        D = CardRechargeRanks[int(len(CardRechargeRanks) * 0.5)][0]
+        E = CardRechargeRanks[int(len(CardRechargeRanks) * 0.625)][0]
+        F = CardRechargeRanks[int(len(CardRechargeRanks) * 0.75)][0]
+        G = CardRechargeRanks[int(len(CardRechargeRanks) * 0.875)][0]
+        H = CardRechargeRanks[len(CardRechargeRanks) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+      
         
     @MyLog.myException
     def calculate(self):

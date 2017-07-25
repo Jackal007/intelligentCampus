@@ -5,12 +5,16 @@ class PropotionCalculater1500(XXCalculater.XXCalculater):
     def setLevel(self):
         sql = "select propotion_of_1500 from students order by propotion_of_1000 "
         self.executer.execute(sql)
-        Time6_7CostsRanks = self.executer.fetchall()
-        A = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.25)][0]
-        B = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.5)][0]
-        C = Time6_7CostsRanks[int(len(Time6_7CostsRanks) * 0.75)][0]
-        D = Time6_7CostsRanks[len(Time6_7CostsRanks) - 1][0]
-        self.level = [A, B, C, D]
+        propotion_of_1500 = self.executer.fetchall()
+        A = propotion_of_1500[int(len(propotion_of_1500) * 0.125)][0]
+        B = propotion_of_1500[int(len(propotion_of_1500) * 0.25)][0]
+        C = propotion_of_1500[int(len(propotion_of_1500) * 0.375)][0]
+        D = propotion_of_1500[int(len(propotion_of_1500) * 0.5)][0]
+        E = propotion_of_1500[int(len(propotion_of_1500) * 0.625)][0]
+        F = propotion_of_1500[int(len(propotion_of_1500) * 0.75)][0]
+        G = propotion_of_1500[int(len(propotion_of_1500) * 0.875)][0]
+        H = propotion_of_1500[len(propotion_of_1500) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
         
     @MyLog.myException
     def calculate(self):

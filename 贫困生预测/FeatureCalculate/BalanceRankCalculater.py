@@ -6,12 +6,16 @@ class BalanceRankCalculater(XXCalculater.XXCalculater):
         sql = "select balance_rank from students order by balance_rank"
         self.executer.execute(sql)
         BalanceRanks = self.executer.fetchall()
-        A = BalanceRanks[int(len(BalanceRanks) * 0.25)][0]
-        B = BalanceRanks[int(len(BalanceRanks) * 0.5)][0]
-        C = BalanceRanks[int(len(BalanceRanks) * 0.75)][0]
-        D = BalanceRanks[len(BalanceRanks) - 1][0]
-        self.level = [A, B, C, D]
-        
+        A = BalanceRanks[int(len(BalanceRanks) * 0.125)][0]
+        B = BalanceRanks[int(len(BalanceRanks) * 0.25)][0]
+        C = BalanceRanks[int(len(BalanceRanks) * 0.375)][0]
+        D = BalanceRanks[int(len(BalanceRanks) * 0.5)][0]
+        E = BalanceRanks[int(len(BalanceRanks) * 0.625)][0]
+        F = BalanceRanks[int(len(BalanceRanks) * 0.75)][0]
+        G = BalanceRanks[int(len(BalanceRanks) * 0.875)][0]
+        H = BalanceRanks[len(BalanceRanks) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+
     @MyLog.myException
     def calculate(self):
         '''

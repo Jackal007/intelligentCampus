@@ -6,11 +6,16 @@ class Below10_RankCalculater(XXCalculater.XXCalculater):
         sql = "select below10_rank from students order by below10_rank"
         self.executer.execute(sql)
         avgDaysCosts = self.executer.fetchall()
-        A = avgDaysCosts[int(len(avgDaysCosts) * 0.25)][0]
-        B = avgDaysCosts[int(len(avgDaysCosts) * 0.5)][0]
-        C = avgDaysCosts[int(len(avgDaysCosts) * 0.75)][0]
-        D = avgDaysCosts[len(avgDaysCosts) - 1][0]
-        self.level = [A, B, C, D]
+        A = avgDaysCosts[int(len(avgDaysCosts) * 0.125)][0]
+        B = avgDaysCosts[int(len(avgDaysCosts) * 0.25)][0]
+        C = avgDaysCosts[int(len(avgDaysCosts) * 0.375)][0]
+        D = avgDaysCosts[int(len(avgDaysCosts) * 0.5)][0]
+        E = avgDaysCosts[int(len(avgDaysCosts) * 0.625)][0]
+        F = avgDaysCosts[int(len(avgDaysCosts) * 0.75)][0]
+        G = avgDaysCosts[int(len(avgDaysCosts) * 0.875)][0]
+        H = avgDaysCosts[len(avgDaysCosts) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+      
         
     @MyLog.myException
     def calculate(self):

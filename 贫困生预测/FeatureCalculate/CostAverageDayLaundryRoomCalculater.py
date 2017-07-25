@@ -6,11 +6,16 @@ class CostAverageDayLaundryRoomCalculater(XXCalculater.XXCalculater):
         sql = "select cost_avg_day_laundryroom from students order by cost_avg_day_laundryroom"
         self.executer.execute(sql)
         CostAmounts = self.executer.fetchall()
-        A = CostAmounts[int(len(CostAmounts) * 0.25)][0]
-        B = CostAmounts[int(len(CostAmounts) * 0.5)][0]
-        C = CostAmounts[int(len(CostAmounts) * 0.75)][0]
-        D = CostAmounts[len(CostAmounts) - 1][0]
-        self.level = [A, B, C, D]
+        A = CostAmounts[int(len(CostAmounts) * 0.125)][0]
+        B = CostAmounts[int(len(CostAmounts) * 0.25)][0]
+        C = CostAmounts[int(len(CostAmounts) * 0.375)][0]
+        D = CostAmounts[int(len(CostAmounts) * 0.5)][0]
+        E = CostAmounts[int(len(CostAmounts) * 0.625)][0]
+        F = CostAmounts[int(len(CostAmounts) * 0.75)][0]
+        G = CostAmounts[int(len(CostAmounts) * 0.875)][0]
+        H = CostAmounts[len(CostAmounts) - 1][0]
+        self.level = [A, B, C, D, E, F, G]
+        
         
     @MyLog.myException
     def calculate(self):
