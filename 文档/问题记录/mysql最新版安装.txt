@@ -1,0 +1,11 @@
+mysql 服务无法启动
+服务没有报告任何错误
+
+先在mysql的bin目录下执行mysqld  --initialize-insecure （不设置root密码，建议使用）命令，第一次执行这个命令会等待的时间稍微长了一些，并且控制台没有任何返回结果。可以看到mysql的根目录下会多出一个data文件夹，里面一堆文件。
+
+
+然后直接管理员身份进入mysql的bin下，执行mysqld -isntall 命令
+启动 net start mysql
+
+Access denied for user 'ODBC'@'localhost' (using password: NO) :必须要以有账户名的方式登录
+即可
